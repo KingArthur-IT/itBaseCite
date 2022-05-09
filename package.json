@@ -1,0 +1,15 @@
+{
+  "name": "itbasecite",
+  "version": "1.0.0",
+  "description": "",
+  "main": "rollup_config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Artem Ostapenko",
+  "license": "ISC",
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "rollup": "^2.72.1"
+  }
+}
