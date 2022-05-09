@@ -1,0 +1,70 @@
+.selector
+    &__hero
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: space-between
+        height: 100vh
+    &__win
+        position: relative
+        background: url(../assets/selector-page/selecter-win.png) no-repeat
+        width: 243px
+        height: 113px
+        background-size: cover
+        margin-top: 53px
+        z-index: 2
+    &__win-text
+        padding: 11px 14px 0 27px
+    &__links
+        position: relative
+        padding: 0 35px
+        margin: auto
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        margin-bottom: 167px
+        z-index: 2
+    &__link
+        width: 143px
+        height: 136px
+        background: rgba(255, 255, 255, 0.2)
+        border: 2px solid rgba(197, 197, 197, 0.2)
+        backdrop-filter: blur(53px)
+        border-radius: 24px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-self: center
+        margin-bottom: 6px
+        &:nth-child(odd)
+            margin-right: 9px
+    &__link-hero
+        & img
+            margin: auto
+            display: block
+            margin-bottom: 7px
+        & p
+            margin: 0
+            color: #fff
+            font-weight: 400
+            font-size: 14px
+            line-height: 17px
+            text-align: center
+    &__circles-top
+        z-index: -1
+        width: 88px
+        height: 88px
+        top: -30px
+        right: 43px
+    &__circles-left
+        z-index: -1
+        width: 154px
+        height: 154px
+        bottom: -79px
+        left: -51px
+    &__circles-bottom
+        z-index: 0
+        width: 244px
+        height: 244px
+        bottom: -98px
+        right: -86px
