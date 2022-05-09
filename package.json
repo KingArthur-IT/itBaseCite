@@ -2,9 +2,11 @@
   "name": "itbasecite",
   "version": "1.0.0",
   "description": "",
-  "main": "rollup_config.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c \"rollup_config.js\"",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "serve"
   },
   "author": "Artem Ostapenko",
   "license": "ISC",
