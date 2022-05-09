@@ -1,0 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bg {
+  background: linear-gradient(117.89deg, #451149 4.83%, #ED00FF 108.33%);
+}
+
+.bg-second-layer {
+  background: linear-gradient(347.42deg, rgba(255, 150, 26, 0.56) -16.29%, rgba(80, 16, 84, 0) 113.92%);
+}
+
+.button {
+  background: #FF9B04;
+  border-radius: 8px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.design-circles {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.index {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.index__wrapper {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+}
+
+.index__btn {
+  width: 159px;
+  height: 40px;
+  display: block;
+  margin-bottom: 117px;
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+.index__intro {
+  position: relative;
+  background: url(../assets/index-win.png) no-repeat;
+  width: 243px;
+  height: 154px;
+  background-size: cover;
+  margin-top: 162px;
+  z-index: 2;
+}
+
+.index__intro-bg {
+  padding-right: 9px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.index__intro-circles {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.index__intro-text {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 13px 14px 0 27px;
+}
+
+.index__intro-text span {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.index__circles-top {
+  top: -98px;
+  left: -114px;
+  width: 244px;
+  height: 244px;
+}
+
+.index__circles-right {
+  top: 80px;
+  right: -1px;
+  width: 176px;
+  height: 176px;
+}
+
+.index__circles-bottom {
+  bottom: -88px;
+  left: 19px;
+  width: 176px;
+  height: 176px;
+}
