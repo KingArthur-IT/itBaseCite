@@ -25,6 +25,20 @@ body {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  cursor: pointer;
+}
+
+.outline-button {
+  background: transparent;
+  border-radius: 8px;
+  color: #FF9B04;
+  text-transform: uppercase;
+  display: block;
+  border: 1px solid #FF9B04;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
 }
 
 .design-circles {
@@ -275,4 +289,120 @@ body {
   height: 176px;
   bottom: 238px;
   right: -129px;
+}
+
+.working__win {
+  position: relative;
+  background: url(../assets/about-us-page/win.png) no-repeat;
+  width: 282px;
+  height: 115px;
+  background-size: cover;
+  margin: auto;
+  margin-top: 100px;
+  z-index: 2;
+}
+
+.working__win-text {
+  padding: 11px 14px 0 27px;
+}
+
+.working__list {
+  position: relative;
+  padding: 0 10px 0 28px;
+  margin-top: 290px;
+}
+
+.working__list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #fff;
+  margin-bottom: 23px;
+}
+
+.working__list-number {
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 78px;
+  display: block;
+  margin-right: 18px;
+}
+
+.working__list-title {
+  margin: 0;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  margin-bottom: 6px;
+}
+
+.working__list-text {
+  margin: 0;
+  font-family: 'Gilroy';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.working__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 19px 16px 19px;
+}
+
+.working__consult {
+  padding: 6px 17px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.working__order {
+  padding: 6px 17px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.working__circles-top-right {
+  z-index: 0;
+  width: 244px;
+  height: 244px;
+  top: -82px;
+  right: -122px;
+}
+
+.working__circles-top-left {
+  z-index: 0;
+  width: 176px;
+  height: 176px;
+  top: 281px;
+  left: -60px;
+}
+
+.working__circles-list-right {
+  z-index: 0;
+  width: 126px;
+  height: 126px;
+  top: 63px;
+  right: -60px;
+}
+
+.working__circles-bottom {
+  z-index: 0;
+  width: 194px;
+  height: 194px;
+  bottom: -79px;
+  left: -145px;
 }
