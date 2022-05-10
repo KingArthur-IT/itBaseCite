@@ -17,7 +17,14 @@
     font-style: normal;
 }
 
-.animate{
+#animationCanvas{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+.canvas-animate{
     animation: 3s ease-in-out infinite alternate-reverse canvasAnimation;
 }
 

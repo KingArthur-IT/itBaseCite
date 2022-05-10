@@ -37,7 +37,7 @@
             let index = 0;
             let intervalId = setInterval(() => {
                 ctx.clearRect(0,0,canvas.width,canvas.height);
-                ctx.drawImage(animationImageList[index], 0, 0);
+                ctx.drawImage(animationImageList[index], 0, 0, document.documentElement.clientWidth, document.documentElement.clientHeight);
                 index ++;
                 if (index > 50) clearInterval(intervalId);
             }, 50);
