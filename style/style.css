@@ -11,7 +11,7 @@ body {
   background: linear-gradient(347.42deg, rgba(255, 150, 26, 0.56) -16.29%, rgba(80, 16, 84, 0) 113.92%);
   position: relative;
   overflow: hidden;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -34,7 +34,7 @@ body {
 }
 
 .page-wrapper {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   position: relative;
 }
@@ -222,4 +222,57 @@ body {
   height: 244px;
   bottom: -98px;
   right: -86px;
+}
+
+.about-us-page__win {
+  position: relative;
+  background: url(../assets/about-us-page/win.png) no-repeat;
+  width: 282px;
+  height: 115px;
+  background-size: cover;
+  margin: auto;
+  margin-top: 112px;
+  z-index: 2;
+}
+
+.about-us-page__win-text {
+  padding: 11px 14px 0 27px;
+}
+
+.about-us-page__text-wrapper {
+  margin-top: 256px;
+  padding: 0 12px 43px 20px;
+}
+
+.about-us-page__text-wrapper p {
+  margin: 0;
+  margin-bottom: 15px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #FFFFFF;
+}
+
+.about-us-page__circles-top {
+  z-index: 0;
+  width: 244px;
+  height: 244px;
+  top: -111px;
+  left: -97px;
+}
+
+.about-us-page__circles-right {
+  z-index: 0;
+  width: 176px;
+  height: 176px;
+  top: 328px;
+  right: -76px;
+}
+
+.about-us-page__circles-bottom {
+  z-index: 0;
+  width: 176px;
+  height: 176px;
+  bottom: 238px;
+  right: -129px;
 }
