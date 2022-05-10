@@ -326,6 +326,7 @@ body {
   line-height: 78px;
   display: block;
   margin-right: 18px;
+  width: 78px;
 }
 
 .working__list-title {

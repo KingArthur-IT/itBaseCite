@@ -1,3 +1,22 @@
+@font-face{
+    font-family: 'Gilroy';
+    src: local('Gilroy Medium'), local('Gilroy-Medium'),
+        url('../assets/fonts/Gilroy-Medium.woff2') format('woff2'),
+        url('../assets/fonts/Gilroy-Medium.woff') format('woff'),
+        url('../assets/fonts/Gilroy-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Gilroy';
+    src: local('Gilroy Semibold'), local('Gilroy-Semibold'),
+        url('../assets/fonts/Gilroy-Semibold.woff2') format('woff2'),
+        url('../assets/fonts/Gilroy-Semibold.woff') format('woff'),
+        url('../assets/fonts/Gilroy-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
 .animate{
     animation: 3s ease-in-out infinite alternate-reverse canvasAnimation;
 }
