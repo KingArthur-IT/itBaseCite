@@ -29,3 +29,25 @@
         transform: rotateY(10deg) rotateZ(2deg)
     }
 }
+
+.circle-animate-1{
+    animation: 2s ease-in-out infinite alternate-reverse circlesAnimation;
+}
+.circle-animate-2{
+    animation: 2.5s ease-in infinite alternate-reverse circlesAnimation;
+}
+.circle-animate-3{
+    animation: 2.8s ease-out infinite alternate-reverse circlesAnimation;
+}
+.circle-animate-4{
+    animation: 3s linear infinite alternate-reverse circlesAnimation;
+}
+
+@keyframes circlesAnimation {
+    0%{
+        transform: scale(0.9)
+    }
+    100%{
+        transform: scale(1.1)
+    }
+}
