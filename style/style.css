@@ -54,13 +54,6 @@ body {
   position: absolute;
   border-radius: 50%;
   z-index: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-}
-
-.design-circles.show {
-  -webkit-transform: scale(1);
-          transform: scale(1);
 }
 
 .page-wrapper {
@@ -139,6 +132,13 @@ body {
   left: -114px;
   width: 244px;
   height: 244px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.index__circles-top.show {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .index__circles-right {
@@ -146,6 +146,13 @@ body {
   right: -1px;
   width: 176px;
   height: 176px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.index__circles-right.show {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .index__circles-bottom {
@@ -153,6 +160,13 @@ body {
   left: 19px;
   width: 176px;
   height: 176px;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+.index__circles-bottom.show {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .selector__hero {

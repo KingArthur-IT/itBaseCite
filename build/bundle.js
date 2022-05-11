@@ -19,7 +19,8 @@
             {id: 1, prefix: 2, start: 0, end: 100},
             {id: 2, prefix: 2, start: 101, end: 197},
             {id: 3, prefix: 2, start: 198, end: 330},
-        ]
+        ],
+        contentAnimationTime: 3
     };
 
     const numToStr = (number, n) => {
@@ -42,6 +43,17 @@
     const indexPageStartAnimateContent = () => {
         [...document.getElementsByClassName('index-page-animate')].forEach(element => {
             element.classList.add('show');
+        });
+        [...document.getElementsByClassName('design-circles')].forEach(element => {
+            element.classList.add('start-anim');
+        });
+    };
+    const indexPageEndAnimateContent = () => {
+        [...document.getElementsByClassName('index-page-animate')].forEach(element => {
+            element.classList.remove('start-anim');     
+            setTimeout(() => {
+                element.classList.add('hide');
+            }, 1000);
         });
     };
 
@@ -77,16 +89,14 @@
             indexPageStartAnimateContent();
             
             document.getElementById('startBtn').addEventListener('click', () => {
-                console.log('start');
                 startAnimation(2);
+                indexPageEndAnimateContent();
             });
 
             //window.addEventListener('resize', onWindowResize, false);
             //onWindowResize();
             //window.addEventListener('mousemove', onMouseMove, false);
             //window.addEventListener('scroll', onScroll, false);
-
-            //window.requestAnimationFrame(draw);
         }
     }
 

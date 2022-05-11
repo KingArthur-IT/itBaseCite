@@ -20,7 +20,7 @@
         z-index: 2
         transform: translateX(-400px) rotate(-30deg)
         &.show
-            transform: translateX(0px) rotate(0deg)
+            transform: translateX(0px) rotate(0deg) 
     &__win-text
         padding: 13px 14px 0 27px
     &__circles-top
@@ -28,13 +28,22 @@
         left: -114px
         width: 244px
         height: 244px
+        transform: scale(0)
+        &.show
+            transform: scale(1)
     &__circles-right
         top: 80px
         right: -1px
         width: 176px
         height: 176px
+        transform: scale(0)
+        &.show
+            transform: scale(1)
     &__circles-bottom
         bottom: -88px
         left: 19px
         width: 176px
         height: 176px
+        transform: scale(0)
+        &.show
+            transform: scale(1)
