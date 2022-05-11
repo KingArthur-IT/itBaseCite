@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 body {
   font-family: 'Montserrat', sans-serif;
+  background: linear-gradient(117.89deg, #451149 4.83%, #ED00FF 108.33%);
 }
 
 #animationCanvas {
@@ -14,6 +15,18 @@ body {
 
 .bg {
   background: linear-gradient(117.89deg, #451149 4.83%, #ED00FF 108.33%);
+  opacity: 0;
+  -webkit-transition: opacity 1s linear;
+  transition: opacity 1s linear;
+  display: none;
+}
+
+.section-visible {
+  opacity: 1;
+}
+
+.section-block {
+  display: block;
 }
 
 .bg-second-layer {

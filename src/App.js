@@ -36,20 +36,41 @@ const startAnimation = (animationNum) => {
     }, 50);
 }
 
-const indexPageStartAnimateContent = () => {
-    [...document.getElementsByClassName('index-page-animate')].forEach(element => {
+const hideSection = (sectionName) => {
+    setTimeout(() => {
+        document.getElementsByClassName(`${sectionName}-section`)[0].classList.remove('section-visible');
+        setTimeout(() => {
+            document.getElementsByClassName(`${sectionName}-section`)[0].classList.remove('section-block');
+        }, 1000);
+    }, 3000);
+}
+const showSection = (sectionName) => {
+    document.getElementsByClassName(`${sectionName}-section`)[0].classList.add('section-block');
+    setTimeout(() => {
+        document.getElementsByClassName(`${sectionName}-section`)[0].classList.add('section-visible');
+    }, 100);
+}
+
+const PageStartAnimateContent = (pageName) => {
+    [...document.getElementsByClassName(`${pageName}-page-animate`)].forEach(element => {
         element.classList.add('show')
     });
     [...document.getElementsByClassName('design-circles')].forEach(element => {
         element.classList.add('start-anim')
     });
 }
-const indexPageEndAnimateContent = () => {
-    [...document.getElementsByClassName('index-page-animate')].forEach(element => {
-        element.classList.remove('start-anim');     
+
+const PageEndAnimateContent = (pageEndName, pageShowName) => {
+    [...document.getElementsByClassName(`${pageEndName}-page-animate`)].forEach(element => {
+        element.classList.remove('start-anim'); //stop pulsing
         setTimeout(() => {
-            element.classList.add('hide');
-            element.classList.remove('show');   
+            element.classList.add('hide'); 
+            element.classList.remove('show');
+            showSection(pageShowName);
+            hideSection(pageEndName);
+            setTimeout(() => {
+                element.classList.remove('hide'); 
+            }, 5000);  
         }, 1000);
     });
 }
@@ -83,11 +104,11 @@ class App {
         canvas.ctx = document.getElementById(settings.canvasID).getContext('2d');
 
         startAnimation(1);
-        indexPageStartAnimateContent();
+        PageStartAnimateContent('index');
         
         document.getElementById('startBtn').addEventListener('click', () => {
             startAnimation(2);
-            indexPageEndAnimateContent();
+            PageEndAnimateContent('index', 'selector');
         })
 
         //window.addEventListener('resize', onWindowResize, false);
