@@ -7,6 +7,9 @@
         width: 159px
         height: 40px
         margin-bottom: 117px
+        transform: translateX(-400px) rotate(-40deg)
+        &.show
+            transform: translateX(0px) rotate(0deg)
     &__win
         position: relative
         background: url(../assets/index-win.png) no-repeat
@@ -15,6 +18,9 @@
         background-size: cover
         margin-top: 162px
         z-index: 2
+        transform: translateX(-400px) rotate(-30deg)
+        &.show
+            transform: translateX(0px) rotate(0deg)
     &__win-text
         padding: 13px 14px 0 27px
     &__circles-top

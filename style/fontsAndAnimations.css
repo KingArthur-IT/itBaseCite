@@ -17,44 +17,47 @@
     font-style: normal;
 }
 
-#animationCanvas{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 10;
-}
 .canvas-animate{
-    animation: 3s ease-in-out infinite alternate-reverse canvasAnimation;
+    animation: 3s ease-in-out infinite alternate-reverse 3s canvasAnimation;
 }
 
 @keyframes canvasAnimation {
     0%{
-        transform: rotateY(0deg) rotateZ(0deg)
+        transform: translate(2px, 0px)
+    }
+    50%{
+        transform: translate(-2px, -4px)
     }
     100%{
-        transform: rotateY(10deg) rotateZ(2deg)
+        transform: translate(0px, 0px)
     }
 }
 
-.circle-animate-1{
-    animation: 2s ease-in-out infinite alternate-reverse circlesAnimation;
+.show.circle-animate-1{
+    animation: 2s ease-in-out infinite alternate-reverse 3s circlesAnimation;
 }
-.circle-animate-2{
-    animation: 2.5s ease-in infinite alternate-reverse circlesAnimation;
+.show.circle-animate-2{
+    animation: 2.5s ease-in infinite alternate-reverse 3s circlesAnimation;
 }
-.circle-animate-3{
-    animation: 2.8s ease-out infinite alternate-reverse circlesAnimation;
+.show.circle-animate-3{
+    animation: 2.8s ease-out infinite alternate-reverse 3s circlesAnimation;
 }
-.circle-animate-4{
-    animation: 3s linear infinite alternate-reverse circlesAnimation;
+.show.circle-animate-4{
+    animation: 3s linear infinite alternate-reverse 3s circlesAnimation;
 }
 
 @keyframes circlesAnimation {
     0%{
+        transform: scale(1.1)
+    }
+    50%{
         transform: scale(0.9)
     }
     100%{
-        transform: scale(1.1)
+        transform: scale(1)
     }
+}
+
+.index-page-animate{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s;
 }
