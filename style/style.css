@@ -15,8 +15,10 @@ body {
 
 .bg {
   background: linear-gradient(117.89deg, #451149 4.83%, #ED00FF 108.33%);
+  opacity: 0;
   -webkit-transition: opacity 1s linear;
   transition: opacity 1s linear;
+  display: none;
 }
 
 .section-visible {
@@ -121,7 +123,7 @@ body {
 
 .index__win {
   position: relative;
-  background: url(../assets/index-win.png) no-repeat;
+  background: url(../assets/index-page/win.png) no-repeat;
   width: 243px;
   height: 154px;
   background-size: cover;
@@ -591,4 +593,194 @@ body {
   height: 176px;
   bottom: 28px;
   left: -126px;
+}
+
+.services-page {
+  background: linear-gradient(351.31deg, #451149 -7.22%, #ED00FF 109.14%);
+}
+
+.services {
+  background: linear-gradient(166.84deg, rgba(255, 150, 26, 0.56) -4.03%, rgba(80, 16, 84, 0) 106.68%);
+}
+
+.services__win {
+  position: relative;
+  background: url(../assets/services-page/win.png) no-repeat;
+  width: 243px;
+  height: 113px;
+  background-size: cover;
+  margin: auto;
+  margin-top: 53px;
+  z-index: 2;
+}
+
+.services__win-text {
+  padding: 11px 14px 0 27px;
+}
+
+.services__list {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  bottom: 34px;
+  padding: 0;
+  width: 100%;
+  margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.services__list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+  margin-bottom: 23px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(197, 197, 197, 0.2);
+  -webkit-backdrop-filter: blur(53px);
+          backdrop-filter: blur(53px);
+  border-radius: 24px;
+  width: 144px;
+  height: 106px;
+  padding: 13px 0;
+}
+
+.services__list-item:first-child {
+  margin-right: 9px;
+}
+
+.services__list-item img {
+  width: 74px;
+  margin-bottom: 11px;
+}
+
+.services__text {
+  margin: 0;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.services__circles-top {
+  width: 88px;
+  height: 88px;
+  right: 20px;
+  bottom: 230px;
+}
+
+.services__circles-bottom {
+  width: 154px;
+  height: 154px;
+  bottom: -70px;
+  left: -51px;
+}
+
+.mobile-menu {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: #000;
+  opacity: 0.6;
+}
+
+.mobile-menu__hero {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(197, 197, 197, 0.2);
+  -webkit-backdrop-filter: blur(58px);
+          backdrop-filter: blur(58px);
+  z-index: 2;
+}
+
+.mobile-menu__logo-wrapper {
+  padding: 6px 27px;
+}
+
+.mobile-menu__logo {
+  width: 41px;
+}
+
+.mobile-menu__list {
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu__list-item {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-bottom: 18px;
+}
+
+.mobile-menu__devider {
+  display: block;
+  margin: auto;
+  margin-bottom: 14px;
+}
+
+.mobile-menu__socials {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 27px;
+}
+
+.mobile-menu__social-item:first-child {
+  margin-right: 18px;
+}
+
+.mobile-menu__footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(197, 197, 197, 0.2);
+  -webkit-backdrop-filter: blur(58px);
+          backdrop-filter: blur(58px);
+  border-radius: 20px;
+  padding: 18px 16px 15px 16px;
+  color: #fff;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  z-index: 2;
+}
+
+.mobile-menu__circles-left {
+  width: 176px;
+  height: 176px;
+  left: -51px;
+  top: 322px;
+}
+
+.mobile-menu__circles-right {
+  width: 268px;
+  height: 268px;
+  right: -144px;
+  bottom: -22px;
 }
