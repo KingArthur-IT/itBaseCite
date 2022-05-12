@@ -13,6 +13,9 @@
         background-size: cover
         margin-top: 53px
         z-index: 2
+        transform: translateY(1000px) rotate(-40deg)
+        &.show
+            transform: translateY(0px) rotate(0deg)
     &__win-text
         padding: 11px 14px 0 27px
     &__links
@@ -38,6 +41,11 @@
         margin-bottom: 6px
         &:nth-child(odd)
             margin-right: 9px
+            transform: translate(-500px, 1000px) rotate(-40deg)
+        &:nth-child(even)
+            transform: translate(500px, 1000px) rotate(40deg)
+        &.show
+            transform: translate(0px, 0px) rotate(0deg)
     &__link-hero
         & img
             margin: auto
@@ -56,15 +64,24 @@
         height: 88px
         top: -30px
         right: 20px
+        transform: translateY(1000px)
+        &.show
+            transform: translateY(0px)
     &__circles-left
         z-index: -1
         width: 154px
         height: 154px
         bottom: -79px
         left: -51px
+        transform: translateY(1000px)
+        &.show
+            transform: translateY(0px)
     &__circles-bottom
         z-index: 0
         width: 244px
         height: 244px
         bottom: -98px
         right: -86px
+        transform: translateY(1000px)
+        &.show
+            transform: translateY(0px)

@@ -109,6 +109,9 @@ class App {
         document.getElementById('startBtn').addEventListener('click', () => {
             startAnimation(2);
             PageEndAnimateContent('index', 'selector');
+            setTimeout(() => {
+                PageStartAnimateContent('selector');
+            }, 2500);
         })
 
         //window.addEventListener('resize', onWindowResize, false);
