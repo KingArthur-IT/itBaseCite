@@ -5,7 +5,8 @@ var canvas = {
         width: 0,
         height: 0
     },
-    animationImageList = [];
+    animationImageList = [],
+    animationIndex = -1;
 
 const settings = {
     canvasID: 'animationCanvas',
@@ -95,15 +96,11 @@ class App {
         }
     }
     start(){
-        canvas.object = document.getElementById(settings.canvasID);
-        canvas.object.width = document.documentElement.clientWidth;
-        canvas.width = document.documentElement.clientWidth;
-        canvas.object.height = canvas.width * settings.canvasImgAspectRatio;
-        canvas.height = canvas.width * settings.canvasImgAspectRatio;
-
+        onWindowResize();
         canvas.ctx = document.getElementById(settings.canvasID).getContext('2d');
 
         startAnimation(1);
+        animationIndex = 1;
         PageStartAnimateContent('index');
         
         document.getElementById('startBtn').addEventListener('click', () => {
@@ -114,22 +111,25 @@ class App {
             }, 2500);
         })
 
-        //window.addEventListener('resize', onWindowResize, false);
-        //onWindowResize();
-        //window.addEventListener('mousemove', onMouseMove, false);
-        //window.addEventListener('scroll', onScroll, false);
+        window.addEventListener('resize', onWindowResize, false);
     }
 }
 
-function onMouseMove(e) {    
-    
-}
-
 function onWindowResize() {
-    canvas.width = document.documentElement.clientWidth;//window.innerWidth;
-    canvas.height = document.documentElement.clientHeight; //window.innerHeight;
-    canvas.setAttribute('width', document.documentElement.clientWidth);
-    canvas.setAttribute('height', document.documentElement.clientHeight);
+    canvas.object = document.getElementById(settings.canvasID);
+    canvas.object.width = document.documentElement.clientWidth;
+    canvas.width = document.documentElement.clientWidth;
+    canvas.object.height = canvas.width * settings.canvasImgAspectRatio;
+    canvas.height = canvas.width * settings.canvasImgAspectRatio;
+
+    const canvasTop = (document.documentElement.clientHeight - canvas.height) / 2.;
+    canvas.object.style.top = canvasTop + 'px';
+
+    if (animationIndex > 0){
+        canvas.ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const index = animationImageList[animationIndex - 1].length - 1;
+        canvas.ctx.drawImage(animationImageList[animationIndex - 1][index], 0, 0, canvas.width, canvas.height);
+    }
 }
 
 export default App;

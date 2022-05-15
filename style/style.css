@@ -9,7 +9,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 2;
   pointer-events: none;
 }
 
@@ -49,6 +49,9 @@ body {
      -moz-appearance: none;
           appearance: none;
   cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
 }
 
 .outline-button {
@@ -63,6 +66,9 @@ body {
      -moz-appearance: none;
           appearance: none;
   cursor: pointer;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
 }
 
 .design-circles {
@@ -122,9 +128,10 @@ body {
 .index__btn {
   width: 159px;
   height: 40px;
-  margin-bottom: 117px;
-  -webkit-transform: translateX(-400px) rotate(-40deg);
-          transform: translateX(-400px) rotate(-40deg);
+  margin-bottom: 14.5vh;
+  -webkit-transform: translateX(-600px) rotate(-40deg);
+          transform: translateX(-600px) rotate(-40deg);
+  z-index: 3;
 }
 
 .index__btn.show {
@@ -138,10 +145,10 @@ body {
   width: 243px;
   height: 154px;
   background-size: cover;
-  margin-top: 162px;
-  z-index: 2;
-  -webkit-transform: translateX(-400px) rotate(-30deg);
-          transform: translateX(-400px) rotate(-30deg);
+  margin-top: 19vh;
+  z-index: 1;
+  -webkit-transform: translateX(-600px) rotate(-30deg);
+          transform: translateX(-600px) rotate(-30deg);
 }
 
 .index__win.show {
@@ -218,7 +225,7 @@ body {
   width: 243px;
   height: 113px;
   background-size: cover;
-  margin-top: 53px;
+  margin-top: 6.5vh;
   z-index: 2;
   -webkit-transform: translateY(1000px) rotate(-40deg);
           transform: translateY(1000px) rotate(-40deg);
@@ -245,7 +252,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 167px;
+  margin-bottom: 19.5vh;
   z-index: 2;
 }
 
@@ -348,6 +355,15 @@ body {
           transform: translateY(0px);
 }
 
+@media screen and (max-width: 375px) {
+  .selector__links {
+    padding: 0 15px;
+  }
+  .selector__link {
+    width: 135px;
+  }
+}
+
 .about-us-page__win {
   position: relative;
   background: url(../assets/about-us-page/win.png) no-repeat;
@@ -355,7 +371,7 @@ body {
   height: 115px;
   background-size: cover;
   margin: auto;
-  margin-top: 112px;
+  margin-top: 13.5vh;
   z-index: 2;
 }
 
@@ -364,16 +380,13 @@ body {
 }
 
 .about-us-page__text-wrapper {
-  margin-top: 256px;
+  margin-top: 31.5vh;
   padding: 0 12px 43px 20px;
 }
 
 .about-us-page__text-wrapper p {
   margin: 0;
   margin-bottom: 15px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
   color: #FFFFFF;
 }
 
@@ -408,7 +421,7 @@ body {
   height: 115px;
   background-size: cover;
   margin: auto;
-  margin-top: 100px;
+  margin-top: 12vh;
   z-index: 2;
 }
 
@@ -419,7 +432,7 @@ body {
 .working__list {
   position: relative;
   padding: 0 10px 0 28px;
-  margin-top: 290px;
+  margin-top: 35.8vh;
 }
 
 .working__list-item {
@@ -456,32 +469,6 @@ body {
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
-}
-
-.working__btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 0 19px 16px 19px;
-}
-
-.working__consult {
-  padding: 6px 17px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-}
-
-.working__order {
-  padding: 6px 17px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 .working__circles-top-right {
@@ -571,9 +558,7 @@ body {
   position: absolute;
   bottom: 10px;
   padding: 6px 17px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
+  color: #FF9B04;
 }
 
 .contacts__circles-top {
@@ -800,7 +785,7 @@ body {
   width: 243px;
   height: 129px;
   background-size: cover;
-  margin-top: 300px;
+  margin-top: 37vh;
   margin-bottom: 70px;
   margin-left: 34px;
   z-index: 2;
@@ -872,33 +857,6 @@ body {
 
 .sites__steps-prelist-text span {
   color: #FFA31A;
-}
-
-.sites__btns {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding-top: 16px;
-  margin-bottom: 30px;
-}
-
-.sites__consult {
-  padding: 6px 17px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-}
-
-.sites__order {
-  padding: 6px 17px;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 17px;
-  text-align: center;
-  text-transform: uppercase;
 }
 
 .sites__circles-top {
@@ -1177,4 +1135,51 @@ body {
 .collapsed.accordeon__steps-control-wrapper::after {
   -webkit-transform: rotate(0deg);
           transform: rotate(0deg);
+}
+
+.buttons-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 19px 16px 19px;
+}
+
+.buttons-wrapper__consult {
+  padding: 6px 17px;
+  width: 100%;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
+  margin-right: 17px;
+  color: #FF9B04;
+}
+
+.buttons-wrapper__order {
+  padding: 6px 17px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 100%;
+  -ms-flex-preferred-size: 40%;
+      flex-basis: 40%;
+}
+
+@media screen and (max-width: 370px) {
+  .buttons-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .buttons-wrapper__consult {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+  .buttons-wrapper__order {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
 }

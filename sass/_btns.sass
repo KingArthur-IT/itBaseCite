@@ -1,0 +1,26 @@
+.buttons-wrapper
+    display: flex
+    justify-content: space-between
+    padding: 0 19px 16px 19px
+    &__consult
+        padding: 6px 17px
+        width: 100%
+        flex-basis: 60%
+        margin-right: 17px
+        color: $secondary
+    &__order
+        padding: 6px 17px
+        text-align: center
+        text-transform: uppercase
+        width: 100%
+        flex-basis: 40%
+
+@media screen and ( max-width: 370px )
+    .buttons-wrapper
+        flex-direction: column
+        &__consult
+            flex-basis: 100%
+            margin-right: 0px
+            margin-bottom: 10px
+        &__order
+            flex-basis: 100%
