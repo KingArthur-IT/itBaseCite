@@ -124,6 +124,13 @@ class App {
                 el.classList.toggle('collapsed');
             })
         })
+
+        const menuBtn = document.getElementsByClassName('mobile-menu-img')[0];
+        const menuPage = document.getElementsByClassName('mobile-menu')[0];
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('opened');
+            menuPage.classList.toggle('opened');
+        })
     }
 }
 
