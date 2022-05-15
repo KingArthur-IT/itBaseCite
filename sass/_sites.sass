@@ -1,0 +1,157 @@
+.sites
+    &__win
+        position: relative
+        background: url(../assets/cites-page/win.png) no-repeat
+        width: 243px
+        height: 129px
+        background-size: cover
+        margin-top: 300px
+        margin-bottom: 70px
+        margin-left: 34px
+        z-index: 2
+    &__win-text
+        padding: 52px 36px 14px 36px
+        font-style: normal
+        font-weight: 700
+        font-size: 24px
+        line-height: 120%
+    &__definition
+        margin: 0
+        margin-bottom: 20px
+        & span
+            color: $orange
+    &__list
+        margin: 0
+        list-style: none
+        & span
+            color: $orange
+        & li
+            margin: 0
+            margin-bottom: 20px
+            padding: 0 0 0 37px
+            position: relative
+            &:nth-child(2)
+                margin-top: 20px
+            &::before
+                content: ''
+                position: absolute
+                left: 0
+                top: .5em
+                height: 2px
+                width: 52px
+                background: $orange
+                transform: translateX(-65%)
+        &-title
+            margin: 0
+            font-family: 'Gilroy'
+            font-style: normal
+            font-weight: 500
+            font-size: 18px
+            line-height: 21px
+            color: #FFFFFF
+    &__steps-prelist-text
+        margin: 0
+        margin-bottom: 20px
+        & span
+            color: $orange
+    &__steps-list
+        padding: 0
+    &__steps-head
+        display: flex
+        justify-content: space-between
+        align-items: baseline
+        padding-right: 25px
+    &__steps-num-wrapper
+        display: flex
+        align-items: flex-start
+    &__steps-num
+        font-style: normal
+        font-weight: 400
+        font-size: 48px
+        line-height: 122%
+        color: #FFFFFF
+        margin-right: 8px
+    &__steps-num-text
+        font-weight: 400
+        font-size: 18px
+        line-height: 122%
+        color: #FFFFFF
+        position: relative
+        padding-top: 10px
+        &::after
+            content: ''
+            position: absolute
+            width: 100%
+            height: 3px
+            background: $orange
+            bottom: -2px
+            left: 0
+    &__steps-control-wrapper
+        width: 26px
+        height: 30px
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            width: 100%
+            height: 3px
+            background: #fff
+            display: block
+        &::after
+            content: ''
+            position: absolute
+            width: 100%
+            height: 3px
+            background: #fff
+            display: block
+            transform: rotate(90deg)
+            transition: transform ease-out 0.3s
+    &__steps-content
+        padding: 20px 0
+        &-text
+            margin: 0
+    &__steps-actions-wrapper
+        margin: 37px 0 21px 0
+        padding: 15px 13px
+        background: rgba(255, 255, 255, 0.2)
+        border: 1px solid rgba(220, 220, 220, 0.59)
+        border-radius: 20px
+        color: #fff
+        & ul
+            padding: 0
+            & li
+                padding: 0
+                margin-left: 13px
+                list-style: none
+                position: relative
+                &::before
+                    content: '.'
+                    position: absolute
+                    top: -0.3em
+                    left: -9px
+    &__steps-actions-title
+        margin: 0
+        font-weight: 400
+        font-size: 24px
+        line-height: 120%
+        margin-bottom: 15px
+        color: #fff
+    &__btns
+        display: flex
+        justify-content: space-between
+        padding-top: 16px
+        margin-bottom: 30px
+    &__consult
+        padding: 6px 17px
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+    &__order
+        padding: 6px 17px
+        font-weight: 400
+        font-size: 14px
+        line-height: 17px
+        text-align: center
+        text-transform: uppercase
+.collapsed.sites__steps-control-wrapper::after
+    transform: rotate(0deg)
