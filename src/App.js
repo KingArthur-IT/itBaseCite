@@ -112,6 +112,18 @@ class App {
         })
 
         window.addEventListener('resize', onWindowResize, false);
+
+        [...document.getElementsByClassName('accordeon__steps-head')].forEach((el) => {
+            el.addEventListener('click', () => {
+                var panel = el.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                } 
+                el.classList.toggle('collapsed');
+            })
+        })
     }
 }
 

@@ -49,9 +49,12 @@
             background: #fff
             display: block
             transform: rotate(90deg)
-            transition: transform ease-out 0.3s
+            transition: transform ease-out 0.2s
     &__steps-content
-        padding: 20px 0
+        padding: 0
+        max-height: 0
+        overflow: hidden
+        transition: all 0.2s ease-out
         &-text
             margin: 0
     &__steps-actions-wrapper
@@ -80,5 +83,9 @@
         line-height: 120%
         margin-bottom: 15px
         color: #fff
-.collapsed.accordeon__steps-control-wrapper::after
+.collapsed .accordeon__steps-control-wrapper::after
     transform: rotate(0deg)
+.collapsed ~ .accordeon__steps-content
+    padding: 20px 0
+    max-height: auto
+    display: block
