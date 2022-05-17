@@ -29,6 +29,12 @@ body {
   display: block;
 }
 
+.section-flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
 .bg-second-layer {
   background: linear-gradient(347.42deg, rgba(255, 150, 26, 0.56) -16.29%, rgba(80, 16, 84, 0) 113.92%);
   position: relative;
@@ -54,7 +60,7 @@ body {
   line-height: 120%;
 }
 
-.simple-button {
+.input {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 8px;
   color: #fff;
@@ -69,6 +75,22 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 120%;
+}
+
+.input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.input::-ms-input-placeholder {
+  color: #fff;
+}
+
+.input::placeholder {
+  color: #fff;
 }
 
 .outline-button {
@@ -124,6 +146,16 @@ body {
 
 .container {
   padding: 0 15px 0 19px;
+}
+
+.preloader {
+  color: #fff;
+  margin-top: 300px;
+}
+
+.preloader img {
+  display: block;
+  margin: auto;
 }
 
 .index {
@@ -882,8 +914,7 @@ body {
   top: 0;
   height: 100vh;
   width: 100%;
-  background: #000;
-  opacity: 0;
+  background: rgba(0, 0, 0, 0.6);
   z-index: 3;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
@@ -894,7 +925,6 @@ body {
 .mobile-menu.opened {
   -webkit-transform: translateY(0);
           transform: translateY(0);
-  opacity: 0.8;
 }
 
 .mobile-menu__hero {
@@ -959,7 +989,7 @@ body {
   border: 1px solid rgba(197, 197, 197, 0.2);
   -webkit-backdrop-filter: blur(58px);
           backdrop-filter: blur(58px);
-  border-radius: 20px;
+  border-radius: 20px 20px 0 0;
   padding: 18px 16px 15px 16px;
   color: #fff;
   text-align: center;
@@ -974,6 +1004,7 @@ body {
   height: 176px;
   left: -51px;
   top: 322px;
+  z-index: -1;
 }
 
 .mobile-menu__circles-right {
@@ -1454,10 +1485,9 @@ body {
 .popup {
   position: absolute;
   top: 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  background: #000;
-  opacity: 0.8;
+  background: rgba(0, 0, 0, 0.6);
   z-index: 3;
   display: -webkit-box;
   display: -ms-flexbox;

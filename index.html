@@ -17,7 +17,10 @@
     <main class="bg-second-layer">
         <section class="index-section section-block section-visible bg page-wrapper">
             <div class="bg-second-layer index">
-                <h1 style="color: #fff; margin-top: 300px;" id="loader">Loading ...</h1>
+                <div class="preloader" id="loader">
+                    <h1>Loading ...</h1>
+                    <img src="./assets/logo.svg" alt="IT-BASE">
+                </div>
                 <div class="index-page-animate index__win">
                     <p class="win-text index__win-text">
                         <span class="win-bold-text">Привет</span><br>
@@ -169,10 +172,10 @@
                     <img src="./assets/circles.png" class="design-circles working__circles-list-right circle-animate-1">
                 </ul>
                 <div class="buttons-wrapper">
-                    <button class="outline-button buttons-wrapper__consult">
+                    <button class="outline-button buttons-wrapper__consult call-consult-popup">
                         консультироваться
                     </button>
-                    <button class="button buttons-wrapper__order">
+                    <button class="button buttons-wrapper__order call-order-popup">
                         заказать
                     </button>
                 </div>
@@ -209,7 +212,7 @@
                         </p>
                     </li>
                 </ul>
-                <button class="outline-button contacts__consult-btn">
+                <button class="outline-button contacts__consult-btn call-consult-popup">
                     консультироваться
                 </button>
                 <img src="./assets/circles.png" class="design-circles contacts__circles-top circle-animate-2">
@@ -488,10 +491,10 @@
                     <li class="text-content">Отзывы реальных людей.</li>
                 </ul>
                 <div class="container buttons-wrapper">
-                    <button class="outline-button buttons-wrapper__consult">
+                    <button class="outline-button buttons-wrapper__consult call-consult-popup">
                         консультироваться
                     </button>
-                    <button class="button buttons-wrapper__order">
+                    <button class="button buttons-wrapper__order call-order-popup">
                         заказать
                     </button>
                 </div>
@@ -667,10 +670,10 @@
                     Пользователи устройств компании Apple финансово состоятельнее и охотнее заплатят за предлагаемый продукт,но забывать про остальных нельзя.
                 </p>
                 <div class="container buttons-wrapper">
-                    <button class="outline-button buttons-wrapper__consult">
+                    <button class="outline-button buttons-wrapper__consult call-consult-popup">
                         консультироваться
                     </button>
-                    <button class="button buttons-wrapper__order">
+                    <button class="button buttons-wrapper__order call-order-popup">
                         заказать
                     </button>
                 </div>
@@ -682,7 +685,7 @@
         <section class="mobile-menu">
             <div class="mobile-menu__hero">
                 <div class="mobile-menu__logo-wrapper">
-                    <img src="./assets/logo.png" alt="IT-Base" class="mobile-menu__logo">
+                    <img src="./assets/logo.svg" alt="IT-Base" class="mobile-menu__logo">
                 </div>
                 <ul class="mobile-menu__list">
                     <li class="mobile-menu__list-item">О нас</li>
@@ -701,30 +704,34 @@
                     </defs>
                 </svg>                    
                 <div class="mobile-menu__socials">
-                    <img src="./assets/socials/instagram.svg" alt="instagram" class="mobile-menu__social-item">
-                    <img src="./assets/socials/facebook.svg" alt="facebook" class="mobile-menu__social-item">
+                    <a href="" target="_blank">
+                        <img src="./assets/socials/instagram.svg" alt="instagram" class="mobile-menu__social-item">
+                    </a>
+                    <a href="" target="_blank">
+                        <img src="./assets/socials/facebook.svg" alt="facebook" class="mobile-menu__social-item">
+                    </a>
                 </div>
             </div>
             <div class="mobile-menu__footer">
                 При воспроизведении материалов с сайта ... обязательна гиперссылка на страницу, с которой материал заимствован
             </div>
-            <img src="./assets/circles.png" class="design-circles mobile-menu__circles-left circle-animate-2">
-            <img src="./assets/circles.png" class="design-circles mobile-menu__circles-right circle-animate-3">
+            <img src="./assets/circles.png" class="start-anim design-circles mobile-menu__circles-left circle-animate-2">
+            <img src="./assets/circles.png" class="start-anim design-circles mobile-menu__circles-right circle-animate-3">
         </section>
         <section class="popup order-popup">
             <div class="popup__win">
                 <p class="popup__title">заказать</p>
-                <button class="simple-button popup__btn">ФИО</button>
-                <button class="simple-button popup__btn">Телефон</button>
-                <button class="button popup__btn">заказать</button>
+                <input type="text" placeholder="ФИО" class="input popup__btn">
+                <input type="text" placeholder="Телефон" class="input popup__btn">
+                <button class="button popup__btn call-thanks-order-popup">заказать</button>
             </div>
         </section>
         <section class="popup consult-popup">
             <div class="popup__win">
                 <p class="popup__title">консультироваться</p>
-                <button class="simple-button popup__btn">ФИО</button>
-                <button class="simple-button popup__btn">Телефон</button>
-                <button class="button popup__btn">заказать</button>
+                <input type="text" placeholder="ФИО" class="input popup__btn">
+                <input type="text" placeholder="Телефон" class="input popup__btn">
+                <button class="button popup__btn call-thanks-consult-popup">заказать</button>
             </div>
         </section>
         <section class="popup order-thank-popup">

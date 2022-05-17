@@ -4,8 +4,6 @@ $orange: #FFA31A
 body
     font-family: 'Montserrat', sans-serif
     background: linear-gradient(117.89deg, #451149 4.83%, #ED00FF 108.33%)
-    //height: 100vh
-    //overflow: hidden
 #animationCanvas
     position: absolute
     top: 0
@@ -22,6 +20,8 @@ body
     opacity: 1
 .section-block
     display: block
+.section-flex
+    display: flex !important
 .bg-second-layer
     background: linear-gradient(347.42deg, rgba(255, 150, 26, 0.56) -16.29%, rgba(80, 16, 84, 0) 113.92%)
     position: relative
@@ -41,7 +41,7 @@ body
     font-weight: 400
     font-size: 14px
     line-height: 120%
-.simple-button
+.input
     background: rgba(255, 255, 255, 0.2)
     border-radius: 8px
     color: #fff
@@ -54,6 +54,8 @@ body
     font-weight: 400
     font-size: 14px
     line-height: 120%
+    &::placeholder
+        color: #fff
 .outline-button
     background: transparent
     border-radius: 8px
@@ -93,3 +95,9 @@ body
         color: #fff
 .container
     padding: 0 15px 0 19px
+.preloader
+    color: #fff
+    margin-top: 300px
+    & img
+        display: block
+        margin: auto

@@ -110,53 +110,8 @@ class App {
         animationIndex = 1;
         PageStartAnimateContent('index');
         
-        document.getElementById('startBtn').addEventListener('click', () => {
-            startAnimation(2);
-            PageEndAnimateContent('index', 'selector');
-            setTimeout(() => {
-                PageStartAnimateContent('selector');
-            }, 2500);
-        })
-        document.getElementById('to-about-us').addEventListener('click', () => {
-            startAnimation(3);
-            PageEndAnimateContent('selector', 'about-us');
-            setTimeout(() => {
-                PageStartAnimateContent('about-us');
-            }, 2500);
-        })
-        document.getElementById('to-working').addEventListener('click', () => {
-            startAnimation(3);
-            PageEndAnimateContent('selector', 'working');
-            setTimeout(() => {
-                PageStartAnimateContent('working');
-            }, 2500);
-        })
-        document.getElementById('to-services').addEventListener('click', () => {
-            startAnimation(3);
-            PageEndAnimateContent('selector', 'services');
-            setTimeout(() => {
-                PageStartAnimateContent('services');
-            }, 2500);
-        })
-        document.getElementById('to-sites').addEventListener('click', () => {
-            startAnimation(3);
-            PageEndAnimateContent('services', 'sites');
-            setTimeout(() => {
-                PageStartAnimateContent('sites');
-            }, 2500);
-        })
-        document.getElementById('to-apps').addEventListener('click', () => {
-            startAnimation(3);
-            PageEndAnimateContent('services', 'apps');
-            setTimeout(() => {
-                PageStartAnimateContent('apps');
-            }, 2500);
-        })
-        document.getElementById('to-contacts').addEventListener('click', () => {
-            PageEndAnimateContent('selector', 'contacts', false);
-            PageStartAnimateContent('contacts');
-            clearCanvas();
-        })
+        navBtnsEventsListeners();
+        popupBtnsEventListenetrs();
 
         window.addEventListener('resize', onWindowResize, false);
 
@@ -196,6 +151,94 @@ function onWindowResize() {
         const index = animationImageList[animationIndex - 1].length - 1;
         canvas.ctx.drawImage(animationImageList[animationIndex - 1][index], 0, 0, canvas.width, canvas.height);
     }
+}
+
+function navBtnsEventsListeners(){
+    document.getElementById('startBtn').addEventListener('click', () => {
+        startAnimation(2);
+        PageEndAnimateContent('index', 'selector');
+        setTimeout(() => {
+            PageStartAnimateContent('selector');
+        }, 2500);
+    })
+    document.getElementById('to-about-us').addEventListener('click', () => {
+        startAnimation(3);
+        PageEndAnimateContent('selector', 'about-us');
+        setTimeout(() => {
+            PageStartAnimateContent('about-us');
+        }, 2500);
+    })
+    document.getElementById('to-working').addEventListener('click', () => {
+        startAnimation(3);
+        PageEndAnimateContent('selector', 'working');
+        setTimeout(() => {
+            PageStartAnimateContent('working');
+        }, 2500);
+    })
+    document.getElementById('to-services').addEventListener('click', () => {
+        startAnimation(3);
+        PageEndAnimateContent('selector', 'services');
+        setTimeout(() => {
+            PageStartAnimateContent('services');
+        }, 2500);
+    })
+    document.getElementById('to-sites').addEventListener('click', () => {
+        startAnimation(3);
+        PageEndAnimateContent('services', 'sites');
+        setTimeout(() => {
+            PageStartAnimateContent('sites');
+        }, 2500);
+    })
+    document.getElementById('to-apps').addEventListener('click', () => {
+        startAnimation(3);
+        PageEndAnimateContent('services', 'apps');
+        setTimeout(() => {
+            PageStartAnimateContent('apps');
+        }, 2500);
+    })
+    document.getElementById('to-contacts').addEventListener('click', () => {
+        PageEndAnimateContent('selector', 'contacts', false);
+        PageStartAnimateContent('contacts');
+        clearCanvas();
+    })
+}
+
+function popupBtnsEventListenetrs(){
+    const   popupOrder = document.querySelector('.order-popup'),
+            popupConsult = document.querySelector('.consult-popup'),
+            popupOrderThanks = document.querySelector('.order-thank-popup'),
+            popupConsultThanks = document.querySelector('.consult-thank-popup'),
+            
+            callPopupOrderBtns = document.getElementsByClassName('call-order-popup'),
+            callPopupThanksOrderBtns = document.getElementsByClassName('call-thanks-order-popup'),
+            callPopupConsultBtns = document.getElementsByClassName('call-consult-popup'),
+            callPopupThanksConsultBtns = document.getElementsByClassName('call-thanks-consult-popup');
+
+    [...callPopupOrderBtns].forEach(element => {
+        element.addEventListener('click', () => {
+            popupOrder.classList.add('section-flex');
+        })
+    });
+
+    [...callPopupThanksOrderBtns].forEach(element => {
+        element.addEventListener('click', () => {
+            popupOrderThanks.classList.add('section-flex');
+            popupOrder.classList.remove('section-flex');
+        })
+    });
+
+    [...callPopupConsultBtns].forEach(element => {
+        element.addEventListener('click', () => {
+            popupConsult.classList.add('section-flex');
+        })
+    });
+
+    [...callPopupThanksConsultBtns].forEach(element => {
+        element.addEventListener('click', () => {
+            popupConsultThanks.classList.add('section-flex');
+            popupConsult.classList.remove('section-flex');
+        })
+    });
 }
 
 export default App;
