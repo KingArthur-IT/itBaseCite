@@ -7,7 +7,10 @@
         background-size: cover
         margin: auto
         margin-top: 12vh
-        z-index: 2
+        z-index: 3
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
     &__win-text
         padding: 11px 14px 0 27px
     &__list
@@ -18,6 +21,10 @@
         display: flex
         color: #fff
         margin-bottom: 23px
+        z-index: 3
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
     &__list-number
         font-weight: 400
         font-size: 64px
@@ -47,22 +54,34 @@
         height: 244px
         top: -82px
         right: -122px
+        transform: translateY(1000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)
     &__circles-top-left
         z-index: 0
         width: 176px
         height: 176px
         top: 281px
         left: -60px
+        transform: translateY(1000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)
     &__circles-list-right
         z-index: 0
         width: 126px
         height: 126px
         top: 63px
         right: -60px
+        transform: translateY(1000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)
     &__circles-bottom
         z-index: 0
         width: 194px
         height: 194px
         bottom: -79px
         left: -145px
+        transform: translateY(1000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)
 

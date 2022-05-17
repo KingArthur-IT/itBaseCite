@@ -41,13 +41,69 @@
 }
 .index-page-animate.hide{
     transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
-    animation: none !important
+    animation: none !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
 }
 /* selector page */
 .selector-page-animate{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
 }
 .selector-page-animate.hide{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
+    animation: none !important
+}
+/* about-us page */
+.about-us-page-animate{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
+}
+.about-us-page-animate.hide{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
+    animation: none !important
+}
+/* working page */
+.working-page-animate{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
+}
+.working-page-animate.hide{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
+    animation: none !important
+}
+/* services page */
+.services-page-animate{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
+}
+.services-page-animate.hide{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
+    animation: none !important
+}
+/* contacts page */
+.contacts-page-animate{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+}
+.contacts-page-animate.hide{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
+    animation: none !important
+}
+/* sites page */
+.sites-page-animate{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+}
+.sites-page-animate.hide{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
+    animation: none !important
+}
+/* apps page */
+.apps-page-animate{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+}
+.apps-page-animate.hide{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
     transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
     animation: none !important
 }

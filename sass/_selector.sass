@@ -26,7 +26,7 @@
         flex-wrap: wrap
         justify-content: center
         margin-bottom: 19.5vh
-        z-index: 2
+        z-index: 1
     &__link
         width: 143px
         height: 136px
@@ -39,13 +39,16 @@
         justify-content: center
         align-self: center
         margin-bottom: 6px
+        transform: translateY(1000px) rotate(-40deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
         &:nth-child(odd)
             margin-right: 9px
-            transform: translate(-500px, 1000px) rotate(-40deg)
+            transform: translate(0px, 1500px) rotate(-40deg) scale(0)
         &:nth-child(even)
-            transform: translate(500px, 1000px) rotate(40deg)
+            transform: translate(0px, 1000px) rotate(40deg) scale(0)
         &.show
-            transform: translate(0px, 0px) rotate(0deg)
+            transform: translate(0px, 0px) rotate(0deg) scale(1)
     &__link-hero
         & img
             margin: auto

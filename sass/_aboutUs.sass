@@ -6,8 +6,11 @@
         height: 115px
         background-size: cover
         margin: auto
-        margin-top: 13.5vh
-        z-index: 2
+        margin-top: 13vh
+        z-index: 3
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
     &__win-text
         padding: 11px 14px 0 27px
     &__text-wrapper
@@ -17,21 +20,36 @@
             margin: 0
             margin-bottom: 15px
             color: #FFFFFF
+            transform: translateY(1500px) rotate(30deg) scale(0)
+            z-index: 3
+            &:nth-child(2)
+                transform: translateY(1500px) rotate(-30deg) scale(0)
+            &.show
+                transform: translateY(0px) rotate(0deg) scale(1)
     &__circles-top
         z-index: 0
         width: 244px
         height: 244px
         top: -111px
         left: -97px
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
     &__circles-right
         z-index: 0
         width: 176px
         height: 176px
         top: 328px
         right: -76px
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
     &__circles-bottom
         z-index: 0
         width: 176px
         height: 176px
         bottom: 238px
         right: -129px
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)

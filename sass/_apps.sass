@@ -7,7 +7,10 @@
         background-size: cover
         margin: auto
         margin-top: 329px
-        z-index: 2
+        z-index: 3
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
     &__win-text
         padding: 44px 23px 19px 27px
     &__reasons-title
@@ -18,8 +21,16 @@
         font-size: 24px
         line-height: 120%
         color: #FFFFFF
+        z-index: 3
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
     &__reasons-list
         margin-bottom: 22px
+        z-index: 3
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
         & li
             padding: 0
             margin-left: 13px
@@ -32,6 +43,10 @@
                 left: -9px
     &__modals-img
         width: 100%
+        z-index: 3
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
     &__steps-title
         display: flex
         &-num
@@ -78,13 +93,22 @@
         height: 244px
         top: -100px
         left: -84px
+        transform: translateY(1000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)
     &__circles-right
         width: 176px
         height: 176px
         top: 103px
         right: -90px
+        transform: translateY(1000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)
     &__circles-left
         width: 76px
         height: 76px
         top: 395px
         left: -39px
+        transform: translateY(1000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)

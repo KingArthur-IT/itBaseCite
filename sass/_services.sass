@@ -10,7 +10,10 @@
         background-size: cover
         margin: auto
         margin-top: 53px
-        z-index: 2
+        z-index: 3
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
     &__win-text
         padding: 11px 14px 0 27px
     &__list
@@ -35,6 +38,10 @@
         width: 144px
         height: 106px
         padding: 13px 0
+        z-index: 3
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
         &:first-child
             margin-right: 9px
         & img
@@ -53,8 +60,14 @@
         height: 88px
         right: 20px
         bottom: 230px
+        transform: translateY(1000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)
     &__circles-bottom
         width: 154px
         height: 154px
         bottom: -70px
         left: -51px
+        transform: translateY(1000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)

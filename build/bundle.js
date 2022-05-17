@@ -40,14 +40,18 @@
             }
         }, 50);
     };
+    const clearCanvas = () => {
+        canvas.ctx.clearRect(0, 0, canvas.width, canvas.height);
+    };
 
-    const hideSection = (sectionName) => {
+    const hideSection = (sectionName, isAnimated) => {
+        const delay = isAnimated ? 3000 : 0;
         setTimeout(() => {
             document.getElementsByClassName(`${sectionName}-section`)[0].classList.remove('section-visible');
             setTimeout(() => {
                 document.getElementsByClassName(`${sectionName}-section`)[0].classList.remove('section-block');
             }, 1000);
-        }, 3000);
+        }, delay);
     };
     const showSection = (sectionName) => {
         document.getElementsByClassName(`${sectionName}-section`)[0].classList.add('section-block');
@@ -60,19 +64,20 @@
         [...document.getElementsByClassName(`${pageName}-page-animate`)].forEach(element => {
             element.classList.add('show');
         });
-        [...document.getElementsByClassName('design-circles')].forEach(element => {
+        
+        [...document.querySelectorAll(`.${pageName}-page-animate.design-circles`)].forEach(element => {
             element.classList.add('start-anim');
         });
     };
 
-    const PageEndAnimateContent = (pageEndName, pageShowName) => {
+    const PageEndAnimateContent = (pageEndName, pageShowName, isAnimated = true) => {
         [...document.getElementsByClassName(`${pageEndName}-page-animate`)].forEach(element => {
             element.classList.remove('start-anim'); //stop pulsing
             setTimeout(() => {
                 element.classList.add('hide'); 
                 element.classList.remove('show');
                 showSection(pageShowName);
-                hideSection(pageEndName);
+                hideSection(pageEndName, isAnimated);
                 setTimeout(() => {
                     element.classList.remove('hide'); 
                 }, 5000);  
@@ -115,6 +120,46 @@
                 setTimeout(() => {
                     PageStartAnimateContent('selector');
                 }, 2500);
+            });
+            document.getElementById('to-about-us').addEventListener('click', () => {
+                startAnimation(3);
+                PageEndAnimateContent('selector', 'about-us');
+                setTimeout(() => {
+                    PageStartAnimateContent('about-us');
+                }, 2500);
+            });
+            document.getElementById('to-working').addEventListener('click', () => {
+                startAnimation(3);
+                PageEndAnimateContent('selector', 'working');
+                setTimeout(() => {
+                    PageStartAnimateContent('working');
+                }, 2500);
+            });
+            document.getElementById('to-services').addEventListener('click', () => {
+                startAnimation(3);
+                PageEndAnimateContent('selector', 'services');
+                setTimeout(() => {
+                    PageStartAnimateContent('services');
+                }, 2500);
+            });
+            document.getElementById('to-sites').addEventListener('click', () => {
+                startAnimation(3);
+                PageEndAnimateContent('services', 'sites');
+                setTimeout(() => {
+                    PageStartAnimateContent('sites');
+                }, 2500);
+            });
+            document.getElementById('to-apps').addEventListener('click', () => {
+                startAnimation(3);
+                PageEndAnimateContent('services', 'apps');
+                setTimeout(() => {
+                    PageStartAnimateContent('apps');
+                }, 2500);
+            });
+            document.getElementById('to-contacts').addEventListener('click', () => {
+                PageEndAnimateContent('selector', 'contacts', false);
+                PageStartAnimateContent('contacts');
+                clearCanvas();
             });
 
             window.addEventListener('resize', onWindowResize, false);
