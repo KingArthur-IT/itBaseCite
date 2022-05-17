@@ -93,9 +93,11 @@
                 }
             }
                 
+            const loader = document.getElementById('loader');
             const lastAnimation = settings.animations.length - 1;
             const lastIndex = settings.animations[lastAnimation].end - settings.animations[lastAnimation].start;
             animationImageList[lastAnimation][lastIndex].onload = () => {
+                loader.style.display = 'none';
                 this.start();
             };
         }
