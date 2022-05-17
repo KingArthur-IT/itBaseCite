@@ -16,10 +16,10 @@
         canvasID: 'animationCanvas',
         canvasImgAspectRatio: 1280. / 591.,
         animations: [
-            {id: 0, prefix: 1, start: 0, end: 50},
+            {id: 0, prefix: 1, start: 11, end: 50},
             {id: 1, prefix: 2, start: 0, end: 100},
             {id: 2, prefix: 2, start: 101, end: 197},
-            {id: 3, prefix: 2, start: 198, end: 330},
+            {id: 3, prefix: 2, start: 198, end: 300},
         ],
         contentAnimationTime: 3
     };
@@ -94,7 +94,7 @@
                 for (let i = 0; i <= settings.animations[animIndex].end - settings.animations[animIndex].start; i++){
                     animationImageList[animIndex].push(new Image());
                     const index = numToStr(i + settings.animations[animIndex].start, 4);
-                    animationImageList[animIndex][i].src =  `./assets/animations/${animIndex + 1}/${prefix}_${index}.png`;
+                    animationImageList[animIndex][i].src =  `./assets/animations/${animIndex + 1}/${prefix}_${index}.webp`;
                 }
             }
                 
@@ -212,7 +212,7 @@
                 popupConsult = document.querySelector('.consult-popup'),
                 popupOrderThanks = document.querySelector('.order-thank-popup'),
                 popupConsultThanks = document.querySelector('.consult-thank-popup'),
-                
+
                 callPopupOrderBtns = document.getElementsByClassName('call-order-popup'),
                 callPopupThanksOrderBtns = document.getElementsByClassName('call-thanks-order-popup'),
                 callPopupConsultBtns = document.getElementsByClassName('call-consult-popup'),
