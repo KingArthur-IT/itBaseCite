@@ -220,8 +220,8 @@
         canvas.object.height = canvas.width * settings.canvasImgAspectRatio;
         canvas.height = canvas.width * settings.canvasImgAspectRatio;
 
-        const canvasTop = (document.documentElement.clientHeight - canvas.height) / 2.;
-        canvas.object.style.top = canvasTop + 'px';
+        (document.documentElement.clientHeight - canvas.height) / 3.;
+        //canvas.object.style.top = canvasTop + 'px';
 
         if (animationIndex > 0){
             canvas.ctx.clearRect(0, 0, canvas.width, canvas.height);

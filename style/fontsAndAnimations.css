@@ -62,7 +62,7 @@
 }
 .about-us-page-animate.hide{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
-    transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
+    transform: translate(0px, -3000px) rotate(10deg) scale(1) !important;
     animation: none !important
 }
 /* working page */
@@ -98,7 +98,7 @@
 }
 .sites-page-animate.hide{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
-    transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
+    transform: translate(0px, -3000px) rotate(10deg) scale(1) !important;
     animation: none !important
 }
 /* apps page */

@@ -18,6 +18,9 @@
     &__definition
         margin: 0
         margin-bottom: 20px
+        transform: translateY(1000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)
         & span
             color: $orange
     &__list
@@ -60,8 +63,14 @@
         height: 244px
         top: -123px
         left: -39px
+        transform: translateY(1000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)
     &__circles-right
         width: 176px
         height: 176px
         top: 334px
         right: -94px
+        transform: translateY(1000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)
