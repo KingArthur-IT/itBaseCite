@@ -10,7 +10,9 @@
     <title>IT Base</title>
 </head>
 <body>
-    <canvas id="animationCanvas" class="canvas-animate"></canvas>
+    <div class="canvas-wrapper">
+        <canvas id="animationCanvas" class="canvas-animate"></canvas>
+    </div>
     <div class="mobile-menu-btn">
         <div class="mobile-menu-img"></div>
     </div>
@@ -215,10 +217,10 @@
                 <button class="outline-button contacts__consult-btn call-consult-popup">
                     консультироваться
                 </button>
-                <img src="./assets/circles.png" class="design-circles contacts__circles-top circle-animate-2">
-                <img src="./assets/circles.png" class="design-circles contacts__circles-center circle-animate-3">
-                <img src="./assets/circles.png" class="design-circles contacts__circles-left circle-animate-4">
-                <img src="./assets/circles.png" class="design-circles contacts__circles-right circle-animate-1">
+                <img src="./assets/circles.png" class="contacts-page-animate design-circles contacts__circles-top circle-animate-2">
+                <img src="./assets/circles.png" class="contacts-page-animate design-circles contacts__circles-center circle-animate-3">
+                <img src="./assets/circles.png" class="contacts-page-animate design-circles contacts__circles-left circle-animate-4">
+                <img src="./assets/circles.png" class="contacts-page-animate design-circles contacts__circles-right circle-animate-1">
             </div>
         </section>
         <section class="services-section bg page-wrapper services-page">
@@ -688,10 +690,10 @@
                     <img src="./assets/logo.svg" alt="IT-Base" class="mobile-menu__logo">
                 </div>
                 <ul class="mobile-menu__list">
-                    <li class="mobile-menu__list-item">О нас</li>
-                    <li class="mobile-menu__list-item">Услуги</li>
-                    <li class="mobile-menu__list-item">Контакты</li>
-                    <li class="mobile-menu__list-item">Как мы работаем</li>
+                    <li id="menu-to-about" class="mobile-menu__list-item">О нас</li>
+                    <li id="menu-to-services" class="mobile-menu__list-item">Услуги</li>
+                    <li id="menu-to-contacts" class="mobile-menu__list-item">Контакты</li>
+                    <li id="menu-to-working" class="mobile-menu__list-item">Как мы работаем</li>
                 </ul>
                 <svg class="mobile-menu__devider" width="284" height="2" viewBox="0 0 284 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 1L284 0.999975" stroke="url(#paint0_linear_516_580)" stroke-width="0.932123"/>
@@ -740,7 +742,7 @@
                 <p class="popup__text">
                     Наши специалисты свяжутся с вами в ближайшее время.
                 </p>
-                <button class="button popup__btn">На главную</button>
+                <button class="button popup__btn to-index">На главную</button>
             </div>
         </section>
         <section class="popup consult-thank-popup">
@@ -749,7 +751,7 @@
                 <p class="popup__text">
                     Наши специалисты свяжутся с вами в ближайшее время.
                 </p>
-                <button class="button popup__btn">На главную</button>
+                <button class="button popup__btn to-index">На главную</button>
             </div>
         </section>
     </main>

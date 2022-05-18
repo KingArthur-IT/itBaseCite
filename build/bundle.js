@@ -10,7 +10,8 @@
             height: 0
         },
         animationImageList = [],
-        animationIndex = -1;
+        animationIndex = -1,
+        currentPage = 'index';
 
     const settings = {
         canvasID: 'animationCanvas',
@@ -21,7 +22,6 @@
             {id: 2, prefix: 2, start: 101, end: 197},
             {id: 3, prefix: 2, start: 198, end: 300},
         ],
-        contentAnimationTime: 3
     };
 
     const numToStr = (number, n) => {
@@ -39,9 +39,6 @@
                 clearInterval(intervalId);
             }
         }, 50);
-    };
-    const clearCanvas = () => {
-        canvas.ctx.clearRect(0, 0, canvas.width, canvas.height);
     };
 
     const hideSection = (sectionName, isAnimated) => {
@@ -117,6 +114,22 @@
             navBtnsEventsListeners();
             popupBtnsEventListenetrs();
 
+            [...document.getElementsByClassName('to-index')].forEach((el) => {
+                el.addEventListener('click', () => {
+                    const popupOrderThanks = document.querySelector('.order-thank-popup'),
+                          popupConsultThanks = document.querySelector('.consult-thank-popup');
+                    popupOrderThanks.classList.remove('section-flex');
+                    popupConsultThanks.classList.remove('section-flex');
+
+                    animationIndex = 1; 
+                    document.getElementById(settings.canvasID).classList.remove('canvas-to-top');
+                    startAnimation(1);
+                    PageEndAnimateContent(currentPage, 'index');
+                    PageStartAnimateContent('index');
+                    currentPage = 'index';
+                });
+            });
+
             window.addEventListener('resize', onWindowResize, false);
 
             [...document.getElementsByClassName('accordeon__steps-head')].forEach((el) => {
@@ -136,6 +149,66 @@
             menuBtn.addEventListener('click', () => {
                 menuBtn.classList.toggle('opened');
                 menuPage.classList.toggle('opened');
+            });
+
+            // [...document.getElementsByClassName('mobile-menu-item')].forEach((el) => {
+            //     el.addEventListener('click', () => {
+            //         menuPage.classList.remove('opened');
+            //         goToPage()
+            //     })
+            // })
+
+            document.getElementById('menu-to-about').addEventListener('click', () => {
+                menuPage.classList.toggle('opened');
+                animationIndex = 3; 
+                document.getElementById(settings.canvasID).classList.remove('canvas-to-top');
+                startAnimation(3);
+                PageEndAnimateContent(currentPage, 'about-us');
+                setTimeout(() => {
+                    PageStartAnimateContent('about-us');
+                }, 2500);
+                currentPage = 'about-us';
+                menuBtn.classList.remove('opened');
+            });
+
+            document.getElementById('menu-to-services').addEventListener('click', () => {
+                menuPage.classList.toggle('opened');
+                animationIndex = 3; 
+                document.getElementById(settings.canvasID).classList.remove('canvas-to-top');
+                startAnimation(3);
+                PageEndAnimateContent(currentPage, 'services');
+                setTimeout(() => {
+                    PageStartAnimateContent('services');
+                }, 2500);
+                currentPage = 'services';
+                menuBtn.classList.remove('opened');
+            });
+
+            document.getElementById('menu-to-contacts').addEventListener('click', () => {
+                menuPage.classList.toggle('opened');
+                document.getElementById(settings.canvasID).classList.toggle('canvas-animate');
+                setTimeout(() => {
+                    document.getElementById(settings.canvasID).classList.toggle('canvas-to-top');
+                }, 1000);
+                PageEndAnimateContent(currentPage, 'contacts', false);
+                setTimeout(() => {
+                    PageStartAnimateContent(currentPage);
+                }, 1500);
+                currentPage = 'contacts';
+                menuBtn.classList.remove('opened');
+            });
+
+            document.getElementById('menu-to-working').addEventListener('click', () => {
+                menuPage.classList.toggle('opened');
+                animationIndex = 3; 
+                document.getElementById(settings.canvasID).classList.remove('canvas-to-top');
+                startAnimation(3);
+                PageEndAnimateContent(currentPage, 'working');
+                setTimeout(() => {
+                    PageStartAnimateContent('working');
+                }, 2500);
+                currentPage = 'working';
+                menuBtn.classList.remove('opened');
             });
         }
     }
@@ -159,6 +232,8 @@
 
     function navBtnsEventsListeners(){
         document.getElementById('startBtn').addEventListener('click', () => {
+            animationIndex = 2; 
+            currentPage = 'selector';
             startAnimation(2);
             PageEndAnimateContent('index', 'selector');
             setTimeout(() => {
@@ -166,6 +241,8 @@
             }, 2500);
         });
         document.getElementById('to-about-us').addEventListener('click', () => {
+            animationIndex = 3; 
+            currentPage = 'about-us';
             startAnimation(3);
             PageEndAnimateContent('selector', 'about-us');
             setTimeout(() => {
@@ -173,6 +250,8 @@
             }, 2500);
         });
         document.getElementById('to-working').addEventListener('click', () => {
+            animationIndex = 3; 
+            currentPage = 'working';
             startAnimation(3);
             PageEndAnimateContent('selector', 'working');
             setTimeout(() => {
@@ -180,6 +259,8 @@
             }, 2500);
         });
         document.getElementById('to-services').addEventListener('click', () => {
+            animationIndex = 3; 
+            currentPage = 'services';
             startAnimation(3);
             PageEndAnimateContent('selector', 'services');
             setTimeout(() => {
@@ -187,6 +268,8 @@
             }, 2500);
         });
         document.getElementById('to-sites').addEventListener('click', () => {
+            animationIndex = 3; 
+            currentPage = 'sites';
             startAnimation(3);
             PageEndAnimateContent('services', 'sites');
             setTimeout(() => {
@@ -194,6 +277,8 @@
             }, 2500);
         });
         document.getElementById('to-apps').addEventListener('click', () => {
+            animationIndex = 3; 
+            currentPage = 'apps';
             startAnimation(3);
             PageEndAnimateContent('services', 'apps');
             setTimeout(() => {
@@ -201,9 +286,16 @@
             }, 2500);
         });
         document.getElementById('to-contacts').addEventListener('click', () => {
+            animationIndex = -1; 
+            currentPage = 'contacts';
+            document.getElementById(settings.canvasID).classList.toggle('canvas-animate');
+            setTimeout(() => {
+                document.getElementById(settings.canvasID).classList.toggle('canvas-to-top');
+            }, 1000);
             PageEndAnimateContent('selector', 'contacts', false);
-            PageStartAnimateContent('contacts');
-            clearCanvas();
+            setTimeout(() => {
+                PageStartAnimateContent('contacts');
+            }, 1500);
         });
     }
 
