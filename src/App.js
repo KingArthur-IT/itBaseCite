@@ -83,6 +83,10 @@ const PageEndAnimateContent = (pageEndName, pageShowName, isAnimated = true) => 
 
 class App {
     preloader() {
+        const loader = document.getElementById('loader');
+        var loadingStatus = 0, loadingMax = 0;
+        settings.animations.forEach((el) => loadingMax += (el.end - el.start + 1))
+
         for (let animIndex = 0; animIndex < settings.animations.length; animIndex++){
             animationImageList.push([]);
             const prefix = settings.animations[animIndex].prefix;
@@ -91,10 +95,11 @@ class App {
                 animationImageList[animIndex].push(new Image());
                 const index = numToStr(i + settings.animations[animIndex].start, 4);
                 animationImageList[animIndex][i].src =  `./assets/animations/${animIndex + 1}/${prefix}_${index}.webp`
+                loadingStatus ++;
+                loader.innerText = (100.0 * (loadingStatus / loadingMax)).toFixed().toString() + '%'
             }
         }
             
-        const loader = document.getElementById('loader');
         const lastAnimation = settings.animations.length - 1;
         const lastIndex = settings.animations[lastAnimation].end - settings.animations[lastAnimation].start;
         animationImageList[lastAnimation][lastIndex].onload = () => {
