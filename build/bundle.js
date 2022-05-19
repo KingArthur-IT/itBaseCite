@@ -159,6 +159,7 @@
             // })
 
             document.getElementById('menu-to-about').addEventListener('click', () => {
+                scrollToTop();
                 menuPage.classList.toggle('opened');
                 animationIndex = 3; 
                 document.getElementById(settings.canvasID).classList.remove('canvas-to-top');
@@ -172,6 +173,7 @@
             });
 
             document.getElementById('menu-to-services').addEventListener('click', () => {
+                scrollToTop();
                 menuPage.classList.toggle('opened');
                 animationIndex = 3; 
                 document.getElementById(settings.canvasID).classList.remove('canvas-to-top');
@@ -185,6 +187,7 @@
             });
 
             document.getElementById('menu-to-contacts').addEventListener('click', () => {
+                scrollToTop();
                 menuPage.classList.toggle('opened');
                 document.getElementById(settings.canvasID).classList.toggle('canvas-animate');
                 setTimeout(() => {
@@ -199,6 +202,7 @@
             });
 
             document.getElementById('menu-to-working').addEventListener('click', () => {
+                scrollToTop();
                 menuPage.classList.toggle('opened');
                 animationIndex = 3; 
                 document.getElementById(settings.canvasID).classList.remove('canvas-to-top');
@@ -299,6 +303,13 @@
         });
     }
 
+    function scrollToTop(){
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }
+
     function popupBtnsEventListenetrs(){
         const   popupOrder = document.querySelector('.order-popup'),
                 popupConsult = document.querySelector('.consult-popup'),
@@ -311,28 +322,46 @@
                 callPopupThanksConsultBtns = document.getElementsByClassName('call-thanks-consult-popup');
 
         [...callPopupOrderBtns].forEach(element => {
-            element.addEventListener('click', () => {
+            element.addEventListener('click', (e) => {
+                e.stopPropagation();
                 popupOrder.classList.add('section-flex');
             });
         });
 
         [...callPopupThanksOrderBtns].forEach(element => {
-            element.addEventListener('click', () => {
+            element.addEventListener('click', (e) => {
+                e.stopPropagation();
                 popupOrderThanks.classList.add('section-flex');
                 popupOrder.classList.remove('section-flex');
             });
         });
 
         [...callPopupConsultBtns].forEach(element => {
-            element.addEventListener('click', () => {
+            element.addEventListener('click', (e) => {
+                e.stopPropagation();
                 popupConsult.classList.add('section-flex');
             });
         });
 
         [...callPopupThanksConsultBtns].forEach(element => {
-            element.addEventListener('click', () => {
+            element.addEventListener('click', (e) => {
+                e.stopPropagation();
                 popupConsultThanks.classList.add('section-flex');
                 popupConsult.classList.remove('section-flex');
+            });
+        });
+
+        document.getElementsByTagName('body')[0].addEventListener('click', () => {
+            console.log('clock');
+            popupOrder.classList.remove('section-flex');
+            popupOrderThanks.classList.remove('section-flex');
+            popupConsult.classList.remove('section-flex');
+            popupConsultThanks.classList.remove('section-flex');
+        });
+
+        [...document.getElementsByClassName('popup__win')].forEach(element => {
+            element.addEventListener('click', (e) => {
+                e.stopPropagation();
             });
         });
     }

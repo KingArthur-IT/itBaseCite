@@ -313,8 +313,8 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: 19.5vh;
-  z-index: 1;
+  margin-bottom: 6vh;
+  z-index: 3;
 }
 
 .selector__link {
@@ -439,7 +439,7 @@ body {
   height: 115px;
   background-size: cover;
   margin: auto;
-  margin-top: 13vh;
+  margin-top: 10vh;
   z-index: 3;
   -webkit-transform: translateY(1500px) rotate(-30deg) scale(0);
           transform: translateY(1500px) rotate(-30deg) scale(0);
