@@ -24,7 +24,7 @@
             {id: 4, prefix: 1, start: 100, end: 197},
         ],
     };
-    //Indexes of animationa
+    //Indexes of animations
     const pageAnimations = {
         'index': { 
             currentAnimationIndex: 1, 
@@ -49,7 +49,7 @@
             ]
         },
     };
-    //
+    //menu
     const menuBtns = [
         { id: 'menu-to-about', nextPage: 'about-us', animationIndex: 3 },
         { id: 'menu-to-services', nextPage: 'services', animationIndex: 3 },
@@ -168,10 +168,17 @@
                     popupOrderThanks.classList.remove('section-flex');
                     popupConsultThanks.classList.remove('section-flex');
 
+                    scrollToTop();
                     animationIndex = 1; 
-                    startAnimation(1);
+                    setTimeout(() => {
+                        startAnimation(1);
+                    }, 2000);
+                    document.getElementsByTagName('body')[0].classList.add('noScrollable');
                     PageEndAnimateContent(currentPage, 'index');
-                    PageStartAnimateContent('index');
+                    setTimeout(() => {
+                        PageStartAnimateContent('index');
+                    }, 2100);
+                    document.getElementById(settings.canvasID).classList.remove('canvas-top-fly-animate');
                     currentPage = 'index';
                 });
             });

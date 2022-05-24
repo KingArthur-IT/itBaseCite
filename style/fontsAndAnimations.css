@@ -40,7 +40,7 @@
 
 /* index page */
 .index-page-animate{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
+    transition: transform 1.6s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .index-page-animate.hide{
     transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
