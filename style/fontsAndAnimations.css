@@ -20,8 +20,8 @@
 .canvas-animate{
     animation: 3s ease-in-out infinite alternate-reverse 3s canvasAnimation;
 }
-.canvas-to-top{
-    top: -2000px !important
+.canvas-top-fly-animate{
+    animation: 1s ease-in-out canvasFlyFromTop;
 }
 
 /* circles pilse animaton */
@@ -53,7 +53,7 @@
 }
 .selector-page-animate.hide{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
-    transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
+    transform: translate(0px, -1000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* about-us page */
@@ -62,7 +62,7 @@
 }
 .about-us-page-animate.hide{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
-    transform: translate(0px, -3000px) rotate(10deg) scale(1) !important;
+    transform: translate(0px, -3000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* working page */
@@ -71,7 +71,7 @@
 }
 .working-page-animate.hide{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
-    transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
+    transform: translate(0px, -3000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* services page */
@@ -79,17 +79,17 @@
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
 }
 .services-page-animate.hide{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
-    transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
+    transition: transform 4s cubic-bezier(.17,.67,.65,1.12) .2s !important;
+    transform: translate(-3000px, 0) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* contacts page */
 .contacts-page-animate{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
 }
 .contacts-page-animate.hide{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
-    transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
+    transform: translate(0px, -1000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* sites page */
@@ -98,7 +98,7 @@
 }
 .sites-page-animate.hide{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
-    transform: translate(0px, -3000px) rotate(10deg) scale(1) !important;
+    transform: translate(0px, -3000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* apps page */
@@ -107,7 +107,7 @@
 }
 .apps-page-animate.hide{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
-    transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
+    transform: translate(0px, -1000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 
@@ -120,6 +120,15 @@
     }
     100%{
         transform: translate(0px, 0px)
+    }
+}
+
+@keyframes canvasFlyFromTop {
+    0%{
+        top: -2000px
+    }
+    100%{
+        top: 0
     }
 }
 

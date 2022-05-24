@@ -4,6 +4,10 @@ body {
   background: linear-gradient(117.89deg, #451149 4.83%, #ED00FF 108.33%);
 }
 
+.noScrollable {
+  overflow: hidden;
+}
+
 #animationCanvas {
   position: absolute;
   top: 0;
@@ -726,6 +730,13 @@ body {
   bottom: 10px;
   padding: 6px 17px;
   color: #FF9B04;
+  -webkit-transform: translateY(1500px) rotate(-30deg) scale(0);
+          transform: translateY(1500px) rotate(-30deg) scale(0);
+}
+
+.contacts__consult-btn.show {
+  -webkit-transform: translateY(0px) rotate(0deg) scale(1);
+          transform: translateY(0px) rotate(0deg) scale(1);
 }
 
 .contacts__circles-top {
@@ -733,6 +744,13 @@ body {
   height: 244px;
   top: -122px;
   left: -97px;
+  -webkit-transform: translateY(1000px);
+          transform: translateY(1000px);
+}
+
+.contacts__circles-top.show {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
 
 .contacts__circles-center {
@@ -740,6 +758,13 @@ body {
   height: 176px;
   top: 105px;
   right: 13px;
+  -webkit-transform: translateY(1000px);
+          transform: translateY(1000px);
+}
+
+.contacts__circles-center.show {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
 
 .contacts__circles-right {
@@ -747,6 +772,13 @@ body {
   height: 176px;
   bottom: 176px;
   right: -128px;
+  -webkit-transform: translateY(1000px);
+          transform: translateY(1000px);
+}
+
+.contacts__circles-right.show {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
 
 .contacts__circles-left {
@@ -754,6 +786,13 @@ body {
   height: 176px;
   bottom: 28px;
   left: -126px;
+  -webkit-transform: translateY(1000px);
+          transform: translateY(1000px);
+}
+
+.contacts__circles-left.show {
+  -webkit-transform: translateY(0px);
+          transform: translateY(0px);
 }
 
 .services-page {

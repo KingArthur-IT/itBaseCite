@@ -10,7 +10,7 @@
             height: 0
         },
         animationImageList = [],
-        animationIndex = -1,
+        animationIndex = 0,
         currentPage = 'index';
 
     const settings = {
@@ -21,8 +21,41 @@
             {id: 1, prefix: 2, start: 0, end: 100},
             {id: 2, prefix: 2, start: 101, end: 197},
             {id: 3, prefix: 2, start: 198, end: 300},
+            {id: 4, prefix: 1, start: 100, end: 197},
         ],
     };
+    //Indexes of animationa
+    const pageAnimations = {
+        'index': { 
+            currentAnimationIndex: 1, 
+            nextPages: [ 
+                { page: 'selector', btnId: 'startBtn',  nextAnimationIndex: 2} 
+            ]
+        },
+        'selector': {
+            currentAnimationIndex: 2, 
+            nextPages: [ 
+                { page: 'about-us', btnId: 'to-about-us', nextAnimationIndex: 3} ,
+                { page: 'working', btnId: 'to-working', nextAnimationIndex: 3} ,
+                { page: 'services', btnId: 'to-services', nextAnimationIndex: 3} ,
+                { page: 'contacts', btnId: 'to-contacts', nextAnimationIndex: 5}
+            ]
+        },
+        'services': {
+            currentAnimationIndex: 3, 
+            nextPages: [ 
+                { page: 'sites', btnId: 'to-sites', nextAnimationIndex: 4} ,
+                { page: 'apps', btnId: 'to-apps', nextAnimationIndex: 4},
+            ]
+        },
+    };
+    //
+    const menuBtns = [
+        { id: 'menu-to-about', nextPage: 'about-us', animationIndex: 3 },
+        { id: 'menu-to-services', nextPage: 'services', animationIndex: 3 },
+        { id: 'menu-to-contacts', nextPage: 'contacts', animationIndex: 5 },
+        { id: 'menu-to-working', nextPage: 'working', animationIndex: 3 },
+    ];
 
     const numToStr = (number, n) => {
         const numLength = number.toString().length;
@@ -73,10 +106,13 @@
             setTimeout(() => {
                 element.classList.add('hide'); 
                 element.classList.remove('show');
-                showSection(pageShowName);
+                setTimeout(() => {
+                    showSection(pageShowName);
+                }, 1000);
                 hideSection(pageEndName, isAnimated);
                 setTimeout(() => {
                     element.classList.remove('hide'); 
+                    document.getElementsByTagName('body')[0].classList.remove('noScrollable');
                 }, 5000);  
             }, 1000);
         });
@@ -85,7 +121,7 @@
     class App {
         preloader() {
             const loader = document.getElementById('loader');
-            var loadingStatus = 0, loadingMax = 0;
+            var loadingStatus = 0.0, loadingMax = 0.0;
             settings.animations.forEach((el) => loadingMax += (el.end - el.start + 1));
 
             for (let animIndex = 0; animIndex < settings.animations.length; animIndex++){
@@ -96,13 +132,19 @@
                     animationImageList[animIndex].push(new Image());
                     const index = numToStr(i + settings.animations[animIndex].start, 4);
                     animationImageList[animIndex][i].src =  `./assets/animations/${animIndex + 1}/${prefix}_${index}.webp`;
-                    loadingStatus ++;
-                    loader.innerText = (100.0 * (loadingStatus / loadingMax)).toFixed().toString() + '%';
                 }
             }
                 
             const lastAnimation = settings.animations.length - 1;
             const lastIndex = settings.animations[lastAnimation].end - settings.animations[lastAnimation].start;
+            animationImageList.forEach((anim) => {
+                anim.forEach((i) => {
+                    i.onload = () => {
+                        loadingStatus ++;
+                        loader.innerText = (100.0 * loadingStatus / loadingMax).toFixed().toString() + '%';
+                    };
+                });
+            });
             animationImageList[lastAnimation][lastIndex].onload = () => {
                 loader.style.display = 'none';
                 this.start();
@@ -127,7 +169,6 @@
                     popupConsultThanks.classList.remove('section-flex');
 
                     animationIndex = 1; 
-                    document.getElementById(settings.canvasID).classList.remove('canvas-to-top');
                     startAnimation(1);
                     PageEndAnimateContent(currentPage, 'index');
                     PageStartAnimateContent('index');
@@ -156,68 +197,25 @@
                 menuPage.classList.toggle('opened');
             });
 
-            // [...document.getElementsByClassName('mobile-menu-item')].forEach((el) => {
-            //     el.addEventListener('click', () => {
-            //         menuPage.classList.remove('opened');
-            //         goToPage()
-            //     })
-            // })
-
-            document.getElementById('menu-to-about').addEventListener('click', () => {
-                scrollToTop();
-                menuPage.classList.toggle('opened');
-                animationIndex = 3; 
-                document.getElementById(settings.canvasID).classList.remove('canvas-to-top');
-                startAnimation(3);
-                PageEndAnimateContent(currentPage, 'about-us');
-                setTimeout(() => {
-                    PageStartAnimateContent('about-us');
-                }, 2500);
-                currentPage = 'about-us';
-                menuBtn.classList.remove('opened');
-            });
-
-            document.getElementById('menu-to-services').addEventListener('click', () => {
-                scrollToTop();
-                menuPage.classList.toggle('opened');
-                animationIndex = 3; 
-                document.getElementById(settings.canvasID).classList.remove('canvas-to-top');
-                startAnimation(3);
-                PageEndAnimateContent(currentPage, 'services');
-                setTimeout(() => {
-                    PageStartAnimateContent('services');
-                }, 2500);
-                currentPage = 'services';
-                menuBtn.classList.remove('opened');
-            });
-
-            document.getElementById('menu-to-contacts').addEventListener('click', () => {
-                scrollToTop();
-                menuPage.classList.toggle('opened');
-                document.getElementById(settings.canvasID).classList.toggle('canvas-animate');
-                setTimeout(() => {
-                    document.getElementById(settings.canvasID).classList.toggle('canvas-to-top');
-                }, 1000);
-                PageEndAnimateContent(currentPage, 'contacts', false);
-                setTimeout(() => {
-                    PageStartAnimateContent(currentPage);
-                }, 1500);
-                currentPage = 'contacts';
-                menuBtn.classList.remove('opened');
-            });
-
-            document.getElementById('menu-to-working').addEventListener('click', () => {
-                scrollToTop();
-                menuPage.classList.toggle('opened');
-                animationIndex = 3; 
-                document.getElementById(settings.canvasID).classList.remove('canvas-to-top');
-                startAnimation(3);
-                PageEndAnimateContent(currentPage, 'working');
-                setTimeout(() => {
-                    PageStartAnimateContent('working');
-                }, 2500);
-                currentPage = 'working';
-                menuBtn.classList.remove('opened');
+            //menu navigation
+            menuBtns.forEach((item) => {
+                document.getElementById(item.id).addEventListener('click', () => {
+                    menuPage.classList.toggle('opened');
+                    menuBtn.classList.remove('opened');
+                    scrollToTop();
+                    if (currentPage !== item.nextPage){
+                        animationIndex = item.animationIndex; 
+                        if (currentPage === 'contacts') document.getElementById(settings.canvasID).classList.add('canvas-top-fly-animate');
+                        startAnimation(animationIndex);
+                        document.getElementsByTagName('body')[0].classList.add('noScrollable');
+                        PageEndAnimateContent(currentPage, item.nextPage);
+                        setTimeout(() => {
+                            PageStartAnimateContent(item.nextPage);
+                            document.getElementById(settings.canvasID).classList.remove('canvas-top-fly-animate');
+                        }, 2500);
+                        currentPage = item.nextPage;
+                    }
+                });
             });
         }
     }
@@ -240,71 +238,20 @@
     }
 
     function navBtnsEventsListeners(){
-        document.getElementById('startBtn').addEventListener('click', () => {
-            animationIndex = 2; 
-            currentPage = 'selector';
-            startAnimation(2);
-            PageEndAnimateContent('index', 'selector');
-            setTimeout(() => {
-                PageStartAnimateContent('selector');
-            }, 2500);
-        });
-        document.getElementById('to-about-us').addEventListener('click', () => {
-            animationIndex = 3; 
-            currentPage = 'about-us';
-            startAnimation(3);
-            PageEndAnimateContent('selector', 'about-us');
-            setTimeout(() => {
-                PageStartAnimateContent('about-us');
-            }, 2500);
-        });
-        document.getElementById('to-working').addEventListener('click', () => {
-            animationIndex = 3; 
-            currentPage = 'working';
-            startAnimation(3);
-            PageEndAnimateContent('selector', 'working');
-            setTimeout(() => {
-                PageStartAnimateContent('working');
-            }, 2500);
-        });
-        document.getElementById('to-services').addEventListener('click', () => {
-            animationIndex = 3; 
-            currentPage = 'services';
-            startAnimation(3);
-            PageEndAnimateContent('selector', 'services');
-            setTimeout(() => {
-                PageStartAnimateContent('services');
-            }, 2500);
-        });
-        document.getElementById('to-sites').addEventListener('click', () => {
-            animationIndex = 3; 
-            currentPage = 'sites';
-            startAnimation(3);
-            PageEndAnimateContent('services', 'sites');
-            setTimeout(() => {
-                PageStartAnimateContent('sites');
-            }, 2500);
-        });
-        document.getElementById('to-apps').addEventListener('click', () => {
-            animationIndex = 3; 
-            currentPage = 'apps';
-            startAnimation(3);
-            PageEndAnimateContent('services', 'apps');
-            setTimeout(() => {
-                PageStartAnimateContent('apps');
-            }, 2500);
-        });
-        document.getElementById('to-contacts').addEventListener('click', () => {
-            animationIndex = -1; 
-            currentPage = 'contacts';
-            document.getElementById(settings.canvasID).classList.toggle('canvas-animate');
-            setTimeout(() => {
-                document.getElementById(settings.canvasID).classList.toggle('canvas-to-top');
-            }, 1000);
-            PageEndAnimateContent('selector', 'contacts', false);
-            setTimeout(() => {
-                PageStartAnimateContent('contacts');
-            }, 1500);
+        //btns of page changes
+        Object.keys(pageAnimations).forEach(pageName => {
+            pageAnimations[pageName].nextPages.forEach((item) => {
+                document.getElementById(item.btnId).addEventListener('click', () => {
+                    currentPage = item.page;
+                    animationIndex = item.nextAnimationIndex; 
+                    startAnimation(item.nextAnimationIndex);
+                    document.getElementsByTagName('body')[0].classList.add('noScrollable');
+                    PageEndAnimateContent(pageName, item.page);
+                    setTimeout(() => {
+                        PageStartAnimateContent(item.page);
+                    }, 2500);
+                });
+            });
         });
     }
 
@@ -357,7 +304,6 @@
         });
 
         document.getElementsByTagName('body')[0].addEventListener('click', () => {
-            console.log('clock');
             popupOrder.classList.remove('section-flex');
             popupOrderThanks.classList.remove('section-flex');
             popupConsult.classList.remove('section-flex');

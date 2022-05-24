@@ -36,25 +36,40 @@
         bottom: 10px
         padding: 6px 17px
         color: $secondary
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
     &__circles-top
         width: 244px
         height: 244px
         top: -122px
         left: -97px
+        transform: translateY(1000px)
+        &.show
+            transform: translateY(0px)
     &__circles-center
         width: 176px
         height: 176px
         top: 105px
         right: 13px
+        transform: translateY(1000px)
+        &.show
+            transform: translateY(0px)
     &__circles-right
         width: 176px
         height: 176px
         bottom: 176px
         right: -128px
+        transform: translateY(1000px)
+        &.show
+            transform: translateY(0px)
     &__circles-left
         width: 176px
         height: 176px
         bottom: 28px
         left: -126px
+        transform: translateY(1000px)
+        &.show
+            transform: translateY(0px)
     
     
