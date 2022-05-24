@@ -38,6 +38,20 @@
 .start-anim.circle-animate-4{
     animation: 3s linear infinite alternate-reverse 3s circlesAnimation;
 }
+/*for preloader*/
+/* circles pilse animaton */
+.start-anim-at-once.circle-animate-1{
+    animation: 2s ease-in-out infinite alternate-reverse circlesAnimation;
+}
+.start-anim-at-once.circle-animate-2{
+    animation: 2.5s ease-in infinite alternate-reverse circlesAnimation;
+}
+.start-anim-at-once.circle-animate-3{
+    animation: 2.8s ease-out infinite alternate-reverse circlesAnimation;
+}
+.start-anim-at-once.circle-animate-4{
+    animation: 3s linear infinite alternate-reverse circlesAnimation;
+}
 
 /* index page */
 .index-page-animate{
