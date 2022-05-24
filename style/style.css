@@ -167,13 +167,57 @@ body {
 
 .preloader {
   color: #fff;
-  margin-top: 300px;
+  margin-top: 50vh;
   font-size: 14px;
 }
 
 .preloader img {
   display: block;
   margin: auto;
+  margin-bottom: 23px;
+  width: 100px;
+}
+
+.preloader p {
+  margin: 0;
+  text-align: center;
+  width: 90%;
+  margin: 0 auto 11px;
+}
+
+.preloader-line {
+  width: 60%;
+  height: 3px;
+  background: #000;
+  margin: auto;
+  position: relative;
+}
+
+.preloader-line::before {
+  content: '0';
+  position: absolute;
+  font-size: 16px;
+  font-weight: 300;
+  left: 0;
+  bottom: -20px;
+}
+
+.preloader-line::after {
+  content: '100';
+  position: absolute;
+  font-size: 16px;
+  font-weight: 300;
+  right: 0;
+  bottom: -20px;
+}
+
+.preloader-loading-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  width: 50%;
 }
 
 .index {
