@@ -111,7 +111,7 @@ body
     color: #fff
     margin-top: 50vh
     font-size: 14px
-    & img
+    &__logo
         display: block
         margin: auto
         margin-bottom: 23px
@@ -121,30 +121,76 @@ body
         text-align: center
         width: 90%
         margin: 0 auto 11px
-.preloader-line
-    width: 60%
-    height: 3px
-    background: #000
-    margin: auto
-    position: relative
-    &::before
-        content: '0'
+    &__line
+        width: 60%
+        height: 3px
+        background: #000
+        margin: auto
+        position: relative
+        &::before
+            content: '0'
+            position: absolute
+            font-size: 16px
+            font-weight: 300
+            left: 0
+            bottom: -20px
+        &::after
+            content: '100'
+            position: absolute
+            font-size: 16px
+            font-weight: 300
+            right: 0
+            bottom: -20px
+    &__loading-line
         position: absolute
-        font-size: 16px
-        font-weight: 300
+        top: 0
+        bottom: 0
         left: 0
-        bottom: -20px
-    &::after
-        content: '100'
+        background: #fff
+        width: 50%
+    &__logo-container
+        width: 100%
+        height: 175px
+        display: flex
+        position: relative
+        justify-content: center
+    &__logo-left
+        width: 34px
         position: absolute
+        top: 27px
+        left: calc(50vw - 50px)
+        animation: 2s ease-in-out logoLeftLoaderAnimation
+    &__logo-right
+        width: 114px
+        position: absolute
+        top: 0
+        right: calc(50vw - 70px)
+        animation: 2s ease-in-out logoRightLoaderAnimation
+    &__logo-title-container
+        width: 100px
+        padding-top: 34px
+        z-index: 3
+        overflow: hidden
+    &__logo-title
+        font-family: 'Inter'
+        font-style: normal
+        font-weight: 400
         font-size: 16px
-        font-weight: 300
-        right: 0
-        bottom: -20px
-.preloader-loading-line
-    position: absolute
-    top: 0
-    bottom: 0
-    left: 0
-    background: #fff
-    width: 50%
+        line-height: 19px
+        color: #FFFFFF
+        width: 100px
+        z-index: 3
+        transform: translateX(-50px)
+        transition: transform 0.1 linear
+
+@keyframes logoLeftLoaderAnimation
+    0% 
+        left: -50px
+    100%
+        left: calc(50vw - 50px)
+
+@keyframes logoRightLoaderAnimation
+    0% 
+        right: -150px
+    100%
+        right: calc(50vw - 70px)

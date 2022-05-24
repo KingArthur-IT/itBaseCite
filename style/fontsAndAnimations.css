@@ -16,6 +16,7 @@
     font-weight: 600;
     font-style: normal;
 }
+
 /* robot floating animation */
 .canvas-animate{
     animation: 3s ease-in-out infinite alternate-reverse 3s canvasAnimation;

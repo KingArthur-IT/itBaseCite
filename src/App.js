@@ -117,7 +117,8 @@ const PageEndAnimateContent = (pageEndName, pageShowName, isAnimated = true) => 
 class App {
     preloader() {
         const loader = document.getElementById('loader');
-        const loaderLine = document.getElementsByClassName('preloader-loading-line')[0];
+        const loaderLine = document.getElementsByClassName('preloader__loading-line')[0];
+        const loaderLogoTitle = document.getElementsByClassName('preloader__logo-title')[0];
         var loadingStatus = 0.0, loadingMax = 0.0;
         settings.animations.forEach((el) => loadingMax += (el.end - el.start + 1))
 
@@ -138,7 +139,9 @@ class App {
             anim.forEach((i) => {
                 i.onload = () => {
                     loadingStatus ++;
-                    loaderLine.style.width = (100.0 * loadingStatus / loadingMax).toFixed().toString() + '%';
+                    const w = (100.0 * loadingStatus / loadingMax).toFixed()
+                    loaderLine.style.width = w.toString() + '%';
+                    loaderLogoTitle.style.transform = `translate(${w * 1.5 - 50}px)`;
                 }
             })
         })

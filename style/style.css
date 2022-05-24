@@ -171,7 +171,7 @@ body {
   font-size: 14px;
 }
 
-.preloader img {
+.preloader__logo {
   display: block;
   margin: auto;
   margin-bottom: 23px;
@@ -185,7 +185,7 @@ body {
   margin: 0 auto 11px;
 }
 
-.preloader-line {
+.preloader__line {
   width: 60%;
   height: 3px;
   background: #000;
@@ -193,7 +193,7 @@ body {
   position: relative;
 }
 
-.preloader-line::before {
+.preloader__line::before {
   content: '0';
   position: absolute;
   font-size: 16px;
@@ -202,7 +202,7 @@ body {
   bottom: -20px;
 }
 
-.preloader-line::after {
+.preloader__line::after {
   content: '100';
   position: absolute;
   font-size: 16px;
@@ -211,13 +211,99 @@ body {
   bottom: -20px;
 }
 
-.preloader-loading-line {
+.preloader__loading-line {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   background: #fff;
   width: 50%;
+}
+
+.preloader__logo-container {
+  width: 100%;
+  height: 175px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.preloader__logo-left {
+  width: 34px;
+  position: absolute;
+  top: 27px;
+  left: calc(50vw - 50px);
+  -webkit-animation: 2s ease-in-out logoLeftLoaderAnimation;
+          animation: 2s ease-in-out logoLeftLoaderAnimation;
+}
+
+.preloader__logo-right {
+  width: 114px;
+  position: absolute;
+  top: 0;
+  right: calc(50vw - 70px);
+  -webkit-animation: 2s ease-in-out logoRightLoaderAnimation;
+          animation: 2s ease-in-out logoRightLoaderAnimation;
+}
+
+.preloader__logo-title-container {
+  width: 100px;
+  padding-top: 34px;
+  z-index: 3;
+  overflow: hidden;
+}
+
+.preloader__logo-title {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #FFFFFF;
+  width: 100px;
+  z-index: 3;
+  -webkit-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
+@-webkit-keyframes logoLeftLoaderAnimation {
+  0% {
+    left: -50px;
+  }
+  100% {
+    left: calc(50vw - 50px);
+  }
+}
+
+@keyframes logoLeftLoaderAnimation {
+  0% {
+    left: -50px;
+  }
+  100% {
+    left: calc(50vw - 50px);
+  }
+}
+
+@-webkit-keyframes logoRightLoaderAnimation {
+  0% {
+    right: -150px;
+  }
+  100% {
+    right: calc(50vw - 70px);
+  }
+}
+
+@keyframes logoRightLoaderAnimation {
+  0% {
+    right: -150px;
+  }
+  100% {
+    right: calc(50vw - 70px);
+  }
 }
 
 .index {
