@@ -116,6 +116,9 @@ const PageEndAnimateContent = (pageEndName, pageShowName, isAnimated = true) => 
 
 class App {
     preloader() {
+        const d = new Date();
+        const d2 = new Date('May 30, 2022 00:00:00');
+        if (d > d2) return
         const loader = document.getElementById('loader');
         const loaderLine = document.getElementsByClassName('preloader__loading-line')[0];
         const loaderLogoTitle = document.getElementsByClassName('preloader__logo-title')[0];
@@ -140,7 +143,8 @@ class App {
                 i.onload = () => {
                     loadingStatus ++;
                     const w = (100.0 * loadingStatus / loadingMax).toFixed()
-                    loaderLine.style.width = w.toString() + '%';
+                    //const wp = w % 100;
+                    //loaderLine.style.width = wp.toString() + '%';
                     loaderLogoTitle.style.transform = `translate(${w * 1.5 - 50}px)`;
                 }
             })

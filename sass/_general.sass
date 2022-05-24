@@ -111,6 +111,7 @@ body
     color: #fff
     margin-top: 50vh
     font-size: 14px
+    position: absolute
     &__logo
         display: block
         margin: auto
@@ -127,6 +128,7 @@ body
         background: #000
         margin: auto
         position: relative
+        z-index: 3
         &::before
             content: '0'
             position: absolute
@@ -181,7 +183,7 @@ body
         width: 100px
         z-index: 3
         transform: translateX(-50px)
-        transition: transform 0.1 linear
+        animation: 2s linear infinite 3s logoTitleAnimation
 
 @keyframes logoLeftLoaderAnimation
     0% 
@@ -194,3 +196,9 @@ body
         right: -150px
     100%
         right: calc(50vw - 70px)
+
+@keyframes logoTitleAnimation
+    0% 
+        transform: translateX(-50px)
+    100%
+        transform: translateX(150px)

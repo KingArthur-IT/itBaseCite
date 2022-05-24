@@ -169,6 +169,7 @@ body {
   color: #fff;
   margin-top: 50vh;
   font-size: 14px;
+  position: absolute;
 }
 
 .preloader__logo {
@@ -191,6 +192,7 @@ body {
   background: #000;
   margin: auto;
   position: relative;
+  z-index: 3;
 }
 
 .preloader__line::before {
@@ -268,6 +270,8 @@ body {
   z-index: 3;
   -webkit-transform: translateX(-50px);
           transform: translateX(-50px);
+  -webkit-animation: 2s linear infinite 3s logoTitleAnimation;
+          animation: 2s linear infinite 3s logoTitleAnimation;
 }
 
 @-webkit-keyframes logoLeftLoaderAnimation {
@@ -303,6 +307,28 @@ body {
   }
   100% {
     right: calc(50vw - 70px);
+  }
+}
+
+@-webkit-keyframes logoTitleAnimation {
+  0% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  100% {
+    -webkit-transform: translateX(150px);
+            transform: translateX(150px);
+  }
+}
+
+@keyframes logoTitleAnimation {
+  0% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+  100% {
+    -webkit-transform: translateX(150px);
+            transform: translateX(150px);
   }
 }
 
@@ -696,6 +722,7 @@ body {
   z-index: 3;
   -webkit-transform: translateY(1500px) rotate(-30deg) scale(0);
           transform: translateY(1500px) rotate(-30deg) scale(0);
+  position: relative;
 }
 
 .working__list-item.show {
