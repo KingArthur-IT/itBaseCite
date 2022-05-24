@@ -21,8 +21,11 @@
 .canvas-animate{
     animation: 3s ease-in-out infinite alternate-reverse 3s canvasAnimation;
 }
-.canvas-top-fly-animate{
+.canvas-from-top-fly-animate{
     animation: 1s ease-in-out canvasFlyFromTop;
+}
+.canvas-to-top-fly-animate{
+    animation: 2s ease-in-out 1s canvasFlyToTop;
 }
 
 /* circles pilse animaton */
@@ -144,6 +147,15 @@
     }
     100%{
         top: 0
+    }
+}
+
+@keyframes canvasFlyToTop {
+    0%{
+        top: 0px
+    }
+    100%{
+        top: -2000px
     }
 }
 

@@ -174,7 +174,11 @@
 
                     scrollToTop();
                     animationIndex = 1; 
+                    document.getElementById(settings.canvasID).classList.add('canvas-to-top-fly-animate');
                     setTimeout(() => {
+                        setTimeout(() => {
+                            document.getElementById(settings.canvasID).classList.remove('canvas-to-top-fly-animate');
+                        }, 1000);
                         startAnimation(1);
                     }, 2000);
                     document.getElementsByTagName('body')[0].classList.add('noScrollable');
@@ -182,7 +186,6 @@
                     setTimeout(() => {
                         PageStartAnimateContent('index');
                     }, 2100);
-                    document.getElementById(settings.canvasID).classList.remove('canvas-top-fly-animate');
                     currentPage = 'index';
                 });
             });
@@ -216,13 +219,13 @@
                     scrollToTop();
                     if (currentPage !== item.nextPage){
                         animationIndex = item.animationIndex; 
-                        if (currentPage === 'contacts') document.getElementById(settings.canvasID).classList.add('canvas-top-fly-animate');
+                        if (currentPage === 'contacts') document.getElementById(settings.canvasID).classList.add('canvas-from-top-fly-animate');
                         startAnimation(animationIndex);
                         document.getElementsByTagName('body')[0].classList.add('noScrollable');
                         PageEndAnimateContent(currentPage, item.nextPage);
                         setTimeout(() => {
                             PageStartAnimateContent(item.nextPage);
-                            document.getElementById(settings.canvasID).classList.remove('canvas-top-fly-animate');
+                            document.getElementById(settings.canvasID).classList.remove('canvas-from-top-fly-animate');
                         }, 2500);
                         currentPage = item.nextPage;
                     }
