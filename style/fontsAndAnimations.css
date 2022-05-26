@@ -101,18 +101,23 @@
     transform: translate(-3000px, 0) rotate(0deg) scale(1) !important;
     animation: none !important
 }
+.services-page-animate.hide-back{
+    transition: transform 4s cubic-bezier(.17,.67,.65,1.12) .2s !important;
+    transform: translate(0, -3000px) rotate(0deg) scale(1) !important;
+    animation: none !important
+}
 /* contacts page */
 .contacts-page-animate{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
 }
 .contacts-page-animate.hide{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
-    transform: translate(0px, -1000px) rotate(0deg) scale(1) !important;
+    transform: translate(0px, 1500px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* sites page */
 .sites-page-animate{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
 }
 .sites-page-animate.hide{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
@@ -121,7 +126,7 @@
 }
 /* apps page */
 .apps-page-animate{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
 }
 .apps-page-animate.hide{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;

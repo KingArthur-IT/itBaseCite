@@ -32,13 +32,8 @@
         & span
             font-weight: 500
     &__consult-btn
-        position: absolute
-        bottom: 10px
         padding: 6px 17px
         color: $secondary
-        transform: translateY(1500px) rotate(-30deg) scale(0)
-        &.show
-            transform: translateY(0px) rotate(0deg) scale(1)
     &__circles-top
         width: 244px
         height: 244px
@@ -71,5 +66,14 @@
         transform: translateY(1000px)
         &.show
             transform: translateY(0px)
-    
-    
+.contacts-btns-wrapper
+    position: absolute
+    bottom: 10px
+    display: flex
+    align-items: center
+    justify-content: space-around
+    transform: translateY(1500px) rotate(-30deg) scale(0)
+    &.show
+        transform: translateY(0px) rotate(0deg) scale(1)
+.contacts-back-btn
+    margin: 0 10px 0 0

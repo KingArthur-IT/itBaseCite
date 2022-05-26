@@ -9,6 +9,9 @@
         margin-bottom: 70px
         margin-left: 34px
         z-index: 2
+        transform: translateX(1000px) scale(0)
+        &.show
+            transform: translateX(0px) scale(1)
     &__win-text
         padding: 52px 36px 14px 36px
         font-style: normal
@@ -18,14 +21,17 @@
     &__definition
         margin: 0
         margin-bottom: 20px
-        transform: translateY(1000px) scale(0)
+        transform: translateX(1000px) scale(0)
         &.show
-            transform: translateY(0px) scale(1)
+            transform: translateX(0px) scale(1)
         & span
             color: $orange
     &__list
         margin: 0
         list-style: none
+        transform: translateX(1000px) scale(0)
+        &.show
+            transform: translateX(0px) scale(1)
         & span
             color: $orange
         & li
@@ -63,14 +69,14 @@
         height: 244px
         top: -123px
         left: -39px
-        transform: translateY(1000px) scale(0)
+        transform: translateX(1000px) scale(0)
         &.show
-            transform: translateY(0px) scale(1)
+            transform: translateX(0px) scale(1)
     &__circles-right
         width: 176px
         height: 176px
         top: 334px
         right: -94px
-        transform: translateY(1000px) scale(0)
+        transform: translateX(1000px) scale(0)
         &.show
-            transform: translateY(0px) scale(1)
+            transform: translateX(0px) scale(1)

@@ -45,6 +45,14 @@ const pageAnimations = {
         ]
     },
 }
+const backBtns = [
+    { id: 'back-working-to-selector', nextPage: 'selector', animationIndex: 2 },
+    { id: 'back-about-us-to-selector', nextPage: 'selector', animationIndex: 2 },
+    { id: 'back-sites-to-services', nextPage: 'services', animationIndex: 3 },
+    { id: 'back-apps-to-services', nextPage: 'services', animationIndex: 3 },
+    { id: 'back-contacts-to-selector', nextPage: 'selector', animationIndex: 2 },
+    { id: 'back-services-to-selector', nextPage: 'selector', animationIndex: 2}
+]
 //menu
 const menuBtns = [
     { id: 'menu-to-about', nextPage: 'about-us', animationIndex: 3 },
@@ -96,18 +104,21 @@ const PageStartAnimateContent = (pageName) => {
     });
 }
 
-const PageEndAnimateContent = (pageEndName, pageShowName, isAnimated = true) => {
+const PageEndAnimateContent = (pageEndName, pageShowName, isAnimated = true, back = false) => {
     [...document.getElementsByClassName(`${pageEndName}-page-animate`)].forEach(element => {
         element.classList.remove('start-anim'); //stop pulsing
         setTimeout(() => {
-            element.classList.add('hide'); 
+            if (back)
+                element.classList.add('hide-back'); 
+            else element.classList.add('hide'); 
             element.classList.remove('show');
             setTimeout(() => {
                 showSection(pageShowName);
             }, 1000);
             hideSection(pageEndName, isAnimated);
             setTimeout(() => {
-                element.classList.remove('hide'); 
+                element.classList.remove('hide');
+                element.classList.remove('hide-back'); 
                 document.getElementsByTagName('body')[0].classList.remove('noScrollable')
             }, 5000);  
         }, 1000);
@@ -132,32 +143,40 @@ class App {
             for (let i = 0; i <= settings.animations[animIndex].end - settings.animations[animIndex].start; i++){
                 animationImageList[animIndex].push(new Image());
                 const index = numToStr(i + settings.animations[animIndex].start, 4);
-                animationImageList[animIndex][i].src =  `./assets/animations/${animIndex + 1}/${prefix}_${index}.webp`
+                animationImageList[animIndex][i].src =  `./assets/animations/${animIndex + 1}/${prefix}_${index}.webp`;
+                animationImageList[animIndex][i].onload = () => {
+                    loadingStatus ++;
+                    const w = (100.0 * loadingStatus / loadingMax).toFixed()
+                    loaderLine.style.width = w.toString() + '%';
+                }
             }
         }
             
-        const lastAnimation = settings.animations.length - 1;
-        const lastIndex = settings.animations[lastAnimation].end - settings.animations[lastAnimation].start;
-        animationImageList.forEach((anim) => {
-            anim.forEach((i) => {
-                i.onload = () => {
-                    loadingStatus ++;
-                    const w = (100.0 * loadingStatus / loadingMax).toFixed()
-                    //const wp = w % 100;
-                    //loaderLine.style.width = wp.toString() + '%';
-                    loaderLogoTitle.style.transform = `translate(${w * 1.5 - 50}px)`;
-                }
-            })
-        })
-        animationImageList[lastAnimation][lastIndex].onload = () => {
-            loader.style.display = 'none';
-            this.start()
-        }
-    }
-    start(){
+        // animationImageList.forEach((anim) => {
+        //     anim.forEach((i) => {
+        //         i.onload = () => {
+        //             loadingStatus ++;
+        //             const w = (100.0 * loadingStatus / loadingMax).toFixed()
+        //             //const wp = w % 100;
+        //             loaderLine.style.width = w.toString() + '%';
+        //             //loaderLogoTitle.style.transform = `translate(${w * 1.5 - 50}px)`;
+        //         }
+        //     })
+        // })
+
         onWindowResize();
         canvas.ctx = document.getElementById(settings.canvasID).getContext('2d');
 
+        const lastAnimation = settings.animations.length - 1;
+        const lastIndex = settings.animations[lastAnimation].end - settings.animations[lastAnimation].start;
+        animationImageList[lastAnimation][lastIndex].onload = () => {
+            setTimeout(() => {
+                loader.style.display = 'none';
+                this.start()
+            }, 500);
+        }
+    }
+    start(){
         startAnimation(1);
         animationIndex = 1;
         PageStartAnimateContent('index');
@@ -267,6 +286,31 @@ function navBtnsEventsListeners(){
             })
         })
     });
+    //back btns
+    backBtns.forEach((item) => {
+        document.getElementById(item.id).addEventListener('click', () => {
+            scrollToTop();
+            animationIndex = item.animationIndex; 
+            const isServicesBack = currentPage === 'services'
+            PageEndAnimateContent(currentPage, item.nextPage, true, isServicesBack);
+            if (currentPage === 'contacts')
+                setTimeout(() => {
+                    document.getElementById(settings.canvasID).classList.add('canvas-from-top-fly-animate');
+                }, 500);
+            const delay = currentPage === 'contacts' ? 1000 : 0;
+            setTimeout(() => {
+                startAnimation(item.animationIndex);
+            }, delay);
+            
+            
+            document.getElementsByTagName('body')[0].classList.add('noScrollable')
+            setTimeout(() => {
+                PageStartAnimateContent(item.nextPage);
+                document.getElementById(settings.canvasID).classList.remove('canvas-from-top-fly-animate')
+            }, 2500);
+            currentPage = item.nextPage;
+        })
+    })
 }
 
 function scrollToTop(){
