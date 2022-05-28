@@ -27,6 +27,9 @@
 .canvas-to-top-fly-animate{
     animation: 2s ease-in-out 1s canvasFlyToTop;
 }
+.canvas-to-top-fly-quick-animate{
+    animation: .5s ease-in-out canvasFlyToTop;
+}
 
 /* circles pilse animaton */
 .start-anim.circle-animate-1{

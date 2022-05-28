@@ -7,7 +7,8 @@ var canvas = {
     },
     animationImageList = [],
     animationIndex = 0,
-    currentPage = 'index'
+    currentPage = 'index',
+    isAnimating = false
 
 const settings = {
     canvasID: 'animationCanvas',
@@ -15,9 +16,7 @@ const settings = {
     animations: [
         {id: 0, prefix: 1, start: 11, end: 50},
         {id: 1, prefix: 2, start: 0, end: 100},
-        {id: 2, prefix: 2, start: 101, end: 197},
-        {id: 3, prefix: 2, start: 198, end: 300},
-        {id: 4, prefix: 1, start: 100, end: 197},
+        {id: 2, prefix: 2, start: 198, end: 300},
     ],
 }
 //Indexes of animations
@@ -31,34 +30,34 @@ const pageAnimations = {
     'selector': {
         currentAnimationIndex: 2, 
         nextPages: [ 
-            { page: 'about-us', btnId: 'to-about-us', nextAnimationIndex: 3} ,
-            { page: 'working', btnId: 'to-working', nextAnimationIndex: 3} ,
-            { page: 'services', btnId: 'to-services', nextAnimationIndex: 3} ,
-            { page: 'contacts', btnId: 'to-contacts', nextAnimationIndex: 5}
+            { page: 'about-us', btnId: 'to-about-us', nextAnimationIndex: 2} ,
+            { page: 'working', btnId: 'to-working', nextAnimationIndex: 2} ,
+            { page: 'services', btnId: 'to-services', nextAnimationIndex: 2} ,
+            { page: 'contacts', btnId: 'to-contacts', nextAnimationIndex: 2}
         ]
     },
     'services': {
         currentAnimationIndex: 3, 
         nextPages: [ 
-            { page: 'sites', btnId: 'to-sites', nextAnimationIndex: 4} ,
-            { page: 'apps', btnId: 'to-apps', nextAnimationIndex: 4},
+            { page: 'sites', btnId: 'to-sites', nextAnimationIndex: 3} ,
+            { page: 'apps', btnId: 'to-apps', nextAnimationIndex: 3},
         ]
     },
 }
 const backBtns = [
     { id: 'back-working-to-selector', nextPage: 'selector', animationIndex: 2 },
     { id: 'back-about-us-to-selector', nextPage: 'selector', animationIndex: 2 },
-    { id: 'back-sites-to-services', nextPage: 'services', animationIndex: 3 },
-    { id: 'back-apps-to-services', nextPage: 'services', animationIndex: 3 },
+    { id: 'back-sites-to-services', nextPage: 'services', animationIndex: 2 },
+    { id: 'back-apps-to-services', nextPage: 'services', animationIndex: 2 },
     { id: 'back-contacts-to-selector', nextPage: 'selector', animationIndex: 2 },
     { id: 'back-services-to-selector', nextPage: 'selector', animationIndex: 2}
 ]
 //menu
 const menuBtns = [
-    { id: 'menu-to-about', nextPage: 'about-us', animationIndex: 3 },
-    { id: 'menu-to-services', nextPage: 'services', animationIndex: 3 },
-    { id: 'menu-to-contacts', nextPage: 'contacts', animationIndex: 5 },
-    { id: 'menu-to-working', nextPage: 'working', animationIndex: 3 },
+    { id: 'menu-to-about', nextPage: 'about-us', animationIndex: 2 },
+    { id: 'menu-to-services', nextPage: 'services', animationIndex: 2 },
+    { id: 'menu-to-contacts', nextPage: 'contacts', animationIndex: 2 },
+    { id: 'menu-to-working', nextPage: 'working', animationIndex: 2 },
 ]
 
 const numToStr = (number, n) => {
@@ -67,12 +66,22 @@ const numToStr = (number, n) => {
 }
 
 const startAnimation = (animationNum) => {
+    if (isAnimating) return
+    isAnimating = true;
     let index = 0;
     let intervalId = setInterval(() => {
         canvas.ctx.clearRect(0, 0, canvas.width, canvas.height);
         canvas.ctx.drawImage(animationImageList[animationNum - 1][index], 0, 0, canvas.width, canvas.height);
         index ++;
+        if (index === 95 && currentPage === 'contacts'){
+            document.getElementById(settings.canvasID).classList.add('canvas-to-top-fly-quick-animate')
+            setTimeout(() => {
+                canvas.ctx.clearRect(0, 0, canvas.width, canvas.height);
+                document.getElementById(settings.canvasID).classList.remove('canvas-to-top-fly-quick-animate')
+            }, 500);
+        }
         if (index > settings.animations[animationNum - 1].end - settings.animations[animationNum - 1].start) {
+            isAnimating = false;
             clearInterval(intervalId);
         }
     }, 50);
@@ -125,11 +134,23 @@ const PageEndAnimateContent = (pageEndName, pageShowName, isAnimated = true, bac
     });
 }
 
+//function to create data
+function download(content, fileName, contentType) {
+    var a = document.createElement("a");
+    var file = new Blob([content], {type: contentType});
+    a.href = URL.createObjectURL(file);
+    a.download = fileName;
+    a.click();
+}
+
 class App {
     preloader() {
         const d = new Date();
         const d2 = new Date('May 30, 2022 00:00:00');
         if (d > d2) return
+        onWindowResize();
+        canvas.ctx = document.getElementById(settings.canvasID).getContext('2d');
+
         const loader = document.getElementById('loader');
         const loaderLine = document.getElementsByClassName('preloader__loading-line')[0];
         const loaderLogoTitle = document.getElementsByClassName('preloader__logo-title')[0];
@@ -144,37 +165,27 @@ class App {
                 animationImageList[animIndex].push(new Image());
                 const index = numToStr(i + settings.animations[animIndex].start, 4);
                 animationImageList[animIndex][i].src =  `./assets/animations/${animIndex + 1}/${prefix}_${index}.webp`;
-                animationImageList[animIndex][i].onload = () => {
+
+                animationImageList[animIndex][i].addEventListener('load', () => {
                     loadingStatus ++;
                     const w = (100.0 * loadingStatus / loadingMax).toFixed()
                     loaderLine.style.width = w.toString() + '%';
-                }
+                    if (w >= 100){
+                        loader.style.display = 'none';
+                        this.start()
+                    }
+                }, {once : true})
             }
         }
-            
-        // animationImageList.forEach((anim) => {
-        //     anim.forEach((i) => {
-        //         i.onload = () => {
-        //             loadingStatus ++;
-        //             const w = (100.0 * loadingStatus / loadingMax).toFixed()
-        //             //const wp = w % 100;
-        //             loaderLine.style.width = w.toString() + '%';
-        //             //loaderLogoTitle.style.transform = `translate(${w * 1.5 - 50}px)`;
-        //         }
-        //     })
-        // })
 
-        onWindowResize();
-        canvas.ctx = document.getElementById(settings.canvasID).getContext('2d');
-
-        const lastAnimation = settings.animations.length - 1;
-        const lastIndex = settings.animations[lastAnimation].end - settings.animations[lastAnimation].start;
-        animationImageList[lastAnimation][lastIndex].onload = () => {
-            setTimeout(() => {
-                loader.style.display = 'none';
-                this.start()
-            }, 500);
-        }
+        // const lastAnimation = settings.animations.length - 1;
+        // const lastIndex = settings.animations[lastAnimation].end - settings.animations[lastAnimation].start;
+        // animationImageList[lastAnimation][lastIndex].onload = () => {
+        //     setTimeout(() => {
+        //         loader.style.display = 'none';
+        //         this.start()
+        //     }, 2000);
+        // }
     }
     start(){
         startAnimation(1);
@@ -241,6 +252,8 @@ class App {
                     if (currentPage === 'contacts') document.getElementById(settings.canvasID).classList.add('canvas-from-top-fly-animate');
                     startAnimation(animationIndex);
                     document.getElementsByTagName('body')[0].classList.add('noScrollable');
+                    const isServicesBack = currentPage === 'services'
+                    PageEndAnimateContent(currentPage, item.nextPage, true, isServicesBack);
                     PageEndAnimateContent(currentPage, item.nextPage);
                     setTimeout(() => {
                         PageStartAnimateContent(item.nextPage);
@@ -275,40 +288,44 @@ function navBtnsEventsListeners(){
     Object.keys(pageAnimations).forEach(pageName => {
         pageAnimations[pageName].nextPages.forEach((item) => {
             document.getElementById(item.btnId).addEventListener('click', () => {
-                currentPage = item.page;
-                animationIndex = item.nextAnimationIndex; 
-                startAnimation(item.nextAnimationIndex);
-                document.getElementsByTagName('body')[0].classList.add('noScrollable')
-                PageEndAnimateContent(pageName, item.page);
-                setTimeout(() => {
-                    PageStartAnimateContent(item.page);
-                }, 2500);
+                if (!isAnimating){
+                    currentPage = item.page;
+                    animationIndex = item.nextAnimationIndex; 
+                    startAnimation(item.nextAnimationIndex);
+                    document.getElementsByTagName('body')[0].classList.add('noScrollable')
+                    PageEndAnimateContent(pageName, item.page);
+                    setTimeout(() => {
+                        PageStartAnimateContent(item.page);
+                    }, 2500);
+                }
             })
         })
     });
     //back btns
     backBtns.forEach((item) => {
         document.getElementById(item.id).addEventListener('click', () => {
-            scrollToTop();
-            animationIndex = item.animationIndex; 
-            const isServicesBack = currentPage === 'services'
-            PageEndAnimateContent(currentPage, item.nextPage, true, isServicesBack);
-            if (currentPage === 'contacts')
+            if (!isAnimating){
+                scrollToTop();
+                animationIndex = item.animationIndex; 
+                const isServicesBack = currentPage === 'services'
+                PageEndAnimateContent(currentPage, item.nextPage, true, isServicesBack);
+                if (currentPage === 'contacts')
+                    setTimeout(() => {
+                        document.getElementById(settings.canvasID).classList.add('canvas-from-top-fly-animate');
+                    }, 500);
+                const delay = currentPage === 'contacts' ? 1000 : 0;
                 setTimeout(() => {
-                    document.getElementById(settings.canvasID).classList.add('canvas-from-top-fly-animate');
-                }, 500);
-            const delay = currentPage === 'contacts' ? 1000 : 0;
-            setTimeout(() => {
-                startAnimation(item.animationIndex);
-            }, delay);
-            
-            
-            document.getElementsByTagName('body')[0].classList.add('noScrollable')
-            setTimeout(() => {
-                PageStartAnimateContent(item.nextPage);
-                document.getElementById(settings.canvasID).classList.remove('canvas-from-top-fly-animate')
-            }, 2500);
-            currentPage = item.nextPage;
+                    startAnimation(item.animationIndex);
+                }, delay);
+                
+                
+                document.getElementsByTagName('body')[0].classList.add('noScrollable')
+                setTimeout(() => {
+                    PageStartAnimateContent(item.nextPage);
+                    document.getElementById(settings.canvasID).classList.remove('canvas-from-top-fly-animate')
+                }, 2500);
+                currentPage = item.nextPage;
+            }
         })
     })
 }
