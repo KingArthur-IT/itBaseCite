@@ -153,7 +153,6 @@ class App {
 
         const loader = document.getElementById('loader');
         const loaderLine = document.getElementsByClassName('preloader__loading-line')[0];
-        const loaderLogoTitle = document.getElementsByClassName('preloader__logo-title')[0];
         var loadingStatus = 0.0, loadingMax = 0.0;
         settings.animations.forEach((el) => loadingMax += (el.end - el.start + 1))
 
@@ -172,7 +171,7 @@ class App {
                     loaderLine.style.width = w.toString() + '%';
                     if (w >= 100){
                         loader.style.display = 'none';
-                        this.start()
+                        this.start();
                     }
                 }, {once : true})
             }
