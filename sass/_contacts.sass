@@ -4,13 +4,14 @@
     justify-content: center
     align-items: center
     &__main-img
-        z-index: 3
+        z-index: 4
         transform: translateY(1500px) rotate(-30deg) scale(0)
         &.show
             transform: translateY(0px) rotate(0deg) scale(1)
     &__list
         margin: 0
         padding: 0
+        z-index: 3
     &__list-item
         margin: 0
         margin-bottom: 12px
@@ -72,6 +73,7 @@
     display: flex
     align-items: center
     justify-content: space-around
+    z-index: 3
     transform: translateY(1500px) rotate(-30deg) scale(0)
     &.show
         transform: translateY(0px) rotate(0deg) scale(1)

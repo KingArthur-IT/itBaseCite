@@ -1,14 +1,25 @@
-var  animationIndex = 0,
-        currentPage = 'index',
-        isAnimating = false
 
-const videoAnimationElements = [
-    document.getElementById('mobile-anim-1'),
-    document.getElementById('mobile-anim-2'),
-    document.getElementById('mobile-anim-3'),
-    document.getElementById('mobile-anim-4'),
-    document.getElementById('mobile-anim-5')
-]
+var canvas = {
+        object: null,
+        ctx: null,
+        width: 0,
+        height: 0
+    },
+    animationImageList = [],
+    animationIndex = 0,
+    currentPage = 'index',
+    isAnimating = false
+
+const settings = {
+    canvasID: 'animationCanvas',
+    canvasImgAspectRatio: 1280. / 591.,
+    animations: [
+        {id: 0, prefix: 1, start: 11, end: 50},
+        {id: 1, prefix: 2, start: 0, end: 100},
+        {id: 2, prefix: 2, start: 198, end: 300},
+    ],
+}
+const videoElem = document.getElementById('video');
 
 //Indexes of animations
 const pageAnimations = {
@@ -21,47 +32,66 @@ const pageAnimations = {
     'selector': {
         currentAnimationIndex: 2, 
         nextPages: [ 
-            { page: 'about-us', btnId: 'to-about-us', nextAnimationIndex: 3} ,
-            { page: 'working', btnId: 'to-working', nextAnimationIndex: 3} ,
-            { page: 'services', btnId: 'to-services', nextAnimationIndex: 3} ,
-            { page: 'contacts', btnId: 'to-contacts', nextAnimationIndex: 5}
+            { page: 'about-us', btnId: 'to-about-us', nextAnimationIndex: 2} ,
+            { page: 'working', btnId: 'to-working', nextAnimationIndex: 2} ,
+            { page: 'services', btnId: 'to-services', nextAnimationIndex: 2} ,
+            { page: 'contacts', btnId: 'to-contacts', nextAnimationIndex: 2}
         ]
     },
     'services': {
         currentAnimationIndex: 3, 
         nextPages: [ 
-            { page: 'sites', btnId: 'to-sites', nextAnimationIndex: 4},
-            { page: 'apps', btnId: 'to-apps', nextAnimationIndex: 4},
+            { page: 'sites', btnId: 'to-sites', nextAnimationIndex: 3},
+            { page: 'apps', btnId: 'to-apps', nextAnimationIndex: 3},
         ]
     },
 }
 const backBtns = [
     { id: 'back-working-to-selector', nextPage: 'selector', animationIndex: 2 },
     { id: 'back-about-us-to-selector', nextPage: 'selector', animationIndex: 2 },
-    { id: 'back-sites-to-services', nextPage: 'services', animationIndex: 3 },
-    { id: 'back-apps-to-services', nextPage: 'services', animationIndex: 3 },
+    { id: 'back-sites-to-services', nextPage: 'services', animationIndex: 2 },
+    { id: 'back-apps-to-services', nextPage: 'services', animationIndex: 2 },
     { id: 'back-contacts-to-selector', nextPage: 'selector', animationIndex: 2 },
     { id: 'back-services-to-selector', nextPage: 'selector', animationIndex: 2}
 ]
 //menu
 const menuBtns = [
-    { id: 'menu-to-about', nextPage: 'about-us', animationIndex: 3 },
-    { id: 'menu-to-services', nextPage: 'services', animationIndex: 3 },
-    { id: 'menu-to-contacts', nextPage: 'contacts', animationIndex: 5 },
-    { id: 'menu-to-working', nextPage: 'working', animationIndex: 3 },
+    { id: 'menu-to-about', nextPage: 'about-us', animationIndex: 2 },
+    { id: 'menu-to-services', nextPage: 'services', animationIndex: 2 },
+    { id: 'menu-to-contacts', nextPage: 'contacts', animationIndex: 2 },
+    { id: 'menu-to-working', nextPage: 'working', animationIndex: 2 },
 ]
+
+const numToStr = (number, n) => {
+    const numLength = number.toString().length;
+    return '0'.repeat(n - numLength) + number.toString()
+}
 
 const startAnimation = (animationNum) => {
     if (isAnimating) return
     isAnimating = true;
-    videoAnimationElements.forEach((el) => {
-        el.classList.remove('video-visible');
-    });
-    videoAnimationElements[animationNum - 1].classList.add('video-visible');
-    videoAnimationElements[animationNum - 1].play();
-    setTimeout(() => {
-        isAnimating = false;
-    }, 2000);
+    // let index = 0;
+    // let intervalId = setInterval(() => {
+    //     canvas.ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //     canvas.ctx.drawImage(animationImageList[animationNum - 1][index], 0, 0, canvas.width, canvas.height);
+    //     index ++;
+    //     if (index === 95 && currentPage === 'contacts'){
+    //         document.getElementById(settings.canvasID).classList.add('canvas-to-top-fly-quick-animate')
+    //         setTimeout(() => {
+    //             canvas.ctx.clearRect(0, 0, canvas.width, canvas.height);
+    //             document.getElementById(settings.canvasID).classList.remove('canvas-to-top-fly-quick-animate')
+    //         }, 500);
+    //     }
+    //     if (index > settings.animations[animationNum - 1].end - settings.animations[animationNum - 1].start) {
+    //         isAnimating = false;
+    //         clearInterval(intervalId);
+    //     }
+    // }, 50);
+    //const v = document.getElementById('video');
+    //v.play();
+    //playVideo()
+    isAnimating = false;
+    videoElem.play();
 }
 
 const hideSection = (sectionName, isAnimated) => {
@@ -121,31 +151,55 @@ class App {
         const d2 = new Date('June 30, 2022 00:00:00');
         if (d > d2) return
         //onWindowResize();
+        canvas.ctx = document.getElementById(settings.canvasID).getContext('2d');
 
         const loader = document.getElementById('loader');
         const loaderLine = document.getElementsByClassName('preloader__loading-line')[0];
         var loadingStatus = 0.0, loadingMax = 0.0;
-        loadingMax = videoAnimationElements.length;
+        settings.animations.forEach((el) => loadingMax += (el.end - el.start + 1))
+
+        // for (let animIndex = 0; animIndex < settings.animations.length; animIndex++){
+        //     animationImageList.push([]);
+        //     const prefix = settings.animations[animIndex].prefix;
+
+        //     for (let i = 0; i <= settings.animations[animIndex].end - settings.animations[animIndex].start; i++){
+        //         animationImageList[animIndex].push(new Image());
+        //         const index = numToStr(i + settings.animations[animIndex].start, 4);
+        //         animationImageList[animIndex][i].src =  `./assets/animations/${animIndex + 1}/${prefix}_${index}.webp`;
+
+        //         animationImageList[animIndex][i].addEventListener('load', () => {
+        //             loadingStatus ++;
+        //             const w = (100.0 * loadingStatus / loadingMax).toFixed()
+        //             loaderLine.style.width = w.toString() + '%';
+        //             if (w >= 100){
+        //                 loader.style.display = 'none';
+        //                 this.start();
+        //                 const v = document.getElementById('video');
+        //                 v.play();
+        //             }
+        //         }, {once : true})
+        //     }
+        // }
+
+        this.start();
 
         if (/iPad|iPhone|iPod/.test(navigator.userAgent))
-            videoAnimationElements.forEach((videoElem) => {
-                videoElem.autoplay = true;
-            });
-
-        videoAnimationElements.forEach((videoElem) => {
-            videoElem.addEventListener('loadeddata', () => {
-                loadingStatus ++;
-                const w = (100.0 * loadingStatus / loadingMax).toFixed()
-                loaderLine.style.width = w.toString() + '%';
-                if (w >= 100){
-                    loader.style.display = 'none';
-                    this.start();
-                }
-            }, {once : true})
-        })
+            videoElem.autoplay = true;
+        videoElem.addEventListener('loadeddata', () => {
+            loader.style.display = 'none';
+            videoElem.play();
+        }, {once : true})
+        // const lastAnimation = settings.animations.length - 1;
+        // const lastIndex = settings.animations[lastAnimation].end - settings.animations[lastAnimation].start;
+        // animationImageList[lastAnimation][lastIndex].onload = () => {
+        //     setTimeout(() => {
+        //         loader.style.display = 'none';
+        //         this.start()
+        //     }, 2000);
+        // }
     }
     start(){
-        startAnimation(1);
+        //startAnimation(1);
         animationIndex = 1;
         PageStartAnimateContent('index');
         
@@ -161,7 +215,13 @@ class App {
 
                 scrollToTop();
                 animationIndex = 1; 
-                startAnimation(1);
+                document.getElementById(settings.canvasID).classList.add('canvas-to-top-fly-animate');
+                setTimeout(() => {
+                    setTimeout(() => {
+                        document.getElementById(settings.canvasID).classList.remove('canvas-to-top-fly-animate')
+                    }, 1000);
+                    startAnimation(1);
+                }, 2000);
                 document.getElementsByTagName('body')[0].classList.add('noScrollable');
                 PageEndAnimateContent(currentPage, 'index');
                 setTimeout(() => {
@@ -200,6 +260,7 @@ class App {
                 scrollToTop();
                 if (currentPage !== item.nextPage){
                     animationIndex = item.animationIndex; 
+                    if (currentPage === 'contacts') document.getElementById(settings.canvasID).classList.add('canvas-from-top-fly-animate');
                     startAnimation(animationIndex);
                     document.getElementsByTagName('body')[0].classList.add('noScrollable');
                     const isServicesBack = currentPage === 'services'
@@ -207,6 +268,7 @@ class App {
                     PageEndAnimateContent(currentPage, item.nextPage);
                     setTimeout(() => {
                         PageStartAnimateContent(item.nextPage);
+                        document.getElementById(settings.canvasID).classList.remove('canvas-from-top-fly-animate')
                     }, 2500);
                     currentPage = item.nextPage;
                 }
@@ -216,7 +278,20 @@ class App {
 }
 
 function onWindowResize() {
+    canvas.object = document.getElementById(settings.canvasID);
+    canvas.object.width = document.documentElement.clientWidth;
+    canvas.width = document.documentElement.clientWidth;
+    canvas.object.height = canvas.width * settings.canvasImgAspectRatio;
+    canvas.height = canvas.width * settings.canvasImgAspectRatio;
 
+    const canvasTop = (document.documentElement.clientHeight - canvas.height) / 3.;
+    //canvas.object.style.top = canvasTop + 'px';
+
+    if (animationIndex > 0){
+        canvas.ctx.clearRect(0, 0, canvas.width, canvas.height);
+        const index = animationImageList[animationIndex - 1].length - 1;
+        canvas.ctx.drawImage(animationImageList[animationIndex - 1][index], 0, 0, canvas.width, canvas.height);
+    }
 }
 
 function navBtnsEventsListeners(){
@@ -245,10 +320,21 @@ function navBtnsEventsListeners(){
                 animationIndex = item.animationIndex; 
                 const isServicesBack = currentPage === 'services'
                 PageEndAnimateContent(currentPage, item.nextPage, true, isServicesBack);
-                startAnimation(item.animationIndex);
+                if (currentPage === 'contacts')
+                    setTimeout(() => {
+                        document.getElementById(settings.canvasID).classList.add('canvas-from-top-fly-animate');
+                    }, 500);
+                const delay = currentPage === 'contacts' ? 1000 : 0;
+                setTimeout(() => {
+                    startAnimation(item.animationIndex);
+                }, delay);
+                
                 
                 document.getElementsByTagName('body')[0].classList.add('noScrollable')
-                PageStartAnimateContent(item.nextPage);
+                setTimeout(() => {
+                    PageStartAnimateContent(item.nextPage);
+                    document.getElementById(settings.canvasID).classList.remove('canvas-from-top-fly-animate')
+                }, 2500);
                 currentPage = item.nextPage;
             }
         })

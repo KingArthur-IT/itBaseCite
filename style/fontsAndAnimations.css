@@ -21,15 +21,6 @@
 .canvas-animate{
     animation: 3s ease-in-out infinite alternate-reverse 3s canvasAnimation;
 }
-.canvas-from-top-fly-animate{
-    animation: 1s ease-in-out canvasFlyFromTop;
-}
-.canvas-to-top-fly-animate{
-    animation: 2s ease-in-out 1s canvasFlyToTop;
-}
-.canvas-to-top-fly-quick-animate{
-    animation: .5s ease-in-out canvasFlyToTop;
-}
 
 /* circles pilse animaton */
 .start-anim.circle-animate-1{
@@ -115,7 +106,7 @@
 }
 .contacts-page-animate.hide{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
-    transform: translate(0px, 1500px) rotate(0deg) scale(1) !important;
+    transform: translate(0px, -1500px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* sites page */
@@ -146,24 +137,6 @@
     }
     100%{
         transform: translate(0px, 0px)
-    }
-}
-
-@keyframes canvasFlyFromTop {
-    0%{
-        top: -2000px
-    }
-    100%{
-        top: 0
-    }
-}
-
-@keyframes canvasFlyToTop {
-    0%{
-        top: 0px
-    }
-    100%{
-        top: -2000px
     }
 }
 

@@ -10,5 +10,5 @@ export default {
 			file: 'build/bundle.js'
 		}
 	],
-	plugins: [ resolve(), obfuscator() ]
+	plugins: [ resolve() ]
 };

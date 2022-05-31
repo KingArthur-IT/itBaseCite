@@ -6,21 +6,6 @@ body
     background: linear-gradient(117.89deg, #451149 4.83%, #ED00FF 108.33%)
 .noScrollable
     overflow: hidden
-#animationCanvas
-    position: absolute
-    top: 0
-    left: 0
-    width: 100%
-    z-index: 2
-    pointer-events: none
-    transition: all 1s ease-out
-.canvas-wrapper
-    width: 100%
-    height: 100vh
-    overflow: hidden
-    position: absolute
-    background: transparent
-    pointer-events: none
 .bg
     background: linear-gradient(117.89deg, #451149 4.83%, #ED00FF 108.33%)
     opacity: 0
@@ -82,7 +67,7 @@ body
 .design-circles
     position: absolute
     border-radius: 50%
-    z-index: 0
+    z-index: 3
 .page-wrapper
     min-height: 100vh
     width: 100%
@@ -219,3 +204,22 @@ body
         line-height: 120%
         color: $secondary
         text-transform: uppercase
+
+.video-wrapper
+    width: 100%
+    height: 100vh
+    position: absolute
+    overflow: hidden
+    pointer-events: none
+#mobile-anim-1,
+#mobile-anim-2,
+#mobile-anim-3,
+#mobile-anim-4,
+#mobile-anim-5
+    width: 100%
+    position: absolute
+    z-index: 1
+    visibility: hidden
+    pointer-events: none
+.video-visible
+    visibility: visible !important
