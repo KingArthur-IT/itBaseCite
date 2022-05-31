@@ -45,10 +45,10 @@ const backBtns = [
 ]
 //menu
 const menuBtns = [
-    { id: 'menu-to-about', nextPage: 'about-us', animationIndex: 3 },
-    { id: 'menu-to-services', nextPage: 'services', animationIndex: 3 },
-    { id: 'menu-to-contacts', nextPage: 'contacts', animationIndex: 5 },
-    { id: 'menu-to-working', nextPage: 'working', animationIndex: 3 },
+    { class: 'menu-to-about', nextPage: 'about-us', animationIndex: 3 },
+    { class: 'menu-to-services', nextPage: 'services', animationIndex: 3 },
+    { class: 'menu-to-contacts', nextPage: 'contacts', animationIndex: 5 },
+    { class: 'menu-to-working', nextPage: 'working', animationIndex: 3 },
 ]
 
 const startAnimation = (animationNum) => {
@@ -78,6 +78,9 @@ const showSection = (sectionName) => {
     setTimeout(() => {
         document.getElementsByClassName(`${sectionName}-section`)[0].classList.add('section-visible');
     }, 100);
+    if (sectionName === 'index')
+        document.getElementsByClassName('navbar')[0].classList.add('hidden-nav')
+    else document.getElementsByClassName('navbar')[0].classList.remove('hidden-nav')
 }
 
 const PageStartAnimateContent = (pageName) => {
@@ -194,22 +197,24 @@ class App {
 
         //menu navigation
         menuBtns.forEach((item) => {
-            document.getElementById(item.id).addEventListener('click', () => {
-                menuPage.classList.toggle('opened');
-                menuBtn.classList.remove('opened');
-                scrollToTop();
-                if (currentPage !== item.nextPage){
-                    animationIndex = item.animationIndex; 
-                    startAnimation(animationIndex);
-                    document.getElementsByTagName('body')[0].classList.add('noScrollable');
-                    const isServicesBack = currentPage === 'services'
-                    PageEndAnimateContent(currentPage, item.nextPage, true, isServicesBack);
-                    PageEndAnimateContent(currentPage, item.nextPage);
-                    setTimeout(() => {
-                        PageStartAnimateContent(item.nextPage);
-                    }, 2500);
-                    currentPage = item.nextPage;
-                }
+            [...document.getElementsByClassName(item.class)].forEach((nav) => {
+                nav.addEventListener('click', () => {
+                    menuPage.classList.remove('opened');
+                    menuBtn.classList.remove('opened');
+                    scrollToTop();
+                    if (currentPage !== item.nextPage){
+                        animationIndex = item.animationIndex; 
+                        startAnimation(animationIndex);
+                        document.getElementsByTagName('body')[0].classList.add('noScrollable');
+                        const isServicesBack = currentPage === 'services'
+                        PageEndAnimateContent(currentPage, item.nextPage, true, isServicesBack);
+                        PageEndAnimateContent(currentPage, item.nextPage);
+                        setTimeout(() => {
+                            PageStartAnimateContent(item.nextPage);
+                        }, 2500);
+                        currentPage = item.nextPage;
+                    }
+                })
             })
         })
     }

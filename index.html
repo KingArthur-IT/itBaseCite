@@ -761,10 +761,10 @@
                     <img src="./assets/logo.svg" alt="IT-Base" class="mobile-menu__logo">
                 </div>
                 <ul class="mobile-menu__list">
-                    <li id="menu-to-about" class="mobile-menu__list-item">О нас</li>
-                    <li id="menu-to-services" class="mobile-menu__list-item">Услуги</li>
-                    <li id="menu-to-contacts" class="mobile-menu__list-item">Контакты</li>
-                    <li id="menu-to-working" class="mobile-menu__list-item">Как мы работаем</li>
+                    <li class="menu-to-about mobile-menu__list-item">About Us</li>
+                    <li class="menu-to-services mobile-menu__list-item">Services</li>
+                    <li class="menu-to-contacts mobile-menu__list-item">Contacts</li>
+                    <li class="menu-to-working mobile-menu__list-item">How We Work</li>
                 </ul>
                 <svg class="mobile-menu__devider" width="284" height="2" viewBox="0 0 284 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 1L284 0.999975" stroke="url(#paint0_linear_516_580)" stroke-width="0.932123"/>
@@ -825,6 +825,27 @@
                 <button class="button popup__btn to-index">На главную</button>
             </div>
         </section>
+        <nav class="navbar hidden-nav">
+            <img src="./assets/nav-logo.svg" alt="IT-BASE" class="navbar__logo">
+            <ul class="navbar__links-list">
+                <li class="menu-to-contacts  navbar__link">Contacts</li>
+                <li class="menu-to-services  navbar__link">Services</li>
+                <li class="menu-to-working  navbar__link">How We Work</li>
+                <li class="menu-to-about  navbar__link">About Us</li>
+            </ul>
+            <ul class="navbar__socials-list">
+                <li class="navbar__social">
+                    <a href="#" target="_blank">
+                        <img src="./assets/socials/facebook.svg" alt="fb">
+                    </a>
+                </li>
+                <li class="navbar__social">
+                    <a href="#" target="_blank">
+                        <img src="./assets/socials/instagram.svg" alt="insta">
+                    </a>
+                </li>
+            </ul>
+        </nav>
     </main>
     
     <script src="./build/bundle.js"></script>
