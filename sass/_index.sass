@@ -27,24 +27,64 @@
     &__circles-top
         top: -98px
         left: -114px
-        width: 244px
-        height: 244px
         transform: scale(0)
         &.show
             transform: scale(1)
     &__circles-right
         top: 80px
         right: -1px
-        width: 176px
-        height: 176px
         transform: scale(0)
         &.show
             transform: scale(1)
     &__circles-bottom
         bottom: -88px
         left: 19px
-        width: 176px
-        height: 176px
         transform: scale(0)
         &.show
             transform: scale(1)
+    &__design-block-top
+        display: none
+    &__design-block-bottom
+        display: none
+
+@media screen and (min-width: 480px) 
+    .index
+        &__win
+            background: url(../assets/index-page/win-desc.png) no-repeat
+            width: 358px
+            height: 190px
+@media screen and (min-width: 1024px) 
+    .index
+        &__circles-right
+            top: auto
+            right: -130px
+            bottom: 187px
+        &__circles-bottom
+            bottom: -130px
+            left: 50vw
+        &__btn
+            width: 194px
+            margin-bottom: auto
+            margin-top: -7px
+            &.show
+                transform: translateX(-40%) rotate(0deg)
+@media screen and (min-width: 1440px)
+    .index
+        &__circles-top
+            top: -98px
+            left: -159px
+        &__circles-bottom
+            bottom: -170px
+            left: 50vw
+        &__design-block-top
+            display: block
+            width: 500px
+            height: 200px
+            top: -30px
+            left: -20px
+        &__design-block-bottom
+            display: block
+            width: 890px
+            height: 270px
+            bottom: -30px
+            right: -20px

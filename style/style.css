@@ -111,6 +111,16 @@ body {
   z-index: 3;
 }
 
+.circle-md {
+  width: 176px;
+  height: 176px;
+}
+
+.circle-lg {
+  width: 244px;
+  height: 244px;
+}
+
 .page-wrapper {
   min-height: 100vh;
   width: 100%;
@@ -366,6 +376,70 @@ body {
   visibility: visible !important;
 }
 
+.design-block {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(197, 197, 197, 0.2);
+  -webkit-backdrop-filter: blur(53px);
+          backdrop-filter: blur(53px);
+  border-radius: 24px;
+  position: absolute;
+  z-index: 4;
+}
+
+@media screen and (min-width: 480px) {
+  .win-text {
+    font-size: 16px;
+  }
+  .button {
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .win-text {
+    font-size: 18px;
+  }
+  .button {
+    font-size: 18px;
+  }
+  .circle-md {
+    width: 215px;
+    height: 215px;
+  }
+  .circle-lg {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .circle-md {
+    width: 270px;
+    height: 270px;
+  }
+  .circle-lg {
+    width: 330px;
+    height: 330px;
+  }
+  .button {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .circle-md {
+    width: 345px;
+    height: 345px;
+  }
+  .circle-lg {
+    width: 402px;
+    height: 402px;
+  }
+  .button {
+    font-size: 24px;
+  }
+}
+
 .index {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -420,8 +494,6 @@ body {
 .index__circles-top {
   top: -98px;
   left: -114px;
-  width: 244px;
-  height: 244px;
   -webkit-transform: scale(0);
           transform: scale(0);
 }
@@ -434,8 +506,6 @@ body {
 .index__circles-right {
   top: 80px;
   right: -1px;
-  width: 176px;
-  height: 176px;
   -webkit-transform: scale(0);
           transform: scale(0);
 }
@@ -448,8 +518,6 @@ body {
 .index__circles-bottom {
   bottom: -88px;
   left: 19px;
-  width: 176px;
-  height: 176px;
   -webkit-transform: scale(0);
           transform: scale(0);
 }
@@ -457,6 +525,68 @@ body {
 .index__circles-bottom.show {
   -webkit-transform: scale(1);
           transform: scale(1);
+}
+
+.index__design-block-top {
+  display: none;
+}
+
+.index__design-block-bottom {
+  display: none;
+}
+
+@media screen and (min-width: 480px) {
+  .index__win {
+    background: url(../assets/index-page/win-desc.png) no-repeat;
+    width: 358px;
+    height: 190px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .index__circles-right {
+    top: auto;
+    right: -130px;
+    bottom: 187px;
+  }
+  .index__circles-bottom {
+    bottom: -130px;
+    left: 50vw;
+  }
+  .index__btn {
+    width: 194px;
+    margin-bottom: auto;
+    margin-top: -7px;
+  }
+  .index__btn.show {
+    -webkit-transform: translateX(-40%) rotate(0deg);
+            transform: translateX(-40%) rotate(0deg);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .index__circles-top {
+    top: -98px;
+    left: -159px;
+  }
+  .index__circles-bottom {
+    bottom: -170px;
+    left: 50vw;
+  }
+  .index__design-block-top {
+    display: block;
+    width: 500px;
+    height: 200px;
+    top: -30px;
+    left: -20px;
+  }
+  .index__design-block-bottom {
+    display: block;
+    width: 890px;
+    height: 270px;
+    bottom: -30px;
+    right: -20px;
+  }
 }
 
 .selector__hero {
@@ -1292,6 +1422,12 @@ body {
   height: 268px;
   right: -144px;
   bottom: -22px;
+}
+
+@media screen and (min-width: 860px) {
+  .mobile-menu-btn {
+    display: none;
+  }
 }
 
 .sites__win {
