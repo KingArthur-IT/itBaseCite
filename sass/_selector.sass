@@ -59,12 +59,10 @@
             color: #fff
             font-weight: 400
             font-size: 14px
-            line-height: 17px
+            line-height: 120%
             text-align: center
     &__circles-top
         z-index: -1
-        width: 88px
-        height: 88px
         top: -30px
         right: 20px
         transform: translateY(1000px)
@@ -72,22 +70,22 @@
             transform: translateY(0px)
     &__circles-left
         z-index: -1
-        width: 154px
-        height: 154px
         bottom: -79px
         left: -51px
         transform: translateY(1000px)
         &.show
             transform: translateY(0px)
     &__circles-bottom
-        z-index: 0
-        width: 244px
-        height: 244px
+        z-index: 1
         bottom: -98px
         right: -86px
         transform: translateY(1000px)
         &.show
             transform: translateY(0px)
+    &__circles-top-desc
+        display: none
+    &__circles-bottom-desc
+        display: none
 
 @media screen and ( max-width: 375px )
     .selector
@@ -95,3 +93,66 @@
             padding: 0 15px
         &__link
             width: 135px
+
+@media screen and (min-width: 500px) 
+    .selector
+        &__links
+            width: 310px
+@media screen and (min-width: 600px) 
+    .selector
+        &__win
+            margin-top: 13.5vh
+            width: 355px
+            height: 165px 
+        &__win-text
+            padding: 27px 55px 0 33px
+        &__links
+            width: 400px
+        &__link
+            width: 175px
+            height: 175px
+        &__link-hero
+            & p
+                font-size: 18px
+@media screen and (min-width: 1020px) 
+    .selector
+        &__hero
+            align-items: flex-start
+            margin-left: 17vw
+            justify-content: center
+        &__links
+            margin: 0
+            padding: 0
+        &__win
+            margin-left: 203px    
+        &__circles-left
+            bottom: -150px
+            left: -80px
+        &__circles-bottom
+            bottom: auto
+            top: -70px
+            right: -86px
+        &__circles-top-desc
+            display: block
+            top: -40px
+            left: -80px
+            transform: translateY(1000px)
+            &.show
+                transform: translateY(0px)
+        &__circles-bottom-desc
+            display: block
+            right: 200px
+            bottom: 100px
+            &.show
+                transform: translateY(0px)
+        &__link-hero
+            & img
+                height: 100px
+            & p
+                font-size: 24px
+@media screen and (min-width: 1440px) 
+    .selector
+        &__circles-top
+            top: -80px
+            right: -80px
+        
