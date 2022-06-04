@@ -60,6 +60,7 @@ const startAnimation = (animationNum) => {
         el.classList.remove('video-visible');
     });
     videoAnimationElements[animationNum - 1].classList.add('video-visible');
+    videoAnimationElements[animationNum - 1].currentTime = '0.0';
     videoAnimationElements[animationNum - 1].play();
     setTimeout(() => {
         isAnimating = false;
@@ -120,10 +121,6 @@ const PageEndAnimateContent = (pageEndName, pageShowName, isAnimated = true, bac
     });
 }
 
-async function playVideo() {
-    await videoElem.play();
-  }
-
 class App {
     preloader() {
         const d = new Date();
@@ -136,10 +133,10 @@ class App {
         var loadingStatus = 0.0, loadingMax = 0.0;
         loadingMax = videoAnimationElements.length;
 
-        if (/iPad|iPhone|iPod/.test(navigator.userAgent))
-            videoAnimationElements.forEach((videoElem) => {
-                videoElem.autoplay = true;
-            });
+        // if (/iPad|iPhone|iPod/.test(navigator.userAgent))
+        //     videoAnimationElements.forEach((videoElem) => {
+        //         videoElem.autoplay = true;
+        //     });
 
         videoAnimationElements.forEach((videoElem) => {
             videoElem.addEventListener('loadeddata', () => {
