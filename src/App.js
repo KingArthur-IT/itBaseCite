@@ -253,8 +253,12 @@ function navBtnsEventsListeners(){
                 animationIndex = item.animationIndex; 
                 const isServicesBack = currentPage === 'services';
                 document.getElementsByTagName('body')[0].classList.add('noScrollable')
-                startAnimation(item.animationIndex);
                 PageEndAnimateContent(currentPage, item.nextPage, true, isServicesBack);
+                if (currentPage === 'ceo' || currentPage === 'contacts')
+                    setTimeout(() => {
+                        startAnimation(item.animationIndex);
+                    }, 100);
+                else startAnimation(item.animationIndex);
                 setTimeout(() => {
                     PageStartAnimateContent(item.nextPage);
                 }, 2500);

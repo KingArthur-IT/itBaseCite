@@ -9,6 +9,27 @@
     <link rel="stylesheet" href="./style/style.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <title>IT Base</title>
+    <style>
+        .index__btn {
+            width: 159px;
+            height: 40px;
+            margin-bottom: 14.5vh;
+            -webkit-transform: translateX(-600px) rotate(-40deg);
+                    transform: translateX(-600px) rotate(-40deg);
+            z-index: 3;
+        }
+        .index__win {
+            position: relative;
+            background: url(../assets/index-page/win.png) no-repeat;
+            width: 243px;
+            height: 154px;
+            background-size: cover;
+            margin-top: 19vh;
+            z-index: 4;
+            -webkit-transform: translateX(-600px) rotate(-30deg) scale(0);
+                    transform: translateX(-600px) rotate(-30deg) scale(0);
+        }
+    </style>
 </head>
 <body>
     <!--
@@ -17,11 +38,46 @@
     </div>
     -->
     <div class="video-wrapper">
-        <video id="mobile-anim-1" src="./assets/video/mobile/1.mp4" muted="muted" preload="auto" type="video/mp4" autoplay="true"></video>
-        <video id="mobile-anim-2" src="./assets/video/mobile/2.mp4" muted="muted" preload="auto" type="video/mp4" autoplay="true"></video>
-        <video id="mobile-anim-3" src="./assets/video/mobile/3.mp4" muted="muted" preload="auto" type="video/mp4" autoplay="true"></video>
-        <video id="mobile-anim-4" src="./assets/video/mobile/4.mp4" muted="muted" preload="auto" type="video/mp4" autoplay="true"></video>
-        <video id="mobile-anim-5" src="./assets/video/mobile/5.mp4" muted="muted" preload="auto" type="video/mp4" autoplay="true"></video>
+        <video  id="mobile-anim-1" 
+                src="./assets/video/mobile/1.mp4" 
+                muted="muted" 
+                preload="auto" 
+                type="video/mp4" 
+                autoplay="true"
+                playsinline 
+        ></video>
+        <video  id="mobile-anim-2" 
+                src="./assets/video/mobile/2.mp4" 
+                muted="muted" 
+                preload="auto" 
+                type="video/mp4" 
+                autoplay="true"
+                playsinline 
+        ></video>
+        <video  id="mobile-anim-3" 
+                src="./assets/video/mobile/3.mp4" 
+                muted="muted" 
+                preload="auto" 
+                type="video/mp4" 
+                autoplay="true"
+                playsinline 
+        ></video>
+        <video  id="mobile-anim-4" 
+                src="./assets/video/mobile/4.mp4" 
+                muted="muted" 
+                preload="auto" 
+                type="video/mp4" 
+                autoplay="true"
+                playsinline 
+        ></video>
+        <video  id="mobile-anim-5" 
+                src="./assets/video/mobile/5.mp4"  
+                muted="muted" 
+                preload="auto" 
+                type="video/mp4" 
+                autoplay="true"
+                playsinline 
+        ></video>
     </div>
     <div class="mobile-menu-btn">
         <div class="mobile-menu-img"></div>

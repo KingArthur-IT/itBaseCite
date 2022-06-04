@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 body {
   font-family: 'Montserrat', sans-serif;
+  background: -webkit-gradient(linear, left top, right top, from(#be4368), to(#db4487));
+  background: linear-gradient(to right, #be4368, #db4487 100%);
 }
 
 .noScrollable {
@@ -29,8 +31,6 @@ body {
 }
 
 .bg-second-layer {
-  background: -webkit-gradient(linear, left top, right top, from(#be4368), to(#db4487));
-  background: linear-gradient(to right, #be4368, #db4487 100%);
   position: relative;
   overflow: hidden;
   min-height: 100vh;
@@ -374,6 +374,7 @@ body {
   z-index: 1;
   visibility: hidden;
   pointer-events: none;
+  background: url("../assets/bg.jpg");
 }
 
 .video-visible {
@@ -1750,7 +1751,8 @@ body {
 
 .apps__modals-img {
   width: 100%;
-  z-index: 3;
+  z-index: 4;
+  position: relative;
   -webkit-transform: translateX(1500px) rotate(-30deg) scale(0);
           transform: translateX(1500px) rotate(-30deg) scale(0);
 }
