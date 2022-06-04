@@ -21,6 +21,11 @@
 .canvas-animate{
     animation: 3s ease-in-out infinite alternate-reverse 3s canvasAnimation;
 }
+/*
+.video-wrapper{
+    transition: transform 1s ease-out;
+}
+*/
 
 /* circles pilse animaton */
 .start-anim.circle-animate-1{
@@ -57,73 +62,82 @@
 .index-page-animate.hide{
     transform: translate(0px, -1000px) rotate(10deg) scale(1) !important;
     animation: none !important;
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) .5s !important;
 }
 /* selector page */
 .selector-page-animate{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .selector-page-animate.hide{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) .5s !important;
     transform: translate(0px, -1000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* about-us page */
 .about-us-page-animate{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .about-us-page-animate.hide{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) .5s !important;
     transform: translate(0px, -3000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* working page */
 .working-page-animate{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .working-page-animate.hide{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) .5s !important;
     transform: translate(0px, -3000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* services page */
 .services-page-animate{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .services-page-animate.hide{
-    transition: transform 4s cubic-bezier(.17,.67,.65,1.12) .2s !important;
+    transition: transform 4s cubic-bezier(.17,.67,.65,1.12) .5s !important;
     transform: translate(-3000px, 0) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 .services-page-animate.hide-back{
-    transition: transform 4s cubic-bezier(.17,.67,.65,1.12) .2s !important;
+    transition: transform 4s cubic-bezier(.17,.67,.65,1.12) .5s !important;
     transform: translate(0, -3000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* contacts page */
 .contacts-page-animate{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .contacts-page-animate.hide{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
-    transform: translate(0px, -1500px) rotate(0deg) scale(1) !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 0s !important;
+    transform: translateY(-1500px) rotate(0deg) scale(1) !important;
+    animation: none !important
+}
+/* ceo page */
+.ceo-page-animate{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
+}
+.ceo-page-animate.hide{
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 0s !important;
+    transform: translateY(-1500px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* sites page */
 .sites-page-animate{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .sites-page-animate.hide{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) .5s !important;
     transform: translate(0px, -3000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* apps page */
 .apps-page-animate{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 2s !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .apps-page-animate.hide{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) !important;
+    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) .5s !important;
     transform: translate(0px, -1000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
@@ -149,5 +163,18 @@
     }
     100%{
         transform: scale(1)
+    }
+}
+
+.fly-from-top{
+    animation: 3s ease-in-out infinite alternate-reverse 0s fly-from-top;
+}
+
+@keyframes fly-from-top {
+    0%{
+        transform: translateY(-1000px);
+    }
+    100%{
+        transform: translateY(0px);
     }
 }

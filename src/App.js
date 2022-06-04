@@ -21,10 +21,11 @@ const pageAnimations = {
     'selector': {
         currentAnimationIndex: 2, 
         nextPages: [ 
-            { page: 'about-us', btnId: 'to-about-us', nextAnimationIndex: 3} ,
-            { page: 'working', btnId: 'to-working', nextAnimationIndex: 3} ,
-            { page: 'services', btnId: 'to-services', nextAnimationIndex: 3} ,
-            { page: 'contacts', btnId: 'to-contacts', nextAnimationIndex: 5}
+            { page: 'about-us', btnId: 'to-about-us', nextAnimationIndex: 3},
+            { page: 'working', btnId: 'to-working', nextAnimationIndex: 3},
+            { page: 'services', btnId: 'to-services', nextAnimationIndex: 3},
+            { page: 'contacts', btnId: 'to-contacts', nextAnimationIndex: 5},
+            { page: 'ceo', btnId: 'to-ceo', nextAnimationIndex: 5}
         ]
     },
     'services': {
@@ -41,7 +42,8 @@ const backBtns = [
     { id: 'back-sites-to-services', nextPage: 'services', animationIndex: 3 },
     { id: 'back-apps-to-services', nextPage: 'services', animationIndex: 3 },
     { id: 'back-contacts-to-selector', nextPage: 'selector', animationIndex: 2 },
-    { id: 'back-services-to-selector', nextPage: 'selector', animationIndex: 2}
+    { id: 'back-services-to-selector', nextPage: 'selector', animationIndex: 2},
+    { id: 'back-ceo-to-selector', nextPage: 'selector', animationIndex: 2}
 ]
 //menu
 const menuBtns = [
@@ -100,17 +102,21 @@ const PageEndAnimateContent = (pageEndName, pageShowName, isAnimated = true, bac
             if (back)
                 element.classList.add('hide-back'); 
             else element.classList.add('hide'); 
-            element.classList.remove('show');
+            //setTimeout(() => {
+                hideSection(pageEndName, isAnimated);
+            //}, 1000);
+
             setTimeout(() => {
                 showSection(pageShowName);
             }, 1000);
-            hideSection(pageEndName, isAnimated);
+            
             setTimeout(() => {
+                element.classList.remove('show');
                 element.classList.remove('hide');
                 element.classList.remove('hide-back'); 
                 document.getElementsByTagName('body')[0].classList.remove('noScrollable')
             }, 5000);  
-        }, 1000);
+        }, 100);
     });
 }
 
@@ -164,12 +170,12 @@ class App {
 
                 scrollToTop();
                 animationIndex = 1; 
-                startAnimation(1);
                 document.getElementsByTagName('body')[0].classList.add('noScrollable');
                 PageEndAnimateContent(currentPage, 'index');
                 setTimeout(() => {
+                    startAnimation(1);
                     PageStartAnimateContent('index');
-                }, 2100);
+                }, 200);
                 currentPage = 'index';
             })
         });
@@ -248,12 +254,13 @@ function navBtnsEventsListeners(){
             if (!isAnimating){
                 scrollToTop();
                 animationIndex = item.animationIndex; 
-                const isServicesBack = currentPage === 'services'
-                PageEndAnimateContent(currentPage, item.nextPage, true, isServicesBack);
-                startAnimation(item.animationIndex);
-                
+                const isServicesBack = currentPage === 'services';
                 document.getElementsByTagName('body')[0].classList.add('noScrollable')
-                PageStartAnimateContent(item.nextPage);
+                startAnimation(item.animationIndex);
+                PageEndAnimateContent(currentPage, item.nextPage, true, isServicesBack);
+                setTimeout(() => {
+                    PageStartAnimateContent(item.nextPage);
+                }, 2500);
                 currentPage = item.nextPage;
             }
         })

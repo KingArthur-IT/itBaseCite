@@ -1,0 +1,135 @@
+.ceo
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    &__wrapper
+        position: relative
+        z-index: 3
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        align-items: center
+        padding: 0 15px
+    &__hero
+        background: rgba(255, 255, 255, 0.2)
+        border: 2px solid rgba(197, 197, 197, 0.2)
+        backdrop-filter: blur(53px)
+        border-radius: 24px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        overflow: hidden
+        margin-bottom: 17px
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
+    &__img
+        margin-right: 15px
+    &__content
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: flex-start
+    &__subtitle
+        margin: 0
+        font-family: 'Montserrat'
+        font-style: normal
+        font-weight: 400
+        font-size: 14px
+        line-height: 120%
+        color: #FFFFFF
+    &__title
+        margin: 0
+        font-family: 'Montserrat'
+        font-style: normal
+        font-weight: 700
+        font-size: 14px
+        line-height: 120%
+        color: #FFFFFF
+        margin-bottom: 9px
+    &__description
+        margin: 0
+        font-family: 'Montserrat'
+        font-style: normal
+        font-weight: 300
+        font-size: 13px
+        line-height: 120%
+        color: #FFFFFF
+    &__about-text
+        margin: 0
+        font-family: 'Montserrat'
+        font-style: normal
+        font-weight: 300
+        font-size: 13px
+        line-height: 16px
+        color: #FFFFFF
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
+    &__socials
+        width: 105px
+        height: 65px
+        margin-bottom: -30px
+        padding: 6px
+        background: rgba(255, 255, 255, 0.24)
+        border: 2px solid rgba(197, 197, 197, 0.2)
+        backdrop-filter: blur(53px)
+        border-radius: 14px
+        display: flex
+        align-items: flex-start
+        justify-content: center
+        align-self: flex-start
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
+    &__link
+    &__social-img
+    
+    &__circles-top
+        top: -122px
+        left: -100px
+        transform: translateY(1000px)
+        &.show
+            transform: translateY(0px)
+    &__circles-center
+        top: 42px
+        right: 33px
+        transform: translateY(1000px)
+        &.show
+            transform: translateY(0px)
+    &__circles-right
+        bottom: 80px
+        right: -107px
+        transform: translateY(1000px)
+        &.show
+            transform: translateY(0px)
+    &__circles-left
+        bottom: 27px
+        left: -127px
+        transform: translateY(1000px)
+        &.show
+            transform: translateY(0px)
+.ceo-btns-wrapper
+    width: 100%
+    justify-content: center
+    position: absolute
+    bottom: 10px
+    display: flex
+    align-items: center
+    justify-content: center
+    z-index: 3
+    transform: translateY(1500px) rotate(-30deg) scale(0)
+    &.show
+        transform: translateY(0px) rotate(0deg) scale(1)
+.ceo-back-btn
+    margin: 0 10px 0 0
+    width: auto !important
+
+.mr-12
+    margin-right: 12px
+
+@media screen and (max-width: 370px)
+    .ceo
+        &__description
+            font-size: 12px
