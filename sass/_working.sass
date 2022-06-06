@@ -85,4 +85,39 @@
         transform: translateY(1000px) scale(0)
         &.show
             transform: translateY(0px) scale(1)
-
+@media screen and (min-width: 600px) 
+    .working
+        &__win
+            margin-top: 13.5vh
+            width: 410px
+            height: 168px 
+        &__win-text
+            padding: 27px 40px 0 55px
+@media screen and (min-width: 1020px) 
+    .working
+        &__win
+            background: url(../assets/about-us-page/win-desc.png) no-repeat
+            height: 170px
+            margin-left: 300px
+        &__win-text
+            padding: 27px 65px 0 40px
+        &__back
+            position: relative
+            width: 200px
+            margin-left: 375px
+        &__btns-wrapper
+            width: 300px
+            flex-direction: row
+            margin-left: 210px
+        &__list
+            width: 530px
+            margin-top: 0
+            background: rgba(255, 255, 255, 0.2)
+            border: 2px solid rgba(197, 197, 197, 0.2)
+            backdrop-filter: blur(53px)
+            border-radius: 0 24px 24px 0
+            z-index: 4
+            padding: 20px
+        &__list-item
+            width: 400px
+            margin-left: auto

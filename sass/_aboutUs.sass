@@ -55,8 +55,42 @@
             transform: translateY(0px) rotate(0deg) scale(1)
     
 @media screen and (min-width: 480px) 
+    .about-us-page
+        &__win
+            width: 305px
+            height: 125px
     .win-text
         font-size: 16px
     .button
         font-size: 16px
+@media screen and (min-width: 600px) 
+    .about-us-page
+        &__win
+            margin-top: 13.5vh
+            width: 410px
+            height: 168px 
+        &__win-text
+            padding: 27px 40px 0 55px
+@media screen and (min-width: 620px) 
+    .about-us-page
+        &__text-wrapper
+            width: 600px !important
+            margin: auto
+            margin-top: 3vh
 
+@media screen and (min-width: 1020px) 
+    .about-us-page
+        &__win
+            background: url(../assets/about-us-page/win-desc.png) no-repeat
+            height: 170px
+            margin-left: 300px
+        &__text-wrapper
+            margin-left: 70px
+        &__back
+            position: relative
+            width: 200px
+            margin-left: 480px
+        &__btns-wrapper
+            width: 300px
+            flex-direction: row
+            margin-left: 315px
