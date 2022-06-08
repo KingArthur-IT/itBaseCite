@@ -59,6 +59,43 @@
             line-height: 21px
             color: #FFFFFF
             margin-top: 21px
+    &__bottom-content-wrapper
+        position: relative
+        z-index: 4
+    &__advantages
+        margin: 0
+        list-style: none
+        transform: translateX(1000px) scale(0)
+        &.show
+            transform: translateX(0px) scale(1)
+        & span
+            color: $orange
+        & li
+            margin: 0
+            margin-bottom: 20px
+            padding: 0 0 0 37px
+            position: relative
+            &::before
+                content: ''
+                position: absolute
+                left: 0
+                top: .5em
+                height: 2px
+                width: 52px
+                background: $orange
+                transform: translateX(-65%)
+        &-title
+            margin: 0
+            font-family: 'Gilroy'
+            font-style: normal
+            font-weight: 500
+            font-size: 18px
+            line-height: 21px
+            color: #FFFFFF
+            margin-top: 21px
+            position: relative
+            z-index: 4
+            padding-bottom: 20px
     &__steps-prelist-text
         margin: 0
         margin-bottom: 20px
@@ -80,3 +117,114 @@
         transform: translateX(1000px) scale(0)
         &.show
             transform: translateX(0px) scale(1)
+
+@media screen and (min-width: 1020px)
+    .sites
+        &__win
+            display: none
+        &__definition
+            margin-top: 200px
+            margin-left: 130px
+            width: 575px
+            padding: 0
+        &__list
+            margin-left: 130px
+            padding: 0
+            & li
+                margin-bottom: 24px
+                &::before
+                    width: 170px
+                    transform: translateX(-88%)
+                &:nth-child(2):after
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: .3em
+                    height: 6px
+                    background: $orange
+                    width: 170px
+                    transform: translateX(-88%)
+                &:nth-child(3):after
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: .3em
+                    height: 6px
+                    background: $orange
+                    width: 140px
+                    transform: translateX(-85%)
+                &:nth-child(4):after
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: .3em
+                    height: 6px
+                    background: $orange
+                    width: 120px
+                    transform: translateX(-83%)
+                &:nth-child(5):after
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: .3em
+                    height: 6px
+                    background: $orange
+                    width: 100px
+                    transform: translateX(-80%)
+                &:nth-child(6):after
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: .3em
+                    height: 6px
+                    background: $orange
+                    width: 80px
+                    transform: translateX(-74%)
+                &:nth-child(7):after
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: .3em
+                    height: 6px
+                    background: $orange
+                    width: 60px
+                    transform: translateX(-66%)
+                &:nth-child(8):after
+                    content: ''
+                    position: absolute
+                    left: 0
+                    top: .3em
+                    height: 6px
+                    background: $orange
+                    width: 40px
+                    transform: translateX(-48%)
+        &__steps-prelist-text
+            margin-left: 130px
+            margin-bottom: 40px
+        &__bottom-content-wrapper
+            background: rgba(255, 255, 255, 0.2)
+            border: 1px solid rgba(197, 197, 197, 0.2)
+            backdrop-filter: blur(58px)
+        &__advantages
+            width: 100%
+            display: flex
+            justify-content: space-evenly
+            &-title
+                text-align: center
+                margin-bottom: 60px
+            & li
+                display: flex
+                flex-basis: 16%
+                padding: 0
+                &::before
+                    display: none
+        &__controls
+            display: flex
+            margin: auto
+            width: 350px
+            align-items: center
+    #back-sites-to-services
+        margin-right: 20px
+        margin-bottom: 17px
+        & img
+            width: 25px
