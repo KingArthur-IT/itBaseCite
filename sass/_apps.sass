@@ -65,7 +65,12 @@
                 color: $orange
     &__steps
         margin-bottom: 13px
+    &__bottom-content-wrapper
+        position: relative
+        z-index: 4
     &__info-title
+        position: relative
+        z-index: 4
         margin: 0
         font-size: 24px
         line-height: 120%
@@ -115,3 +120,41 @@
         transform: translateX(1000px) scale(0)
         &.show
             transform: translateX(0px) scale(1)
+
+@media screen and (min-width: 1020px)
+    .apps
+        &__win
+            display: none
+        &__reasons-title
+            margin-left: 130px
+            margin-top: 200px
+        &__reasons-list
+            margin-left: 130px
+        &__modals-img
+            display: none
+        &__bottom-content-wrapper
+            background: rgba(255, 255, 255, 0.2)
+            border: 1px solid rgba(197, 197, 197, 0.2)
+            backdrop-filter: blur(58px)
+        &__texts
+            width: 100%
+            display: flex
+            justify-content: center
+            align-items: flex-start
+            padding: 30px 0
+            &-item
+                width: 340px
+                &:first-child
+                    margin-right: 200px
+        &__info-text
+            text-align: center
+        &__controls
+            display: flex
+            margin: auto
+            width: 350px
+            align-items: center
+    #back-apps-to-services
+        margin-right: 20px
+        margin-bottom: 17px
+        & img
+            width: 25px

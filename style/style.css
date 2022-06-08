@@ -2413,7 +2413,14 @@ body {
   margin-bottom: 13px;
 }
 
+.apps__bottom-content-wrapper {
+  position: relative;
+  z-index: 4;
+}
+
 .apps__info-title {
+  position: relative;
+  z-index: 4;
   margin: 0;
   font-size: 24px;
   line-height: 120%;
@@ -2493,6 +2500,67 @@ body {
 .apps__circles-left.show {
   -webkit-transform: translateX(0px) scale(1);
           transform: translateX(0px) scale(1);
+}
+
+@media screen and (min-width: 1020px) {
+  .apps__win {
+    display: none;
+  }
+  .apps__reasons-title {
+    margin-left: 130px;
+    margin-top: 200px;
+  }
+  .apps__reasons-list {
+    margin-left: 130px;
+  }
+  .apps__modals-img {
+    display: none;
+  }
+  .apps__bottom-content-wrapper {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(197, 197, 197, 0.2);
+    -webkit-backdrop-filter: blur(58px);
+            backdrop-filter: blur(58px);
+  }
+  .apps__texts {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 30px 0;
+  }
+  .apps__texts-item {
+    width: 340px;
+  }
+  .apps__texts-item:first-child {
+    margin-right: 200px;
+  }
+  .apps__info-text {
+    text-align: center;
+  }
+  .apps__controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    width: 350px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #back-apps-to-services {
+    margin-right: 20px;
+    margin-bottom: 17px;
+  }
+  #back-apps-to-services img {
+    width: 25px;
+  }
 }
 
 .accordeon {
@@ -2658,10 +2726,18 @@ body {
             justify-content: space-between;
   }
   .accordeon__steps-list {
+    -ms-flex-preferred-size: 33%;
+        flex-basis: 33%;
+    width: 33%;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .accordeon__steps-list {
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;
     width: 25%;
-    margin-bottom: 60px;
   }
 }
 
