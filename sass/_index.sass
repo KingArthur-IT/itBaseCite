@@ -7,10 +7,10 @@
         width: 159px
         height: 40px
         margin-bottom: 14.5vh
-        transform: translateX(-2000px) rotate(-40deg)
         z-index: 3
+        transform: translateX(-2000px) rotate(-40deg) scale(0)
         &.show
-            transform: translateX(0px) rotate(0deg)
+            transform: translateX(0px) rotate(0deg) scale(1)
     &__win
         position: relative
         background: url(../assets/index-page/win.png) no-repeat
@@ -44,8 +44,14 @@
             transform: scale(1)
     &__design-block-top
         display: none
+        transform: translateX(-2000px) rotate(-40deg) scale(0)
+        &.show
+            transform: translateX(0px) rotate(0deg) scale(1)
     &__design-block-bottom
         display: none
+        transform: translateX(-2000px) rotate(-40deg) scale(0)
+        &.show
+            transform: translateX(0px) rotate(0deg) scale(1)
 
 @media screen and (min-width: 600px) 
     .index
@@ -69,7 +75,7 @@
             margin-bottom: auto !important
             margin-top: -7px !important
             &.show
-                transform: translateX(-40%) rotate(0deg)
+                transform: translateX(-50%) rotate(0deg)
 @media screen and (min-width: 1440px)
     .index
         &__circles-top

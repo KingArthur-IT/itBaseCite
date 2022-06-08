@@ -113,30 +113,17 @@
             height: 165px 
         &__win-text
             padding: 27px 55px 0 33px
-        // &__links
-        //     width: 400px
-        // &__link
-        //     width: 175px
-        //     height: 175px
-        //     &:nth-child(5)
-        //         width: 360px
-        // &__link-hero
-        //     & p
-        //         font-size: 18px
+
 @media screen and (min-width: 860px) 
     .selector
         &__links
-            width: 600px
+            width: 400px
         &__link
-            width: 175px
-            height: 175px
+            width: 150px
+            height: 150px
             margin-bottom: 9px
-            &:nth-child(2)
-                margin-right: 185px
-            &:nth-child(4)
-                margin-right: 9px
             &:nth-child(5)
-                width: 175px
+                width: 310px
         &__link-hero
             & p
                 font-size: 18px
@@ -144,14 +131,15 @@
     .selector
         &__hero
             align-items: flex-start
-            margin-left: 17vw
+            margin-left: 15vw
             justify-content: center
         &__links
             margin: 0
             padding: 0
             width: 700px
+            justify-content: flex-start
         &__link
-            padding: 0 10px
+            padding: 10px
             margin-bottom: 20px
             &:nth-child(odd)
                 margin-right: 20px
@@ -159,11 +147,10 @@
                 margin-right: 235px
             &:nth-child(4)
                 margin-right: 20px
-            // &:nth-child(5)
-            //     margin-right: 0
-            //     width: 390px
+            &:nth-child(5)
+                width: 150px
         &__win
-            margin-left: 203px    
+            margin-left: 185px    
         &__circles-left
             bottom: -150px
             left: -80px
@@ -186,13 +173,23 @@
                 transform: translateY(0px)
         &__link-hero
             & img
-                height: 100px
+                height: 80px
+                margin-bottom: 10px
             & p
-                font-size: 24px
+                font-size: 22px
                 padding: 0 5px
 @media screen and (min-width: 1440px) 
     .selector
         &__circles-top
             top: -80px
             right: -80px
-        
+        &__link
+            width: 175px
+            height: 175px
+            &:nth-child(5)
+                width: 175px
+        &__link-hero
+            & img
+                height: 90px
+            & p
+                font-size: 24px
