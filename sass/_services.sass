@@ -53,7 +53,7 @@
         font-style: normal
         font-weight: 400
         font-size: 14px
-        line-height: 17px
+        line-height: 120%
         text-align: center
         color: #FFFFFF
     &__circles-top
@@ -82,3 +82,62 @@
     z-index: 3
     &.show
         transform: translateY(0px) scale(1)
+
+@media screen and (min-width: 600px) 
+    .services
+        &__win
+            margin-top: 13.5vh
+            width: 355px
+            height: 165px 
+        &__win-text
+            padding: 27px 55px 0 33px
+@media screen and (min-width: 860px) 
+    .services
+        &__list-item
+            width: 190px
+            height: 180px
+            &:first-child
+                margin-right: 28px
+            & img
+                margin-bottom: 15px
+                padding: 0 5px
+        &__text
+            font-size: 18px
+@media screen and (min-width: 1020px) 
+    .services
+        &__win
+            width: 370px
+            height: 170px
+            background: url(../assets/services-page/win-desc.png) no-repeat
+            margin-left: 27vw
+            margin-top: 30vh
+        &__list
+            position: relative
+            bottom: 12px
+            width: 400px
+            margin-left: 14vw
+    .services-back-btn
+        position: relative
+        margin: 0
+        width: 100px
+        margin-left: calc( 14vw + 140px )
+@media screen and (min-width: 1440px) 
+    .services
+        &__win
+            margin-left: 33vw
+        &__list
+            width: 600px
+            margin-left: 10vw
+        &__list-item
+            width: 275px
+            height: 250px
+            & img
+                width: 130px
+                height: 130px
+        &__text
+            font-size: 22px
+        .services-back-btn
+            position: relative
+            margin: 0
+            width: 100px
+            margin-left: calc( 10vw + 235px )

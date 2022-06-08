@@ -14,8 +14,8 @@
             width: 159px;
             height: 40px;
             margin-bottom: 14.5vh;
-            -webkit-transform: translateX(-600px) rotate(-40deg);
-                    transform: translateX(-600px) rotate(-40deg);
+            -webkit-transform: translateX(-2000px) rotate(-40deg) scale(0);
+                    transform: translateX(-2000px) rotate(-40deg scale(0));
             z-index: 3;
         }
         .index__win {
@@ -26,8 +26,8 @@
             background-size: cover;
             margin-top: 19vh;
             z-index: 4;
-            -webkit-transform: translateX(-600px) rotate(-30deg) scale(0);
-                    transform: translateX(-600px) rotate(-30deg) scale(0);
+            -webkit-transform: translateX(-2000px) rotate(-30deg) scale(0);
+                    transform: translateX(-2000px) rotate(-30deg) scale(0);
         }
     </style>
 </head>
@@ -299,46 +299,49 @@
         </section>
         <section class="contacts-section bg page-wrapper">
             <div class="bg-second-layer contacts">
-                <img src="./assets/contacts-page/earth.png" class="contacts__main-img contacts-page-animate">
-                <ul class="contacts__list">
-                    <li class="contacts__list-item contacts-page-animate">
-                        <img src="./assets/contacts-page/calendar.svg" alt="Calendar">
-                        <p class="contacts__text">
-                            <span>График работы:</span><br>     
-                            Пн-Пт: с 9:00 до 18:00 <br>
-                            Сб-Вс: Выходной
-                        </p>
-                    </li>
-                    <li class="contacts__list-item contacts-page-animate">
-                        <img src="./assets/contacts-page/phone.svg" alt="Phone">
-                        <p class="contacts__text">
-                            <span>Телефон:</span><br>     
-                            0 800 00 00 00<br>
-                            (044)000-00-00
-                        </p>
-                    </li>
-                    <li class="contacts__list-item contacts-page-animate">
-                        <img src="./assets/contacts-page/mail.svg" alt="Mail">
-                        <p class="contacts__text">
-                            <span>Email:</span><br>     
-                            info@it-base.com.ua
-                        </p>
-                    </li>
-                </ul>
+                <div class="contacts__hero">
+                    <img src="./assets/contacts-page/earth.png" class="contacts__main-img contacts-page-animate">
+                    <ul class="contacts__list">
+                        <li class="contacts__list-item contacts-page-animate">
+                            <img src="./assets/contacts-page/calendar.svg" alt="Calendar">
+                            <p class="contacts__text">
+                                <span>График работы:</span><br>     
+                                Пн-Пт: с 9:00 до 18:00 <br>
+                                Сб-Вс: Выходной
+                            </p>
+                        </li>
+                        <li class="contacts__list-item contacts-page-animate">
+                            <img src="./assets/contacts-page/phone.svg" alt="Phone">
+                            <p class="contacts__text">
+                                <span>Телефон:</span><br>     
+                                0 800 00 00 00<br>
+                                (044)000-00-00
+                            </p>
+                        </li>
+                        <li class="contacts__list-item contacts-page-animate">
+                            <img src="./assets/contacts-page/mail.svg" alt="Mail">
+                            <p class="contacts__text">
+                                <span>Email:</span><br>     
+                                info@it-base.com.ua
+                            </p>
+                        </li>
+                        <img src="./assets/contacts-page/earth.png" class="contacts__main-img-desc contacts-page-animate">
+                    </ul>
                 
-                <div class="contacts-btns-wrapper contacts-page-animate">
-                    <div class="back-btn contacts-back-btn">
-                        <div class="back-btn__item" id="back-contacts-to-selector">
-                            <img src="./assets/left-arrow.svg" alt="Back" class="back-btn__img">
-                            <p class="back-btn__text">Назад</p>
+                    <div class="contacts-btns-wrapper contacts-page-animate">
+                        <div class="back-btn contacts-back-btn">
+                            <div class="back-btn__item" id="back-contacts-to-selector">
+                                <img src="./assets/left-arrow.svg" alt="Back" class="back-btn__img">
+                                <p class="back-btn__text">Back</p>
+                            </div>
                         </div>
+                        <button class="outline-button contacts__consult-btn call-consult-popup">
+                            GET ADVICE
+                        </button>
+                        <button class="button buttons-wrapper__order call-order-popup contacts__order-btn">
+                            ORDER
+                        </button>
                     </div>
-                    <button class="outline-button contacts__consult-btn call-consult-popup">
-                        консультироваться
-                    </button>
-                    <button class="button buttons-wrapper__order call-order-popup contacts__order-btn">
-                        заказать
-                    </button>
                 </div>
                 
                 <img src="./assets/circles.png" class="contacts-page-animate design-circles contacts__circles-top circle-animate-2">
@@ -360,7 +363,7 @@
                     <li class="services__list-item services-page-animate" id="to-sites">
                         <img src="./assets/services-page/web.svg" alt="Web">
                         <p class="services__text">
-                            Создание сайтов
+                            Website Building
                         </p>
                     </li>
                     <li class="services__list-item services-page-animate" id="to-apps">
@@ -373,7 +376,7 @@
                 <div class="services-page-animate back-btn services-back-btn">
                     <div class="back-btn__item" id="back-services-to-selector">
                         <img src="./assets/left-arrow.svg" alt="Back" class="back-btn__img">
-                        <p class="back-btn__text">Назад</p>
+                        <p class="back-btn__text">Back</p>
                     </div>
                 </div>
                 <img src="./assets/circles.png" class="services-page-animate design-circles services__circles-top circle-animate-2">

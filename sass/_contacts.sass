@@ -1,13 +1,21 @@
 .contacts
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
+    &__hero
+        height: 100vh
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
     &__main-img
         z-index: 4
         transform: translateY(1500px) rotate(-30deg) scale(0)
         &.show
             transform: translateY(0px) rotate(0deg) scale(1)
+    &__main-img-desc
+        display: none
+        z-index: 4
+        transform: translateY(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translate(25%, -25%) rotate(0deg) scale(1)
     &__list
         margin: 0
         padding: 0
@@ -35,6 +43,7 @@
     &__consult-btn
         padding: 6px 17px
         color: $secondary
+        width: 160%
     &__circles-top
         width: 244px
         height: 244px
@@ -82,30 +91,47 @@
 .contacts-back-btn
     margin: 0 10px 0 0
 
+@media screen and (min-width: 500px) 
+    .contacts
+        &__main-img
+            width: 50vh
 @media screen and (min-width: 860px) 
     .contacts
-        flex-direction: row-reverse
-        justify-content: flex-start
+        &__hero
+            align-items: flex-start
+            width: 730px
+            margin: auto
         &__main-img
-            width: 70vh
+            display: none
+        &__main-img-desc
+            display: block
+            position: absolute
+            right: 0
+            top: 0
+            width: 500px
+            height: 500px
             z-index: 5
-            margin-right: 10vw
         &__list
             background: rgba(255, 255, 255, 0.2)
             border: 2px solid rgba(197, 197, 197, 0.2)
             backdrop-filter: blur(53px)
             border-radius: 24px
-            position: absolute
+            position: relative
             z-index: 4
-            left: 10vw
-            width: 60vw
+            width: 90%
             padding: 30px
-    .contacts-btns-wrapper
-        bottom: auto
-        top: 70vh
-        left: 10vw
-@media screen and (min-width: 1020px) 
-    .contacts
+            margin-bottom: 30px
         &__order-btn
             display: flex
             margin-left: 10px
+    .contacts-btns-wrapper
+        position: relative
+        bottom: auto
+@media screen and (min-width: 1050px) 
+    .contacts
+        &__hero
+            width: 800px
+@media screen and (min-width: 1200px) 
+    .contacts
+        &__hero
+            width: 900px

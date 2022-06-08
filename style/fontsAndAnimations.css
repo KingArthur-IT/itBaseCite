@@ -16,7 +16,9 @@
     font-weight: 600;
     font-style: normal;
 }
-
+*{
+    box-sizing: border-box;
+}
 /* robot floating animation */
 .canvas-animate{
     animation: 3s ease-in-out infinite alternate-reverse 3s canvasAnimation;
@@ -69,8 +71,8 @@
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .selector-page-animate.hide{
-    transition: transform 1s cubic-bezier(.17,.67,.65,1.12) .5s !important;
-    transform: translate(0px, -1000px) rotate(0deg) scale(1) !important;
+    transition: transform 2s cubic-bezier(.17,.67,.65,1.12) .5s !important;
+    transform: translate(0px, -2000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 /* about-us page */
