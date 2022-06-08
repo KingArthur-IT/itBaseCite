@@ -2155,7 +2155,12 @@ body {
 
 @media screen and (min-width: 1020px) {
   .sites__win {
-    display: none;
+    position: absolute;
+    background: url(../assets/cites-page/win-desc.png) no-repeat;
+    top: 70px;
+    left: 650px;
+    width: 305px;
+    height: 200px;
   }
   .sites__definition {
     margin-top: 200px;
@@ -2324,7 +2329,7 @@ body {
 }
 
 .apps__win-text {
-  padding: 44px 23px 19px 27px;
+  padding: 55px 23px 19px 27px;
 }
 
 .apps__reasons-title {
@@ -2390,6 +2395,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  z-index: 4;
 }
 
 .apps__steps-title-num {
@@ -2502,19 +2509,37 @@ body {
           transform: translateX(0px) scale(1);
 }
 
+@media screen and (min-width: 600px) {
+  .apps__modals-img {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 1020px) {
   .apps__win {
-    display: none;
+    position: absolute;
+    background: url(../assets/applications-page/win-desc.png) no-repeat;
+    top: -85px;
+    left: 700px;
+    width: 305px;
+    height: 200px;
+  }
+  .apps__win-text {
+    padding: 30px 23px 19px 30px;
   }
   .apps__reasons-title {
     margin-left: 130px;
-    margin-top: 200px;
+    margin-top: 400px;
   }
   .apps__reasons-list {
     margin-left: 130px;
   }
   .apps__modals-img {
     display: none;
+  }
+  .apps__steps-title {
+    margin-left: 130px;
+    padding: 60px 19px;
   }
   .apps__bottom-content-wrapper {
     background: rgba(255, 255, 255, 0.2);

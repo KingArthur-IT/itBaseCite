@@ -12,7 +12,7 @@
         &.show
             transform: translateX(0px) rotate(0deg) scale(1)
     &__win-text
-        padding: 44px 23px 19px 27px
+        padding: 55px 23px 19px 27px
     &__reasons-title
         position: relative
         margin: 0
@@ -52,6 +52,8 @@
             transform: translateX(0px) rotate(0deg) scale(1)
     &__steps-title
         display: flex
+        position: relative
+        z-index: 4
         &-num
             color: $orange
             font-size: 64px
@@ -121,17 +123,31 @@
         &.show
             transform: translateX(0px) scale(1)
 
+@media screen and (min-width: 600px)
+    .apps
+        &__modals-img
+            display: none
 @media screen and (min-width: 1020px)
     .apps
         &__win
-            display: none
+            position: absolute
+            background: url(../assets/applications-page/win-desc.png) no-repeat
+            top: -85px
+            left: 700px
+            width: 305px
+            height: 200px
+        &__win-text
+            padding: 30px 23px 19px 30px
         &__reasons-title
             margin-left: 130px
-            margin-top: 200px
+            margin-top: 400px
         &__reasons-list
             margin-left: 130px
         &__modals-img
             display: none
+        &__steps-title
+            margin-left: 130px
+            padding: 60px 19px
         &__bottom-content-wrapper
             background: rgba(255, 255, 255, 0.2)
             border: 1px solid rgba(197, 197, 197, 0.2)
