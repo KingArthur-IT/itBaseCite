@@ -23,11 +23,6 @@
 .canvas-animate{
     animation: 3s ease-in-out infinite alternate-reverse 3s canvasAnimation;
 }
-/*
-.video-wrapper{
-    transition: transform 1s ease-out;
-}
-*/
 
 /* circles pilse animaton */
 .start-anim.circle-animate-1{

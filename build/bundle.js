@@ -7,13 +7,29 @@
             currentPage = 'index',
             isAnimating = false;
 
-    const videoAnimationElements = [
+    const mobileAnimations = [
         document.getElementById('mobile-anim-1'),
         document.getElementById('mobile-anim-2'),
         document.getElementById('mobile-anim-3'),
         document.getElementById('mobile-anim-4'),
         document.getElementById('mobile-anim-5')
     ];
+    const desctopAnimations = [
+        document.getElementById('desctop-anim-1'),
+        document.getElementById('desctop-anim-2'),
+        document.getElementById('desctop-anim-3'),
+        document.getElementById('desctop-anim-4'),
+        document.getElementById('desctop-anim-5')
+    ];
+
+    var videoAnimationElements = window.innerWidth > 1019 ? desctopAnimations : mobileAnimations;
+    // const videoAnimationElements = [
+    //     document.getElementById('mobile-anim-1'),
+    //     document.getElementById('mobile-anim-2'),
+    //     document.getElementById('mobile-anim-3'),
+    //     document.getElementById('mobile-anim-4'),
+    //     document.getElementById('mobile-anim-5')
+    // ]
 
     //Indexes of animations
     const pageAnimations = {

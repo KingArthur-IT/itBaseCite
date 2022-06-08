@@ -50,6 +50,8 @@
         transform: translateX(1500px) rotate(-30deg) scale(0)
         &.show
             transform: translateX(0px) rotate(0deg) scale(1)
+    &__modals-img-desc
+        display: none
     &__steps-title
         display: flex
         position: relative
@@ -161,7 +163,7 @@
             &-item
                 width: 340px
                 &:first-child
-                    margin-right: 200px
+                    margin-right: 70px
         &__info-text
             text-align: center
         &__controls
@@ -169,6 +171,15 @@
             margin: auto
             width: 350px
             align-items: center
+        &__modals-img-desc
+            display: block
+            position: absolute
+            right: -75px
+            top: 31px
+            z-index: 4
+            width: 300px
+            height: 300px
+            transform: rotate(-45deg)
     #back-apps-to-services
         margin-right: 20px
         margin-bottom: 17px
