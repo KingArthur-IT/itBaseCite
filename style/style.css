@@ -461,6 +461,51 @@
   }
 }
 
+@media screen and (min-width: 700px) {
+  #mobile-anim-1,
+  #mobile-anim-2,
+  #mobile-anim-3,
+  #mobile-anim-4,
+  #mobile-anim-5,
+  #desctop-anim-1,
+  #desctop-anim-2,
+  #desctop-anim-3,
+  #desctop-anim-4,
+  #desctop-anim-5 {
+    right: -17vh;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  #mobile-anim-1,
+  #mobile-anim-2,
+  #mobile-anim-3,
+  #mobile-anim-4,
+  #mobile-anim-5,
+  #desctop-anim-1,
+  #desctop-anim-2,
+  #desctop-anim-3,
+  #desctop-anim-4,
+  #desctop-anim-5 {
+    right: -13vh;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #mobile-anim-1,
+  #mobile-anim-2,
+  #mobile-anim-3,
+  #mobile-anim-4,
+  #mobile-anim-5,
+  #desctop-anim-1,
+  #desctop-anim-2,
+  #desctop-anim-3,
+  #desctop-anim-4,
+  #desctop-anim-5 {
+    right: -7vh;
+  }
+}
+
 @media screen and (min-width: 1020px) {
   #mobile-anim-1,
   #mobile-anim-2,
@@ -638,9 +683,15 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .index__win {
+    background: url(../assets/selector-page/win-desc.png) no-repeat !important;
+  }
   .index__win.show {
     -webkit-transform: translateX(-50%) rotate(0deg) scale(1);
             transform: translateX(-50%) rotate(0deg) scale(1);
+  }
+  .index__win-text {
+    padding: 30px 40px 0 40px;
   }
   .index__circles-right {
     top: auto;
@@ -881,8 +932,9 @@
 @media screen and (min-width: 600px) {
   .selector__win {
     margin-top: 13.5vh;
-    width: 355px;
-    height: 165px;
+    width: 370px;
+    height: 171px;
+    background: url(../assets/selector-page/win-desc.png) no-repeat;
   }
   .selector__win-text {
     padding: 27px 55px 0 33px;
@@ -2696,7 +2748,7 @@
     position: absolute;
     background: url(../assets/applications-page/win-desc.png) no-repeat;
     top: -85px;
-    left: 700px;
+    left: 550px;
     width: 305px;
     height: 200px;
   }
@@ -2834,7 +2886,7 @@
   width: 100%;
   height: 3px;
   background: #FFA31A;
-  bottom: -2px;
+  bottom: -6px;
   left: 0;
 }
 
@@ -2843,6 +2895,7 @@
   height: 30px;
   position: relative;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .accordeon__steps-control-wrapper::before {
@@ -3069,6 +3122,7 @@
   top: 0;
   right: 0;
   padding: 26px 20px;
+  cursor: pointer;
 }
 
 .order-popup {
@@ -3122,6 +3176,9 @@
   }
   .popup__close {
     padding: 20px;
+  }
+  .popup__btn.to-index {
+    margin-right: 0;
   }
   .thanks-win {
     width: 500px;
