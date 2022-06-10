@@ -17,7 +17,7 @@ const desctopAnimations = [
     document.getElementById('desctop-anim-5')
 ]
 
-var videoAnimationElements = window.innerWidth > 1019 ? desctopAnimations : mobileAnimations;
+var videoAnimationElements = window.innerWidth > 599 ? desctopAnimations : mobileAnimations;
 // const videoAnimationElements = [
 //     document.getElementById('mobile-anim-1'),
 //     document.getElementById('mobile-anim-2'),

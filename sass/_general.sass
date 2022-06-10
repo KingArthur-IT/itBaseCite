@@ -1,11 +1,9 @@
 $secondary: #FF9B04
 $orange: #FFA31A
 
-body
+.body
     font-family: 'Montserrat', sans-serif
-    //background: linear-gradient(to right, #be4368, #db4487 100%)
     background: linear-gradient(to right, #bc4668, #e24788 100%)
-    //background: linear-gradient(117.89deg, #451149 4.83%, #ED00FF 108.33%)
 .noScrollable
     overflow: hidden
 .bg
@@ -265,6 +263,21 @@ body
         font-size: 16px
 
 @media screen and (min-width: 600px) 
+    .body
+        background: linear-gradient(to right, #ca428a 0%, #c43f84 25%, #9e3274 50%, #6e1d63 75%, #511857 100%) !important
+    #mobile-anim-1,
+    #mobile-anim-2,
+    #mobile-anim-3,
+    #mobile-anim-4,
+    #mobile-anim-5,
+    #desctop-anim-1,
+    #desctop-anim-2,
+    #desctop-anim-3,
+    #desctop-anim-4,
+    #desctop-anim-5
+        width: auto
+        height: 100vh
+        right: -22vh
     .win-text
         font-size: 18px
     .button
@@ -278,7 +291,24 @@ body
     .circle-lg
         width: 300px
         height: 300px
+    .video-wrapper-mobile
+        display: none
+    .video-wrapper-desc
+        display: block
 @media screen and (min-width: 1020px) 
+    #mobile-anim-1,
+    #mobile-anim-2,
+    #mobile-anim-3,
+    #mobile-anim-4,
+    #mobile-anim-5,
+    #desctop-anim-1,
+    #desctop-anim-2,
+    #desctop-anim-3,
+    #desctop-anim-4,
+    #desctop-anim-5
+        width: 100%
+        height: auto
+        right: 0
     .circle-sm
         width: 120px
         height: 120px
@@ -290,10 +320,7 @@ body
         height: 330px
     .button
         font-size: 20px
-    .video-wrapper-mobile
-        display: none
-    .video-wrapper-desc
-        display: block
+    
 @media screen and (min-width: 1440px) 
     .circle-sm
         width: 200px
