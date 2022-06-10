@@ -3057,6 +3057,13 @@
   margin-bottom: 19px;
 }
 
+.popup__close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 26px 20px;
+}
+
 .order-popup {
   display: none;
 }
@@ -3104,6 +3111,9 @@
     margin-right: 0;
   }
   .popup__win {
+    padding: 20px;
+  }
+  .popup__close {
     padding: 20px;
   }
   .thanks-win {

@@ -341,6 +341,15 @@
             popupConsultThanks.classList.remove('section-flex');
         });
 
+        [...document.getElementsByClassName('popup__close')].forEach(element => {
+            element.addEventListener('click', () => {
+                popupOrder.classList.remove('section-flex');
+                popupOrderThanks.classList.remove('section-flex');
+                popupConsult.classList.remove('section-flex');
+                popupConsultThanks.classList.remove('section-flex');
+            });
+        });
+
         [...document.getElementsByClassName('popup__win')].forEach(element => {
             element.addEventListener('click', (e) => {
                 e.stopPropagation();
