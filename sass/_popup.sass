@@ -21,6 +21,8 @@
         width: 100%
         margin-left: 23px
         margin-right: 23px
+    &__wrapper
+        width: 100%
     &__title
         margin: 0
         font-weight: 400
@@ -52,3 +54,29 @@
     display: none
 .consult-thank-popup
     display: none
+
+@media screen and (min-width: 600px)
+    .popup
+        &__win
+            width: 600px
+    .popup__btn.to-index
+        width: 265px
+    .thanks-win
+        width: 500px
+@media screen and (min-width: 1020px)
+    .popup
+        &__win
+            width: 950px
+        &__wrapper
+            display: flex
+            width: 100%
+            margin-top: 10px
+        &__btn
+            margin-right: 30px
+            margin-bottom: 0
+            &:last-child
+                margin-right: 0
+        &__win
+            padding: 20px 
+    .thanks-win
+        width: 500px

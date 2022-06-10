@@ -3022,6 +3022,10 @@
   margin-right: 23px;
 }
 
+.popup__wrapper {
+  width: 100%;
+}
+
 .popup__title {
   margin: 0;
   font-weight: 400;
@@ -3067,6 +3071,44 @@
 
 .consult-thank-popup {
   display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .popup__win {
+    width: 600px;
+  }
+  .popup__btn.to-index {
+    width: 265px;
+  }
+  .thanks-win {
+    width: 500px;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .popup__win {
+    width: 950px;
+  }
+  .popup__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .popup__btn {
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
+  .popup__btn:last-child {
+    margin-right: 0;
+  }
+  .popup__win {
+    padding: 20px;
+  }
+  .thanks-win {
+    width: 500px;
+  }
 }
 
 .hidden-nav {
