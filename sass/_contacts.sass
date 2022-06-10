@@ -20,6 +20,9 @@
         margin: 0
         padding: 0
         z-index: 3
+        transform: translateY(2000px) rotate(0deg) scale(0)
+        &.show
+            transform: translateY(0px) rotate(0deg) scale(1)
     &__list-item
         margin: 0
         margin-bottom: 12px
@@ -43,37 +46,29 @@
     &__consult-btn
         padding: 6px 17px
         color: $secondary
-        width: 160%
+        width: 200%
     &__circles-top
-        width: 244px
-        height: 244px
         top: -122px
         left: -97px
-        transform: translateY(1000px) rotate(0deg) scale(0)
+        transform: translateY(2000px) rotate(0deg) scale(0)
         &.show
             transform: translateY(0px) rotate(0deg) scale(1)
     &__circles-center
-        width: 176px
-        height: 176px
         top: 105px
         right: 13px
-        transform: translateY(1000px) rotate(0deg) scale(0)
+        transform: translateY(2000px) rotate(0deg) scale(0)
         &.show
             transform: translateY(0px) rotate(0deg) scale(1)
     &__circles-right
-        width: 176px
-        height: 176px
         bottom: 176px
         right: -128px
-        transform: translateY(1000px) rotate(0deg) scale(0)
+        transform: translateY(2000px) rotate(0deg) scale(0)
         &.show
             transform: translateY(0px) rotate(0deg) scale(1)
     &__circles-left
-        width: 176px
-        height: 176px
         bottom: 28px
         left: -126px
-        transform: translateY(1000px) rotate(0deg) scale(0)
+        transform: translateY(2000px) rotate(0deg) scale(0)
         &.show
             transform: translateY(0px) rotate(0deg) scale(1)
     &__order-btn
@@ -127,6 +122,11 @@
     .contacts-btns-wrapper
         position: relative
         bottom: auto
+
+@media screen and (min-width: 1020px)   
+    .contacts  
+        &__circles-right
+            bottom: -100px
 @media screen and (min-width: 1050px) 
     .contacts
         &__hero
@@ -135,3 +135,16 @@
     .contacts
         &__hero
             width: 900px
+@media screen and (min-width: 1440px) 
+    .contacts  
+        &__circles-left
+            bottom: 28px
+            left: -200px
+        &__circles-top
+            top: -200px
+            left: -200px
+        &__circles-center
+            top: -50px
+            right: 170px
+            width: 200px
+            height: 200px

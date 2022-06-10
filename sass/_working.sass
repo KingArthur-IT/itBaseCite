@@ -53,34 +53,28 @@
         font-size: 14px
         line-height: 16px
     &__circles-top-right
-        z-index: 0
-        width: 244px
-        height: 244px
+        z-index: 2
         top: -82px
         right: -122px
         transform: translateY(1000px) scale(0)
         &.show
             transform: translateY(0px) scale(1)
     &__circles-top-left
-        z-index: 0
-        width: 176px
-        height: 176px
+        z-index: 2
         top: 281px
         left: -60px
         transform: translateY(1000px) scale(0)
         &.show
             transform: translateY(0px) scale(1)
     &__circles-list-right
-        z-index: 0
-        width: 126px
-        height: 126px
+        z-index: 2
         top: 63px
         right: -60px
         transform: translateY(1000px) scale(0)
         &.show
             transform: translateY(0px) scale(1)
     &__circles-bottom
-        z-index: 0
+        z-index: 2
         width: 194px
         height: 194px
         bottom: -79px
@@ -127,7 +121,7 @@
         &__win
             background: url(../assets/about-us-page/win-desc.png) no-repeat
             height: 170px
-            margin-left: 300px
+            margin-left: 250px
         &__win-text
             padding: 27px 65px 0 40px
         &__back
@@ -148,27 +142,36 @@
             width: 400px
             margin-left: auto
         &__btns-wrapper
-            margin-left: 170px
+            margin-left: 250px
         &__back
             margin-left: 330px
+        &__circles-top-left
+            top: 150px
+            left: -60px
+        &__circles-bottom
+            left: 650px
 
 @media screen and (min-width: 1440px) 
     .working
         &__win
-            margin-left: 730px
+            margin-left: 530px
         &__list
-            width: 1000px
+            width: 800px
             display: flex
             justify-content: space-between
-            padding: 25px 20px 25px 8vw
+            padding: 25px 20px 25px 7vw
             margin-top: 1vh
         &__list-item
+            width: 300px
             &:nth-child(3)
                 margin-bottom: 0
         &__btns-wrapper
-            margin-left: 681px
+            margin-left: 515px
         &__back
-            margin-left: 797px
+            margin-left: 595px
             margin-top: 25px
+        &__circles-bottom
+            left: auto
+            right: 200px
                 
         

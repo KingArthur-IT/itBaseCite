@@ -255,6 +255,7 @@
                         startAnimation(item.nextAnimationIndex);
                         document.getElementsByTagName('body')[0].classList.add('noScrollable');
                         PageEndAnimateContent(pageName, item.page);
+                        //const delay = item.page === 'contacts' || item.page === 'ceo' ? 1000 : 2500;
                         setTimeout(() => {
                             PageStartAnimateContent(item.page);
                         }, 2500);

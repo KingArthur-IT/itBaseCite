@@ -12,7 +12,7 @@
         height: 113px
         background-size: cover
         margin-top: 6.5vh
-        z-index: 2
+        z-index: 5
         transform: translateY(1000px) rotate(-40deg)
         &.show
             transform: translateY(0px) rotate(0deg)
@@ -160,7 +160,10 @@
         &__circles-bottom
             bottom: auto
             top: -70px
-            right: -86px
+            right: -120px
+        &__circles-top
+            top: -50px
+            right: 280px
         &__circles-top-desc
             display: block
             top: -40px
@@ -184,9 +187,12 @@
                 padding: 0 5px
 @media screen and (min-width: 1440px) 
     .selector
+        &__circles-bottom
+            top: -130px
+            right: -130px
         &__circles-top
             top: -80px
-            right: -80px
+            right: 200px
         &__link
             width: 200px
             height: 190px
@@ -197,3 +203,9 @@
                 height: 90px
             & p
                 font-size: 24px
+        &__circles-bottom-desc
+            right: 150px
+            bottom: 50px
+        &__circles-top-desc
+            top: -80px
+            left: -160px

@@ -40,6 +40,7 @@
         height: 140px
         padding: 13px 0
         z-index: 3
+        cursor: pointer
         transform: translateY(1500px) rotate(-30deg) scale(0)
         &.show
             transform: translateY(0px) rotate(0deg) scale(1)
@@ -57,18 +58,24 @@
         text-align: center
         color: #FFFFFF
     &__circles-top
-        width: 88px
-        height: 88px
         right: 20px
         bottom: 230px
-        transform: translateY(1000px) scale(0)
+        transform: translateY(2000px) scale(0)
         &.show
             transform: translateY(0px) scale(1)
     &__circles-bottom
-        width: 154px
-        height: 154px
         bottom: -70px
         left: -51px
+        transform: translateY(2000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)
+    &__circles-desc-top
+        display: none
+        transform: translateY(1000px) scale(0)
+        &.show
+            transform: translateY(0px) scale(1)
+    &__circles-desc-left
+        display: none
         transform: translateY(1000px) scale(0)
         &.show
             transform: translateY(0px) scale(1)
@@ -116,6 +123,21 @@
             bottom: 12px
             width: 400px
             margin-left: 14vw
+        &__circles-top
+            right: -40px
+            bottom: auto
+            top: 20px
+        &__circles-bottom
+            bottom: -20px
+            left: 500px
+        &__circles-desc-top
+            display: block
+            top: -130px
+            left: 500px
+        &__circles-desc-left
+            display: block
+            left: -120px
+            top: 150px
     .services-back-btn
         position: relative
         margin: 0

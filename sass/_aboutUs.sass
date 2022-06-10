@@ -37,8 +37,6 @@
             transform: translateY(0px) rotate(0deg) scale(1)
     &__circles-right
         z-index: 2
-        width: 176px
-        height: 176px
         top: 328px
         right: -76px
         transform: translateY(3000px) rotate(-30deg) scale(0)
@@ -46,8 +44,6 @@
             transform: translateY(0px) rotate(0deg) scale(1)
     &__circles-bottom
         z-index: 2
-        width: 176px
-        height: 176px
         bottom: 238px
         right: -129px
         transform: translateY(3000px) rotate(-30deg) scale(0)
@@ -91,11 +87,23 @@
             position: relative
             width: 200px
             margin-left: 480px
+            transform: translateY(3000px) rotate(-30deg) scale(0)
+            &.show
+                transform: translateY(0px) rotate(0deg) scale(1)
         &__btns-wrapper
             width: 300px
             flex-direction: row
-            margin-left: 315px
-
+            margin-left: 404px
+            transform: translateY(3000px) rotate(-30deg) scale(0)
+            &.show
+                transform: translateY(0px) rotate(0deg) scale(1)
+        &__circles-right
+            top: auto
+            bottom: -100px
+            right: auto
+            left: -100px
+        &__circles-bottom
+            bottom: 200px
 @media screen and (min-width: 1440px) 
     .about-us-page
         &__text-wrapper
@@ -103,6 +111,6 @@
         &__win
             margin-left: 36vw
         &__btns-wrapper
-            margin-left: 30vw
+            margin-left: 36vw
         &__back
             margin-left: 41vw
