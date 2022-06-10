@@ -418,8 +418,8 @@
 
 @media screen and (min-width: 600px) {
   .body {
-    background: -webkit-gradient(linear, left top, right top, from(#ca428a), color-stop(25%, #c43f84), color-stop(50%, #9e3274), color-stop(75%, #6e1d63), to(#511857)) !important;
-    background: linear-gradient(to right, #ca428a 0%, #c43f84 25%, #9e3274 50%, #6e1d63 75%, #511857 100%) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#cc418a), color-stop(10%, #cb428a), color-stop(20%, #c94189), color-stop(30%, #c13f84), color-stop(40%, #b6387f), color-stop(50%, #a13175), color-stop(60%, #8b2a6c), color-stop(70%, #762066), color-stop(80%, #611a5d), color-stop(90%, #551558), to(#4f1d55)) !important;
+    background: linear-gradient(to right, #cc418a 0%, #cb428a 10%, #c94189 20%, #c13f84 30%, #b6387f 40%, #a13175 50%, #8b2a6c 60%, #762066 70%, #611a5d 80%, #551558 90%, #4f1d55 100%) !important;
   }
   #mobile-anim-1,
   #mobile-anim-2,
@@ -507,6 +507,10 @@
 }
 
 @media screen and (min-width: 1020px) {
+  .body {
+    background: -webkit-gradient(linear, left top, right top, from(#cc418a), color-stop(10%, #cb428a), color-stop(20%, #c94189), color-stop(30%, #c13f84), color-stop(40%, #b6387f), color-stop(50%, #a13175), color-stop(60%, #8b2a6c), color-stop(70%, #762066), color-stop(80%, #611a5d), color-stop(90%, #551558), to(#4f1d55)) !important;
+    background: linear-gradient(to right, #cc418a 0%, #cb428a 10%, #c94189 20%, #c13f84 30%, #b6387f 40%, #a13175 50%, #8b2a6c 60%, #762066 70%, #611a5d 80%, #551558 90%, #4f1d55 100%) !important;
+  }
   #mobile-anim-1,
   #mobile-anim-2,
   #mobile-anim-3,
@@ -582,7 +586,7 @@
   width: 159px;
   height: 40px;
   margin-bottom: 14.5vh;
-  z-index: 3;
+  z-index: 5;
   -webkit-transform: translateX(-2000px) rotate(-40deg) scale(0);
           transform: translateX(-2000px) rotate(-40deg) scale(0);
 }
@@ -705,7 +709,7 @@
   .index__btn {
     width: 194px !important;
     margin-bottom: auto !important;
-    margin-top: -7px !important;
+    margin-top: -50px !important;
     -webkit-transform: translateX(-2000px) rotate(-40deg) scale(0);
             transform: translateX(-2000px) rotate(-40deg) scale(0);
   }
