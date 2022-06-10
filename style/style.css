@@ -164,6 +164,7 @@
   margin-top: 50vh;
   font-size: 14px;
   position: absolute;
+  width: 100%;
 }
 
 .preloader__logo {
@@ -176,7 +177,7 @@
 .preloader p {
   margin: 0;
   text-align: center;
-  width: 90%;
+  width: 70%;
   margin: 0 auto 11px;
 }
 
@@ -489,6 +490,12 @@
   }
   .button {
     font-size: 20px;
+  }
+  .preloader p {
+    width: 600px;
+  }
+  .preloader__line {
+    width: 600px;
   }
 }
 

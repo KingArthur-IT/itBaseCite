@@ -18,13 +18,6 @@ const desctopAnimations = [
 ]
 
 var videoAnimationElements = window.innerWidth > 599 ? desctopAnimations : mobileAnimations;
-// const videoAnimationElements = [
-//     document.getElementById('mobile-anim-1'),
-//     document.getElementById('mobile-anim-2'),
-//     document.getElementById('mobile-anim-3'),
-//     document.getElementById('mobile-anim-4'),
-//     document.getElementById('mobile-anim-5')
-// ]
 
 //Indexes of animations
 const pageAnimations = {
