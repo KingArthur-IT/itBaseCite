@@ -56,6 +56,9 @@
         display: flex
         position: relative
         z-index: 4
+        transform: translateX(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateX(0px) rotate(0deg) scale(1)
         &-num
             color: $orange
             font-size: 64px
@@ -68,10 +71,17 @@
             & span
                 color: $orange
     &__steps
+        z-index: 4
         margin-bottom: 13px
+        transform: translateX(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateX(0px) rotate(0deg) scale(1)
     &__bottom-content-wrapper
         position: relative
         z-index: 4
+        transform: translateX(1500px) rotate(-30deg) scale(0)
+        &.show
+            transform: translateX(0px) rotate(0deg) scale(1)
     &__info-title
         position: relative
         z-index: 4

@@ -135,7 +135,7 @@
 }
 .apps-page-animate.hide{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) .5s !important;
-    transform: translate(0px, -1000px) rotate(0deg) scale(1) !important;
+    transform: translate(0px, -3000px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
 

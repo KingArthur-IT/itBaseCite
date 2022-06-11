@@ -130,7 +130,7 @@
                     element.classList.remove('hide');
                     element.classList.remove('hide-back'); 
                     document.getElementsByTagName('body')[0].classList.remove('noScrollable');
-                }, 5000);  
+                }, 3000);  
             }, 100);
         });
     };
