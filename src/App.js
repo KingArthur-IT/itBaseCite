@@ -125,7 +125,7 @@ const PageEndAnimateContent = (pageEndName, pageShowName, isAnimated = true, bac
                 element.classList.remove('hide');
                 element.classList.remove('hide-back'); 
                 document.getElementsByTagName('body')[0].classList.remove('noScrollable')
-            }, 3000);  
+            }, 5000);  
         }, 100);
     });
 }
@@ -246,11 +246,12 @@ function navBtnsEventsListeners(){
                     animationIndex = item.nextAnimationIndex; 
                     startAnimation(item.nextAnimationIndex);
                     document.getElementsByTagName('body')[0].classList.add('noScrollable')
-                    PageEndAnimateContent(pageName, item.page);
-                    //const delay = item.page === 'contacts' || item.page === 'ceo' ? 1000 : 2500;
+                    const descContacts = (item.page === 'contacts' || item.page === 'ceo') && window.innerWidth > 599;
+                    PageEndAnimateContent(pageName, item.page, !descContacts);
+                    const delay = descContacts ? 1150 : 2500;
                     setTimeout(() => {
                         PageStartAnimateContent(item.page);
-                    }, 2500);
+                    }, delay);
                 }
             })
         })

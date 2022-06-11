@@ -111,6 +111,7 @@
     transform: translateY(-1500px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
+
 /* ceo page */
 .ceo-page-animate{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
@@ -120,6 +121,16 @@
     transform: translateY(-1500px) rotate(0deg) scale(1) !important;
     animation: none !important
 }
+
+@media screen and (max-width: 600px) {
+    .contacts-page-animate{
+        transition: transform .5s cubic-bezier(.17,.67,.65,1.12) 0s !important;
+    }
+    .ceo-page-animate{
+        transition: transform .5s cubic-bezier(.17,.67,.65,1.12) 0s !important;
+    }
+}
+
 /* sites page */
 .sites-page-animate{
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
