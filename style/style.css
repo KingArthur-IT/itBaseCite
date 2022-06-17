@@ -511,8 +511,9 @@
 
 @media screen and (min-width: 1020px) {
   .body {
-    background: -webkit-gradient(linear, left top, right top, from(#cc418a), color-stop(10%, #cb428a), color-stop(20%, #c94189), color-stop(30%, #c13f84), color-stop(40%, #b6387f), color-stop(50%, #a13175), color-stop(60%, #8b2a6c), color-stop(70%, #762066), color-stop(80%, #611a5d), color-stop(90%, #551558), to(#4f1d55)) !important;
-    background: linear-gradient(to right, #cc418a 0%, #cb428a 10%, #c94189 20%, #c13f84 30%, #b6387f 40%, #a13175 50%, #8b2a6c 60%, #762066 70%, #611a5d 80%, #551558 90%, #4f1d55 100%) !important;
+    background: url("../assets/bg-desc2.png") !important;
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat;
   }
   #mobile-anim-1,
   #mobile-anim-2,
@@ -2577,6 +2578,16 @@
   }
 }
 
+.apps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .apps__win {
   position: relative;
   background: url(../assets/applications-page/win.png) no-repeat;
@@ -2707,6 +2718,7 @@
 }
 
 .apps__bottom-content-wrapper {
+  margin-top: auto;
   position: relative;
   z-index: 4;
   -webkit-transform: translateX(1500px) rotate(-30deg) scale(0);

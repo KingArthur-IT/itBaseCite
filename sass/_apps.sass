@@ -1,4 +1,6 @@
 .apps
+    display: flex
+    flex-direction: column
     &__win
         position: relative
         background: url(../assets/applications-page/win.png) no-repeat
@@ -77,6 +79,7 @@
         &.show
             transform: translateX(0px) rotate(0deg) scale(1)
     &__bottom-content-wrapper
+        margin-top: auto
         position: relative
         z-index: 4
         transform: translateX(1500px) rotate(-30deg) scale(0)
