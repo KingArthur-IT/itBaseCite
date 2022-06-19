@@ -510,6 +510,10 @@
 }
 
 @media screen and (min-width: 1020px) {
+  html {
+    background: -webkit-gradient(linear, left top, right top, from(#cc418a), color-stop(10%, #cb428a), color-stop(20%, #c94189), color-stop(30%, #c13f84), color-stop(40%, #b6387f), color-stop(50%, #a13175), color-stop(60%, #8b2a6c), color-stop(70%, #762066), color-stop(80%, #611a5d), color-stop(90%, #551558), to(#4f1d55));
+    background: linear-gradient(to right, #cc418a 0%, #cb428a 10%, #c94189 20%, #c13f84 30%, #b6387f 40%, #a13175 50%, #8b2a6c 60%, #762066 70%, #611a5d 80%, #551558 90%, #4f1d55 100%);
+  }
   .body {
     background: url("../assets/bg-desc2.png") !important;
     background-size: 100% 100% !important;
@@ -1266,6 +1270,11 @@
   }
 }
 
+.working {
+  position: relative;
+  z-index: 5;
+}
+
 .working__win {
   position: relative;
   background: url(../assets/about-us-page/win.png) no-repeat;
@@ -1731,6 +1740,10 @@
     height: 500px;
     z-index: 5;
   }
+  .contacts__main-img-desc.show {
+    -webkit-transform: translate(31%, -25%) rotate(0deg) scale(1);
+            transform: translate(31%, -25%) rotate(0deg) scale(1);
+  }
   .contacts__list {
     background: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(197, 197, 197, 0.2);
@@ -1759,14 +1772,18 @@
   .contacts__circles-right {
     bottom: -100px;
   }
-  .contacts__text {
-    font-size: 18px;
+  .contacts__main-img-desc.show {
+    -webkit-transform: translate(35%, -25%) rotate(0deg) scale(1);
+            transform: translate(35%, -25%) rotate(0deg) scale(1);
   }
 }
 
 @media screen and (min-width: 1050px) {
   .contacts__hero {
     width: 800px;
+  }
+  .contacts__text {
+    font-size: 18px;
   }
 }
 
@@ -2090,7 +2107,7 @@
   height: 100vh;
   width: 100%;
   background: rgba(0, 0, 0, 0.6);
-  z-index: 5;
+  z-index: 6;
   -webkit-transform: translateY(-100%);
           transform: translateY(-100%);
   -webkit-transition: all 0.4s ease-out;
@@ -3172,6 +3189,7 @@
   text-transform: uppercase;
   color: #FFFFFF;
   margin-bottom: 13px;
+  width: 88%;
 }
 
 .popup__btn {
@@ -3438,6 +3456,7 @@
 
 .ceo__img {
   margin-right: 15px;
+  width: 35vw;
 }
 
 .ceo__content {
