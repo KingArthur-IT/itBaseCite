@@ -37,6 +37,7 @@
 .start-anim.circle-animate-4{
     animation: 3s linear infinite alternate-reverse 3s circlesAnimation;
 }
+
 /*for preloader*/
 /* circles pilse animaton */
 .start-anim-at-once.circle-animate-1{
@@ -62,7 +63,7 @@
     transition: transform 2s cubic-bezier(.17,.67,.65,1.12) .5s !important;
 }
 /* selector page */
-.selector-page-animate{
+.selector-page-animate:not(.start-anim){
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .selector-page-animate.hide{
@@ -71,7 +72,7 @@
     animation: none !important
 }
 /* about-us page */
-.about-us-page-animate{
+.about-us-page-animate:not(.start-anim){
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .about-us-page-animate.hide{
@@ -80,7 +81,7 @@
     animation: none !important
 }
 /* working page */
-.working-page-animate{
+.working-page-animate:not(.start-anim){
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .working-page-animate.hide{
@@ -89,7 +90,7 @@
     animation: none !important
 }
 /* services page */
-.services-page-animate{
+.services-page-animate:not(.start-anim){
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .services-page-animate.hide{
@@ -103,7 +104,7 @@
     animation: none !important
 }
 /* contacts page */
-.contacts-page-animate{
+.contacts-page-animate:not(.start-anim){
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .contacts-page-animate.hide{
@@ -113,7 +114,7 @@
 }
 
 /* ceo page */
-.ceo-page-animate{
+.ceo-page-animate:not(.start-anim){
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .ceo-page-animate.hide{
@@ -132,7 +133,7 @@
 }
 
 /* sites page */
-.sites-page-animate{
+.sites-page-animate:not(.start-anim){
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .sites-page-animate.hide{
@@ -141,7 +142,7 @@
     animation: none !important
 }
 /* apps page */
-.apps-page-animate{
+.apps-page-animate:not(.start-anim){
     transition: transform 1s cubic-bezier(.17,.67,.65,1.12) 1s !important;
 }
 .apps-page-animate.hide{

@@ -375,6 +375,11 @@
   pointer-events: none;
 }
 
+.long-body .video-wrapper-mobile,
+.long-body .video-wrapper-desc {
+  height: 150vh !important;
+}
+
 #mobile-anim-1,
 #mobile-anim-2,
 #mobile-anim-3,
@@ -388,13 +393,14 @@
   width: 100%;
   position: absolute;
   z-index: 1;
-  visibility: hidden;
+  opacity: 0;
   pointer-events: none;
   background: url("../assets/bg.jpg");
+  pointer-events: none;
 }
 
 .video-visible {
-  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 .design-block {
@@ -626,7 +632,7 @@
 }
 
 .index__win-text {
-  padding: 13px 14px 0 27px;
+  padding: 13px 20px 0 27px;
 }
 
 .index__circles-top {
@@ -1299,6 +1305,7 @@
 
 .working__list {
   position: relative;
+  z-index: 4;
   padding: 0 10px 0 28px;
   margin-top: 35.8vh;
   -webkit-transform: translateY(1500px) rotate(-30deg) scale(0);
@@ -2232,7 +2239,7 @@
   margin-top: 350px;
   margin-bottom: 70px;
   margin-left: 34px;
-  z-index: 2;
+  z-index: 4;
   -webkit-transform: translateX(1000px) scale(0);
           transform: translateX(1000px) scale(0);
 }
@@ -2375,7 +2382,7 @@
   margin-top: 21px;
   position: relative;
   z-index: 4;
-  padding-bottom: 20px;
+  padding: 20px;
 }
 
 .sites__steps-prelist-text {
@@ -2407,10 +2414,10 @@
 }
 
 .sites__circles-top {
-  width: 244px;
-  height: 244px;
-  top: -123px;
-  left: -39px;
+  width: 176px;
+  height: 176px;
+  top: -110px;
+  left: -20px;
   -webkit-transform: translateX(1000px) scale(0);
           transform: translateX(1000px) scale(0);
 }
@@ -2931,6 +2938,7 @@
 .accordeon__steps-list {
   position: relative;
   z-index: 4;
+  margin-top: 10px;
 }
 
 .accordeon__steps-head {
@@ -2944,6 +2952,7 @@
       -ms-flex-align: baseline;
           align-items: baseline;
   padding-right: 25px;
+  height: 70px;
 }
 
 .accordeon__steps-num-wrapper {
@@ -3029,7 +3038,7 @@
 }
 
 .accordeon__steps-actions-wrapper {
-  margin: 37px 0 21px 0;
+  margin: 21px 0 21px 0;
   padding: 15px 13px;
   background: rgba(255, 255, 255, 0.2);
   border: 1px solid rgba(220, 220, 220, 0.59);
@@ -3070,7 +3079,6 @@
 }
 
 .collapsed ~ .accordeon__steps-content {
-  padding: 20px 0;
   max-height: auto;
   display: block;
 }

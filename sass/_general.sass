@@ -5,7 +5,7 @@ $orange: #FFA31A
     font-family: 'Montserrat', sans-serif
     background: linear-gradient(to right, #bc4668, #e24788 100%)
 .noScrollable
-    overflow: hidden
+    overflow: hidden 
 .bg
     opacity: 1
     transition: opacity 1s linear
@@ -229,6 +229,9 @@ $orange: #FFA31A
     overflow: hidden
     pointer-events: none
     //background: url('../assets/bg.jpg')
+.long-body .video-wrapper-mobile,
+.long-body .video-wrapper-desc
+    height: 150vh !important
 #mobile-anim-1,
 #mobile-anim-2,
 #mobile-anim-3,
@@ -242,11 +245,14 @@ $orange: #FFA31A
     width: 100%
     position: absolute
     z-index: 1
-    visibility: hidden
+    opacity: 0
+    //visibility: hidden
     pointer-events: none
     background: url('../assets/bg.jpg')
+    pointer-events: none
 .video-visible
-    visibility: visible !important
+    opacity: 1 !important
+    //visibility: visible !important
 .design-block
     background: rgba(255, 255, 255, 0.2)
     border: 2px solid rgba(197, 197, 197, 0.2)

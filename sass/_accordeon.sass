@@ -3,11 +3,13 @@
     &__steps-list
         position: relative
         z-index: 4
+        margin-top: 10px
     &__steps-head
         display: flex
         justify-content: space-between
         align-items: baseline
         padding-right: 25px
+        height: 70px
     &__steps-num-wrapper
         display: flex
         align-items: flex-start
@@ -64,7 +66,7 @@
         &-text
             margin: 0
     &__steps-actions-wrapper
-        margin: 37px 0 21px 0
+        margin: 21px 0 21px 0
         padding: 15px 13px
         background: rgba(255, 255, 255, 0.2)
         border: 1px solid rgba(220, 220, 220, 0.59)
@@ -92,7 +94,7 @@
 .collapsed .accordeon__steps-control-wrapper::after
     transform: rotate(0deg)
 .collapsed ~ .accordeon__steps-content
-    padding: 20px 0
+    //padding: 20px 0
     max-height: auto
     display: block
 @media screen and (min-width: 1020px)

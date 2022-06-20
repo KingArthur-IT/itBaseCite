@@ -125,6 +125,9 @@ const PageEndAnimateContent = (pageEndName, pageShowName, isAnimated = true, bac
                 element.classList.remove('hide');
                 element.classList.remove('hide-back'); 
                 document.getElementsByTagName('body')[0].classList.remove('noScrollable');
+                document.getElementsByTagName('body')[0].classList.remove('long-body');
+                if (currentPage === 'about-us' || currentPage === 'working' || currentPage === 'sites' || currentPage === 'apps')
+                    document.getElementsByTagName('body')[0].classList.add('long-body');
                 if (animationIndex !== 5)
                     videoAnimationElements[animationIndex].currentTime = '0.0';
             }, 5000);  
