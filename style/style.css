@@ -693,6 +693,12 @@
           transform: translateX(0px) rotate(0deg) scale(1);
 }
 
+@media screen and (min-width: 480px) {
+  .index__win-text {
+    padding: 13px 30px 0 27px;
+  }
+}
+
 @media screen and (min-width: 600px) {
   .index__win {
     background: url(../assets/index-page/win-desc.png) no-repeat !important;
@@ -2237,7 +2243,7 @@
   height: 129px;
   background-size: cover;
   margin-top: 350px;
-  margin-bottom: 70px;
+  margin-bottom: 40px;
   margin-left: 34px;
   z-index: 4;
   -webkit-transform: translateX(1000px) scale(0);
@@ -2260,6 +2266,7 @@
 .sites__definition {
   margin: 0;
   margin-bottom: 20px;
+  margin-top: 30px;
   -webkit-transform: translateX(1000px) scale(0);
           transform: translateX(1000px) scale(0);
 }
@@ -2388,6 +2395,7 @@
 .sites__steps-prelist-text {
   margin: 0;
   margin-bottom: 20px;
+  margin-top: 20px;
   -webkit-transform: translateX(2000px) scale(0);
           transform: translateX(2000px) scale(0);
 }
@@ -2439,6 +2447,24 @@
 .sites__circles-right.show {
   -webkit-transform: translateX(0px) scale(1);
           transform: translateX(0px) scale(1);
+}
+
+.sites__page-content-1 {
+  background: -webkit-gradient(linear, left top, right top, from(#b83d6e), to(#c93c82));
+  background: linear-gradient(to right, #b83d6e, #c93c82 100%);
+  z-index: 3;
+}
+
+.sites__page-content-2 {
+  background: -webkit-gradient(linear, left top, right top, from(#b83d6e), to(#c93c82));
+  background: linear-gradient(to right, #b83d6e, #c93c82 100%);
+  z-index: 3;
+}
+
+.sites__page-content-3 {
+  background: -webkit-gradient(linear, left top, right top, from(#b83d6e), to(#c93c82));
+  background: linear-gradient(to right, #b83d6e, #c93c82 100%);
+  z-index: 3;
 }
 
 @media screen and (min-width: 1020px) {
@@ -2602,6 +2628,33 @@
   }
 }
 
+@media screen and (min-width: 500px) {
+  .sites__page-content-1 {
+    background: transparent;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .sites__page-content-2 {
+    background: -webkit-gradient(linear, left top, right top, from(#a33175), to(#55155a));
+    background: linear-gradient(to right, #a33175, #55155a 100%);
+  }
+  .sites__page-content-3 {
+    background: -webkit-gradient(linear, left top, right top, from(#a33175), to(#55155a));
+    background: linear-gradient(to right, #a33175, #55155a 100%);
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .sites__page-content-2 {
+    background: transparent;
+  }
+  .sites__page-content-3 {
+    background: -webkit-gradient(linear, left top, right top, from(#cc418a), color-stop(10%, #cb428a), color-stop(20%, #c94189), color-stop(30%, #c13f84), color-stop(40%, #b6387f), color-stop(50%, #a13175), color-stop(60%, #8b2a6c), color-stop(70%, #762066), color-stop(80%, #611a5d), color-stop(90%, #551558), to(#4f1d55));
+    background: linear-gradient(to right, #cc418a 0%, #cb428a 10%, #c94189 20%, #c13f84 30%, #b6387f 40%, #a13175 50%, #8b2a6c 60%, #762066 70%, #611a5d 80%, #551558 90%, #4f1d55 100%);
+  }
+}
+
 .apps {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2620,6 +2673,7 @@
   background-size: cover;
   margin: auto;
   margin-top: 329px;
+  margin-bottom: 30px;
   z-index: 3;
   -webkit-transform: translateX(1500px) rotate(-30deg) scale(0);
           transform: translateX(1500px) rotate(-30deg) scale(0);
@@ -2634,10 +2688,28 @@
   padding: 55px 23px 19px 27px;
 }
 
+.apps__content-section-1 {
+  background: -webkit-gradient(linear, left top, right top, from(#aa356d), to(#ba3485));
+  background: linear-gradient(to right, #aa356d, #ba3485 100%);
+  z-index: 3;
+}
+
+.apps__content-section-2 {
+  background: -webkit-gradient(linear, left top, right top, from(#aa356d), to(#ba3485));
+  background: linear-gradient(to right, #aa356d, #ba3485 100%);
+  z-index: 3;
+}
+
+.apps__content-section-3 {
+  background: -webkit-gradient(linear, left top, right top, from(#aa356d), to(#ba3485));
+  background: linear-gradient(to right, #aa356d, #ba3485 100%);
+  z-index: 3;
+}
+
 .apps__reasons-title {
   position: relative;
   margin: 0;
-  margin-top: 63px;
+  margin-top: 30px;
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
@@ -2838,9 +2910,23 @@
           transform: translateX(0px) scale(1);
 }
 
+@media screen and (min-width: 500px) {
+  .apps__content-section-1 {
+    background: transparent;
+  }
+}
+
 @media screen and (min-width: 600px) {
   .apps__modals-img {
     display: none;
+  }
+  .apps__content-section-2 {
+    background: -webkit-gradient(linear, left top, right top, from(#a33175), to(#55155a));
+    background: linear-gradient(to right, #a33175, #55155a 100%);
+  }
+  .apps__content-section-3 {
+    background: -webkit-gradient(linear, left top, right top, from(#a33175), to(#55155a));
+    background: linear-gradient(to right, #a33175, #55155a 100%);
   }
 }
 
@@ -2868,7 +2954,7 @@
   }
   .apps__steps-title {
     margin-left: 130px;
-    padding: 60px 19px;
+    padding: 60px 19px 30px;
   }
   .apps__bottom-content-wrapper {
     background: rgba(255, 255, 255, 0.2);
@@ -2921,6 +3007,14 @@
   }
   .apps__control-btn {
     width: 175px !important;
+  }
+  .apps__content-section-2 {
+    background: -webkit-gradient(linear, left top, right top, from(#cc418a), color-stop(10%, #cb428a), color-stop(20%, #c94189), color-stop(30%, #c13f84), color-stop(40%, #b6387f), color-stop(50%, #a13175), color-stop(60%, #8b2a6c), color-stop(70%, #762066), color-stop(80%, #611a5d), color-stop(90%, #551558), to(#4f1d55));
+    background: linear-gradient(to right, #cc418a 0%, #cb428a 10%, #c94189 20%, #c13f84 30%, #b6387f 40%, #a13175 50%, #8b2a6c 60%, #762066 70%, #611a5d 80%, #551558 90%, #4f1d55 100%);
+  }
+  .apps__content-section-3 {
+    background: -webkit-gradient(linear, left top, right top, from(#cc418a), color-stop(10%, #cb428a), color-stop(20%, #c94189), color-stop(30%, #c13f84), color-stop(40%, #b6387f), color-stop(50%, #a13175), color-stop(60%, #8b2a6c), color-stop(70%, #762066), color-stop(80%, #611a5d), color-stop(90%, #551558), to(#4f1d55));
+    background: linear-gradient(to right, #cc418a 0%, #cb428a 10%, #c94189 20%, #c13f84 30%, #b6387f 40%, #a13175 50%, #8b2a6c 60%, #762066 70%, #611a5d 80%, #551558 90%, #4f1d55 100%);
   }
   #back-apps-to-services {
     margin-right: 20px;
@@ -3085,7 +3179,7 @@
 
 @media screen and (min-width: 1020px) {
   .accordeon {
-    padding: 0 130px;
+    padding: 30px 130px 0;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

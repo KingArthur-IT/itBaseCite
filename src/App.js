@@ -137,9 +137,6 @@ const PageEndAnimateContent = (pageEndName, pageShowName, isAnimated = true, bac
 
 class App {
     preloader() {
-        const d = new Date();
-        const d2 = new Date('June 30, 2022 00:00:00');
-        if (d > d2) return
         //onWindowResize();
 
         const loader = document.getElementById('loader');

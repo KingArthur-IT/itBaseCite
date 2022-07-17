@@ -8,7 +8,7 @@
         height: 129px
         background-size: cover
         margin-top: 350px
-        margin-bottom: 70px
+        margin-bottom: 40px
         margin-left: 34px
         z-index: 4
         transform: translateX(1000px) scale(0)
@@ -23,6 +23,7 @@
     &__definition
         margin: 0
         margin-bottom: 20px
+        margin-top: 30px
         transform: translateX(1000px) scale(0)
         &.show
             transform: translateX(0px) scale(1)
@@ -105,6 +106,7 @@
     &__steps-prelist-text
         margin: 0
         margin-bottom: 20px
+        margin-top: 20px
         transform: translateX(2000px) scale(0)
         &.show
             transform: translateX(0px) scale(1)
@@ -132,6 +134,15 @@
         transform: translateX(1000px) scale(0)
         &.show
             transform: translateX(0px) scale(1)
+    &__page-content-1
+        background: linear-gradient(to right, #b83d6e, #c93c82 100%)
+        z-index: 3
+    &__page-content-2
+        background: linear-gradient(to right, #b83d6e, #c93c82 100%)
+        z-index: 3
+    &__page-content-3
+        background: linear-gradient(to right, #b83d6e, #c93c82 100%)
+        z-index: 3
 
 @media screen and (min-width: 1020px)
     .sites
@@ -251,3 +262,20 @@
         margin-bottom: 17px
         & img
             width: 25px
+
+@media screen and (min-width: 500px)
+    .sites
+        &__page-content-1
+            background: transparent
+@media screen and (min-width: 600px)
+    .sites
+        &__page-content-2
+            background: linear-gradient(to right, #a33175, #55155a 100%)
+        &__page-content-3
+            background: linear-gradient(to right, #a33175, #55155a 100%)
+@media screen and (min-width: 1020px)
+    .sites
+        &__page-content-2
+            background: transparent
+        &__page-content-3
+            background: linear-gradient(to right, #cc418a 0%, #cb428a 10%, #c94189 20%, #c13f84 30%, #b6387f 40%, #a13175 50%, #8b2a6c 60%, #762066 70%, #611a5d 80%, #551558 90%, #4f1d55 100%)
